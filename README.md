@@ -1,6 +1,6 @@
-# [dibk-bygg-uten-soke](https://dibk-bygg-uten-soke.firebaseapp.com/) [![Build Status](https://travis-ci.com/netliferesearch/dibk-bygg-uten-soke.svg?token=7NpjNJdFW93Qs1rPvcce&branch=master)](https://travis-ci.com/netliferesearch/dibk-bygg-uten-soke)
+# [dibk-bus-garasje](https://dibk-bus-garasje.firebaseapp.com/) [![Build Status](https://travis-ci.com/netliferesearch/dibk-bus-garasje.svg?token=7NpjNJdFW93Qs1rPvcce&branch=master)](https://travis-ci.com/netliferesearch/dibk-bus-garasje)
 
-The dibk-bygg-uten-soke project is a wizard that uses
+The dibk-bus-garasje project is a wizard that uses
 [losen](https://github.com/netliferesearch/losen).\
 The documentation for losen can be found here https://dibk-storybook.firebaseapp.com/.
 
@@ -17,12 +17,12 @@ Then run `yarn && yarn start` to run the development server.
 
 To run the tests you need to type the command `yarn test`.
 
-The data for this wizard can be found in `src/api/bygg-uten-soke.json`.
+The data for this wizard can be found in `src/api/bus-garasje.json`.
 
 ## Deploy
 
 The project is hosted on
-[`Firebase`](https://console.firebase.google.com/u/0/project/dibk-bygg-uten-soke/overview) :fire:. You
+[`Firebase`](https://console.firebase.google.com/u/0/project/dibk-bus-garasje/overview) :fire:. You
 need to be invited to it to be able to deploy.
 
 To deploy you need the firebase tools. Install it with the following command:
