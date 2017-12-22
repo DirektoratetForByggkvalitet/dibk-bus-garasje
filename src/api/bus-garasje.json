@@ -1,0 +1,849 @@
+{
+  "meta": {
+    "title": "Bygg garasje uten å søke"
+  },
+  "schema": [
+    {
+      "id": "page1",
+      "type": "Page",
+      "heading": "Om eiendommen",
+      "children": [
+        {
+          "id": "byggerett",
+          "property": "byggerett",
+          "type": "Radio",
+          "heading": "Har du rett til å bygge på eiendommen?",
+          "options": [
+            {
+              "id": "byggerett.yes",
+              "type": "Answer",
+              "heading": "Ja",
+              "value": "yes"
+            },
+            {
+              "id": "byggerett.no",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "byggerett",
+                "operator": "eq",
+                "value": "no"
+              },
+              "children": [
+                {
+                  "id": "insufficientCompentency",
+                  "type": "Error",
+                  "children": [
+                    {
+                      "id": "insufficientCompentency",
+                      "type": "Text",
+                      "warning": true,
+                      "heading": "Du kan ikke ha katt!"
+                    }
+                  ]
+                },
+                {
+                  "id": "manglerByggerett",
+                  "type": "Result",
+                  "heading": "Du må søke",
+                  "lead": "Du kan ikke bygge uten å søke om tillatelse."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "bebygd",
+          "property": "bebygd",
+          "type": "Radio",
+          "heading": "Er eiendommen bebygd?",
+          "text":
+            "<img src=\"/img/05_garasje_600x275.png\" alt=\"Illustrasjon av et hus\"><p>For å slippe å søke må eiendommen din være bebygd. Eiendommen din er bebygd hvis det for eksempel er et bolighus eller hytte på eiendommen fra før.</p>",
+          "options": [
+            {
+              "id": "bebygd.yes",
+              "type": "Answer",
+              "heading": "Ja, eiendommen er bebygd",
+              "value": "yes"
+            },
+            {
+              "id": "bebygd.no",
+              "type": "Answer",
+              "heading": "Nei, eiendommen er ikke bebygd",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "bebygd",
+                "operator": "eq",
+                "value": "no"
+              },
+              "children": [
+                {
+                  "id": "ikkeBebygd",
+                  "type": "Error",
+                  "children": [
+                    {
+                      "id": "ikkeBebygd",
+                      "type": "Text",
+                      "warning": true,
+                      "heading": "Du kan ikke ha katt!"
+                    }
+                  ]
+                },
+                {
+                  "id": "manglerBebyggelse",
+                  "type": "Result",
+                  "heading": "Du må søke",
+                  "lead": "Du kan ikke bygge uten å søke om tillatelse."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "regplan",
+          "property": "regplan",
+          "type": "Radio",
+          "heading": "Finnes det en reguleringsplan for eiendommen?",
+          "text":
+            "<p>Reguleringsplanen for eiendommen finner du hos kommunen.</p>",
+          "options": [
+            {
+              "id": "regplan.yes",
+              "type": "Answer",
+              "heading": "Ja",
+              "value": "yes"
+            },
+            {
+              "id": "regplan.no",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "group",
+          "type": "Group",
+          "heading": "Bygge i LNF-områder",
+          "text":
+            "<p>Det er begrensninger på hva du kan bygge i områder som er regulerte til landbruk, natur og friluftsformål samt reindrift. Dette kalles LNF-områder eller LNFR-områder. Du finner som regel informasjon om dette i kommuneplanens arealdel.</p>",
+          "property": "lnf.group",
+          "children": [
+            {
+              "property": "lnfSheep",
+              "type": "Image",
+              "image": {
+                "url": "/img/17_garasje_600x275.png",
+                "alt": "Fire sauer"
+              },
+              "hidden": {
+                "type": "or",
+                "clauses": [
+                  {
+                    "field": "lnfArea",
+                    "operator": "not"
+                  },
+                  {
+                    "field": "lnfArea",
+                    "operator": "eq",
+                    "value": "no"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lnfArea",
+              "property": "lnfArea",
+              "type": "Radio",
+              "heading": "Skal du bygge i et LNF-område?",
+              "options": [
+                {
+                  "id": "lnfArea.yes",
+                  "type": "Answer",
+                  "heading": "Ja",
+                  "value": "yes"
+                },
+                {
+                  "id": "lnfArea.no",
+                  "type": "Answer",
+                  "heading": "Nei",
+                  "value": "no"
+                }
+              ]
+            },
+            {
+              "property": "lnfImage",
+              "type": "Image",
+              "image": {
+                "url": "/img/18_garasje_600x275.png",
+                "alt": "Garasje med traktor inni"
+              },
+              "hidden": {
+                "type": "or",
+                "clauses": [
+                  {
+                    "field": "lnfArea",
+                    "operator": "not"
+                  },
+                  {
+                    "field": "lnfArea",
+                    "operator": "eq",
+                    "value": "no"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lnfBuilding",
+              "property": "lnfBuilding",
+              "type": "Radio",
+              "heading": "Skal du sette opp en landbruksbygning?",
+              "text": "<p>I LNF-områder er det bare tillatt å sette opp bygninger som har direkte tilknytning til landbruk eller stedbunden næring (tradisjonell landbruksvirksomhet).</p>",
+              "summary": "Se eksempler",
+              "details": 
+                "<p>Landbruksbygninger som kan være tillatt er:</p><ul><li>Naust eller rorbu som er nødvendige for landbruk</li><li>Hageveksthus som er knyttet til produksjon på gårdsbruk</li><li>Salgslokale som i hovedsak brukes til salg av egne gårdsprodukter</li><li>Garasje som bare brukes til landbruksformål</li></ul><p>Er du usikker på om bygningen din er en landbruksbygning, må du kontakte kommunen. Er det ikke en landbruksbygning, kan du også høre med kommunen om det er mulig å søke om dispensasjon.</p>",
+              "hidden": {
+                "type": "or",
+                "clauses": [
+                  {
+                    "field": "lnfArea",
+                    "operator": "not"
+                  },
+                  {
+                    "field": "lnfArea",
+                    "operator": "eq",
+                    "value": "no"
+                  }
+                ]
+              },
+              "options": [
+                {
+                  "id": "lnfBuilding.yes",
+                  "type": "Answer",
+                  "text": "Ja",
+                  "value": "ja"
+                },
+                {
+                  "id": "lnfBuilding.no",
+                  "type": "Answer",
+                  "text": "Nei",
+                  "value": "nei"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "page2",
+      "type": "Page",
+      "heading": "Størrelse på bygningen",
+      "children": [
+        {
+          "id": "buildingSize",
+          "property": "buildingSize",
+          "type": "Radio",
+          "heading": "Skal bygningen være større enn 50 kvadratmeter?",
+          "options": [
+            {
+              "id": "buildingSize.yesbut",
+              "type": "Answer",
+              "text": "Ja, men mindre enn 70 m<sup>2</sup>",
+              "value": "yesbut"
+            },
+            {
+              "id": "buildingSize.yesand",
+              "type": "Answer",
+              "text": "Ja, og større enn 70 m<sup>2</sup>",
+              "value": "yesand"
+            },
+            {
+              "id": "buildingSize.no",
+              "type": "Answer",
+              "text": "Nei",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "buildingFloors",
+          "property": "buildingFloors",
+          "type": "Radio",
+          "heading": "Skal du ha kjeller eller loftsetasje i bygningen?",
+          "options": [
+            {
+              "id": "buildingFloors.yes",
+              "type": "Answer",
+              "heading": "Ja",
+              "value": "yes"
+            },
+            {
+              "id": "buildingFloors.no",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "no"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "page3",
+      "type": "Page",
+      "heading": "Plassering på tomten",
+      "children": [
+        {
+          "id": "buildingsDistance",
+          "property": "buildingsDistance",
+          "type": "Radio",
+          "heading": "Skal bygningen plasseres minst 1,0 meter fra andre bygninger på eiendommen?",
+          "options": [
+            {
+              "id": "buildingsDistance.yes",
+              "type": "Answer",
+              "heading": "Ja",
+              "value": "yes"
+            },
+            {
+              "id": "buildingsDistance.no",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "neighborDistance",
+          "property": "neighborDistance",
+          "type": "Radio",
+          "heading": "Skal bygningen plasseres minst 1,0 meter fra nabogrensa?",
+          "text":
+            "<img src=\"/img/08_garasje_600x275.png\" alt=\"Illustrasjon av et hus\"><p>Bygningen må plasseres minst 1,0 meter fra nabogrensa. Dette betyr at veggen som vender mot naboen, må plasseres minst 1,0 meter fra grensa. Ta kontakt med kommunen om du er usikker på hvor nabogrensa går.</p>",
+          "options": [
+            {
+              "id": "neighborDistance.yes",
+              "type": "Answer",
+              "heading": "Ja",
+              "value": "yes"
+            },
+            {
+              "id": "neighborDistance.no",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "neighborBuildingDistance",
+          "property": "neighborBuildingDistance",
+          "type": "Radio",
+          "heading": "Er det mindre enn 2,0 meter til bygning på naboeiendom?",
+          "options": [
+            {
+              "id": "neighborBuildingDistance.yes",
+              "type": "Answer",
+              "heading": "Ja",
+              "value": "yes"
+            },
+            {
+              "id": "neighborBuildingDistance.no",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "neighborBuildingDistance",
+          "property": "neighborBuildingDistance",
+          "type": "Radio",
+          "heading": "Er det mindre enn 2,0 meter til bygning på naboeiendom?",
+          "options": [
+            {
+              "id": "neighborBuildingDistance.yes",
+              "type": "Answer",
+              "heading": "Ja",
+              "value": "yes"
+            },
+            {
+              "id": "neighborBuildingDistance.no",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "drainagePlacement",
+          "property": "drainagePlacement",
+          "type": "Radio",
+          "heading": "Skal bygningen plasseres over vann- og avløpsledninger?",
+          "options": [
+            {
+              "id": "drainagePlacement.yes",
+              "type": "Answer",
+              "heading": "Ja",
+              "value": "yes"
+            },
+            {
+              "id": "drainagePlacement.no",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "no"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "page4",
+      "type": "Page",
+      "heading": "Bruk av bygningen",
+      "children": [
+        {
+          "id": "uses",
+          "property": "uses",
+          "type": "Group",
+          "heading": "Bruksområde",
+          "text": "<p>Du må søke hvis du skal ha kjøkken, stue, bad, våtrom eller soverom i bygningen.</p>",
+          "children": [
+            {
+              "id": "usesType",
+              "property": "usesType",
+              "type": "Radio",
+              "heading": "Hva skal bygningen brukes til?",
+              "options": [
+                {
+                  "id": "usesType.garasje",
+                  "type": "Answer",
+                  "text": "Kun bod eller garasje",
+                  "value": "garasje"
+                },
+                {
+                  "id": "usesType.bolig",
+                  "type": "Answer",
+                  "text": "Noen skal bo eller sove der",
+                  "value": "bolig"
+                },
+                {
+                  "id": "usesType.hobby",
+                  "type": "Answer",
+                  "text": "Kontor, atelier, hobbyrom eller treningsrom",
+                  "value": "hobby"
+                }
+              ]
+            },
+            {
+              "id": "usesNabo",
+              "property": "usesNabo",
+              "type": "Radio",
+              "heading": "Er det mindre enn 8,0 meter til nærmeste bygning på naboeiendommen?",
+              "options": [
+                {
+                  "id": "usesNabo.yes",
+                  "type": "Answer",
+                  "text": "Ja",
+                  "value": "yes"
+                },
+                {
+                  "id": "usesNabo.no",
+                  "type": "Answer",
+                  "text": "Nei",
+                  "value": "no"
+                }
+              ],
+              "hidden": {
+                "type": "or",
+                "clauses": [
+                  {
+                    "field": "usesType",
+                    "operator": "not"
+                  },
+                  {
+                    "field": "usesType",
+                    "operator": "neq",
+                    "value": "hobby"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "usesNaboGarasje",
+              "property": "usesNaboGarasje",
+              "type": "Radio",
+              "heading": "Er bygningen på naboeiendommen en garasje?",
+              "options": [
+                {
+                  "id": "usesNaboGarasje.yes",
+                  "type": "Answer",
+                  "text": "Ja",
+                  "value": "yes"
+                },
+                {
+                  "id": "usesNaboGarasje.no",
+                  "type": "Answer",
+                  "text": "Nei",
+                  "value": "no"
+                }
+              ],
+              "hidden": {
+                "type": "or",
+                "clauses": [
+                  {
+                    "field": "usesNabo",
+                    "operator": "not"
+                  },
+                  {
+                    "field": "usesNabo",
+                    "operator": "eq",
+                    "value": "yes"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "page5",
+      "type": "Page",
+      "heading": "Avstander og høyder",
+      "children": [
+        {
+          "id": "road",
+          "property": "road",
+          "type": "Group",
+          "heading": "Nærhet til offentlig vei",
+          "text": "<img src=\"/img/40_garasje_600x275.png\" alt=\"Illustrasjon som viser avstand til veien\"><p>Du bygger i nærheten av offentlig vei hvis det er mindre enn:<ul><li>15 meter til gang- og sykkelvei</li><li>15 meter til kommunal vei</li><li>50 meter til fylkesvei</li><li>100 meter til riksvei (50 meter hvis området er uregulert)</li></ul>Avstanden måles fra midtlinjen i kjørebanen.</p>",
+          "children": [
+            {
+              "id": "roadDistance",
+              "property": "roadDistance",
+              "type": "Radio",
+              "heading": "Skal du bygge i nærheten av offentlig vei?",
+              "options": [
+                {
+                  "id": "roadDistance.yes",
+                  "type": "Answer",
+                  "text": "Ja",
+                  "value": "yes"
+                },
+                {
+                  "id": "roadDistance.no",
+                  "type": "Answer",
+                  "text": "Nei",
+                  "value": "no"
+                }
+              ]
+            },
+            {
+              "id": "roadDistanceOk",
+              "property": "road.distanceOk",
+              "type": "Radio",
+              "heading": "Kan du likevel plassere bygningen der du ønsker?",
+              "text": "<p><span style=\"color:deeppink\">LAG VARIABLER HER BASERT PÅ HVA MAN SVARTE OM REGULERINGSPLAN I STEG 1</span><br /><strong>I uregulert område</strong><br />Ønsker du å bygge nærmere offentlig vei enn avstandene som var oppgitt på forrige spørsmål, må du søke om dispensasjon.</p><p><strong>I regulert område</strong><br />Se etter byggegrense mot vei i reguleringsplan eller i kommuneplanens arealdel. Hvis plasseringen til bygningen ikke er i strid med denne byggegrensa, kan du plassere bygningen der du ønsker.</p><p>Er det ikke oppgitt byggegrense mot vei i planene? Sjekk hvilket årstall reguleringsplanen din er vedtatt, og finn byggegrensen i tabellen under. Vil du bygge nærmere enn dette, må du søke om dispensasjon.</p><p>Du kan lese mer om byggegrense mot offentlig vei i <a href=\"https://lovdata.no/dokument/NL/lov/1963-06-21-23#KAPITTEL_5\">kapittel 5 i veglova</a>.</p>",
+              "options": [
+                {
+                  "id": "roadDistanceOk.yes",
+                  "type": "Answer",
+                  "text": "Ja",
+                  "value": "yes"
+                },
+                {
+                  "id": "roadDistanceOk.no",
+                  "type": "Answer",
+                  "text": "Nei",
+                  "value": "no"
+                }
+              ],
+              "hidden": {
+                "type": "or",
+                "clauses": [
+                  {
+                    "field": "roadDistance",
+                    "operator": "not"
+                  },
+                  {
+                    "field": "roadDistance",
+                    "operator": "eq",
+                    "value": "no"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "flood",
+          "property": "flood",
+          "type": "Radio",
+          "heading": "Skal du bygge i et flom- eller skredutsatt område?",
+          "text": "<img src=\"/img/25_garasje_600x275.png\" alt=\"Illustrasjon som viser avstand til veien\"><p>Det er ditt ansvar å sørge for at bygningen plasseres på sikker grunn. Du må derfor undersøke om det er fare for ras, flom, stormflo og skred, inklusive kvikkleireskred, der du skal bygge. Et kvikkleireskred kan bli utløst selv av små terrenginngrep.</p><p>Er du i tvil om grunnen er sikker, må du kontakte kommunen. Du kan lese mer om hvilke krav som stilles til sikkerhet mot naturpåkjenninger i <a href=\"https://dibk.no/byggeregler/tek/2/7/innledning/\">byggteknisk forskrift kapittel 7</a>.</p>",
+          "options": [
+            {
+              "id": "flood.yes",
+              "type": "Answer",
+              "text": "Ja",
+              "value": "yes"
+            },
+            {
+              "id": "flood.no",
+              "type": "Answer",
+              "text": "Nei",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "sea",
+          "property": "sea",
+          "type": "Group",
+          "heading": "Nærhet til sjøen",
+          "text": "<img src=\"/img/19_garasje_600x275.png\" alt=\"Illustrasjon som viser avstand til veien\"><p>Det er i utgangspunktet forbudt å bygge nærmere enn 100 meter fra sjøen. Dette området kalles 100-metersbeltet. Avstanden måles fra alminnelig høyvannsstand.</p><p>Det kan også være begrensninger på hva du kan bygge nærmere enn 100 meter fra elver og innsjøer (vassdrag).</p><p>Svaret finner du i reguleringsplan eller i kommuneplanens arealdel.</p>",
+          "children": [
+            {
+              "id": "seaDistance",
+              "property": "seaDistance",
+              "type": "Radio",
+              "heading": "Skal du bygge nærmere enn 100 meter fra sjøen?",
+              "options": [
+                {
+                  "id": "seaDistance.yes",
+                  "type": "Answer",
+                  "text": "Ja",
+                  "value": "yes"
+                },
+                {
+                  "id": "seaDistance.no",
+                  "type": "Answer",
+                  "text": "Nei",
+                  "value": "no"
+                }
+              ]
+            },
+            {
+              "id": "seaDistanceOk",
+              "property": "sea.distanceOk",
+              "type": "Radio",
+              "heading": "Finnes det en egen byggegrense på eiendommen som ikke er i strid med ønsker plassering?",
+              "text": "<p><span style=\"color:deeppink\">JUSTERE DENNE???</span><br />Kommunen kan ha fastsatt en annen byggegrense i 100-metersbeltet. Denne finner du i reguleringsplanen eller i kommuneplanens arealdel. Hvis plasseringen til bygningen ikke er i strid med denne byggegrensa, kan du bygge. Ta kontakt med kommunen om du er usikker på hva og hvor du kan bygge.</p>",
+              "options": [
+                {
+                  "id": "seaDistanceOk.yes",
+                  "type": "Answer",
+                  "text": "Ja",
+                  "value": "yes"
+                },
+                {
+                  "id": "seaDistanceOk.no",
+                  "type": "Answer",
+                  "text": "Nei",
+                  "value": "no"
+                }
+              ],
+              "hidden": {
+                "type": "or",
+                "clauses": [
+                  {
+                    "field": "seaDistance",
+                    "operator": "not"
+                  },
+                  {
+                    "field": "seaDistance",
+                    "operator": "eq",
+                    "value": "no"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "railroad",
+          "property": "railroad",
+          "type": "Group",
+          "heading": "Nærhet til jernbanespor",
+          "text": "<p><span style=\"color:deeppink\">INFOTEKST</span></p>",
+          "children": [
+            {
+              "id": "railroadDistance",
+              "property": "railroadDistance",
+              "type": "Radio",
+              "heading": "Er det minst 30 meter til nærmeste jernbanespor?",
+              "text": "<p><span style=\"color:deeppink\">INFOTEKST</span></p>",
+              "options": [
+                {
+                  "id": "railroadDistance.yes",
+                  "type": "Answer",
+                  "text": "Ja",
+                  "value": "yes"
+                },
+                {
+                  "id": "railroadDistance.no",
+                  "type": "Answer",
+                  "text": "Nei",
+                  "value": "no"
+                }
+              ]
+            },
+            {
+              "id": "railroadDistanceOk",
+              "property": "railroad.distanceOk",
+              "type": "Radio",
+              "heading": "Har du fått tillatelse til å bygge nærmere enn 30 meter?",
+              "text": "<p><span style=\"color:deeppink\">INFOTEKST</span></p>",
+              "options": [
+                {
+                  "id": "railroadDistanceOk.yes",
+                  "type": "Answer",
+                  "text": "Ja",
+                  "value": "yes"
+                },
+                {
+                  "id": "railroadDistanceOk.no",
+                  "type": "Answer",
+                  "text": "Nei",
+                  "value": "no"
+                }
+              ],
+              "hidden": {
+                "type": "or",
+                "clauses": [
+                  {
+                    "field": "railroadDistance",
+                    "operator": "not"
+                  },
+                  {
+                    "field": "railroadDistance",
+                    "operator": "eq",
+                    "value": "yes"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "exitRoad",
+          "property": "exitRoad",
+          "type": "Radio",
+          "heading": "Trenger du ny eller endret avkjørsel mot vei?",
+          "text": "<p><span style=\"color:deeppink\">INFOTEKST</span></p>",
+          "options": [
+            {
+              "id": "exitRoad.yes",
+              "type": "Answer",
+              "text": "Ja",
+              "value": "yes"
+            },
+            {
+              "id": "exitRoad.no",
+              "type": "Answer",
+              "text": "Nei",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "heights",
+          "property": "heights",
+          "type": "Radio",
+          "heading": "Er mønehøyde maksimalt 4,0 meter, og gesimshøyde maksimalt 3.0 meter?",
+          "text": "<p><span style=\"color:deeppink\">INFOTEKST</span></p>",
+          "options": [
+            {
+              "id": "heights.yes",
+              "type": "Answer",
+              "text": "Ja",
+              "value": "yes"
+            },
+            {
+              "id": "heights.no",
+              "type": "Answer",
+              "text": "Nei",
+              "value": "no"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "page6",
+      "type": "Page",
+      "heading": "Hvor stort kan du bygge og andre forhold",
+      "children": [
+        {
+          "id": "areaAvailable",
+          "property": "areaAvailable",
+          "type": "Radio",
+          "heading": "Har eiendommen din stort nok areal til bygningen du ønsker å sette opp?",
+          "text": "<p><span style=\"color:deeppink\">INFOTEKST</span></p>",
+          "options": [
+            {
+              "id": "areaAvailable.yes",
+              "type": "Answer",
+              "text": "Ja",
+              "value": "yes"
+            },
+            {
+              "id": "areaAvailable.no",
+              "type": "Answer",
+              "text": "Nei",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "other",
+          "property": "other",
+          "type": "Radio",
+          "heading": "Er det andre forhold som hindrer deg i å bygge der du ønsker?",
+          "text": "<p><span style=\"color:deeppink\">INFOTEKST</span></p>",
+          "options": [
+            {
+              "id": "other.yes",
+              "type": "Answer",
+              "text": "Ja",
+              "value": "yes"
+            },
+            {
+              "id": "other.no",
+              "type": "Answer",
+              "text": "Nei",
+              "value": "no"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hooray",
+      "type": "Result",
+      "heading": "Du kan bygge uten å søke!",
+      "errorheading": "Du har ikke svart på alle spørsmålene",
+      "lead":
+        "<p><strong>Så bra for deg!</strong><br />Sjekk at du har svart riktig på alle spørsmålene. I oppsummeringen under kan du klikke deg inn på hvert steg i veiviseren for å legge til og endre svarene dine.</p>",
+      "errorlead":
+        "Vi kan derfor ikke gi deg svar på om du kan bygge uten å søke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.",
+      "exporter": "dataExport"
+    }
+  ]
+}
