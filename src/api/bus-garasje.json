@@ -86,7 +86,7 @@
               "test": {
                 "field": "regplan",
                 "operator": "eq",
-                "value": "yes"
+                "value": "no"
               },
               "children": [
                 {
@@ -184,7 +184,8 @@
                       "id": "lnfBuilding.error.msg",
                       "type": "Text",
                       "warning": true,
-                      "heading": "Hva skal denne feilmeldingen være??"
+                      "heading":
+                        "Dispensasjonen må være innvilget før du kan sette opp en slik bygning i et LNF-område. Ta kontakt med kommunen for å høre om mulighetene for å få innvilget en slik dispensasjon."
                     }
                   ]
                 }
@@ -210,7 +211,21 @@
               "heading": "Nei",
               "value": "no"
             }
-          ]
+          ],
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "lnfArea",
+                "operator": "not"
+              },
+              {
+                "field": "lnfArea",
+                "operator": "eq",
+                "value": "no"
+              }
+            ]
+          }
         },
         {
           "type": "Branch",
@@ -272,10 +287,49 @@
           ]
         },
         {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "type": "or",
+                "clauses": [
+                  {
+                    "field": "buildingSize",
+                    "operator": "eq",
+                    "value": "yesbut"
+                  },
+                  {
+                    "field": "buildingSize",
+                    "operator": "eq",
+                    "value": "yesand"
+                  }
+                ]
+              },
+              "children": [
+                {
+                  "id": "tooBigbuildingSize",
+                  "type": "Error",
+                  "children": [
+                    {
+                      "id": "tooBigbuildingSize.msg",
+                      "type": "Text",
+                      "warning": true,
+                      "heading":
+                        "Er bygningen større enn 50 kvadratmeter må du sende byggesøknad til kommunen. Du kan ikke bygge før søknaden er godkjent."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
           "id": "buildingFloors",
           "property": "buildingFloors",
           "type": "Radio",
           "heading": "Skal du ha kjeller eller loftsetasje i bygningen?",
+          "text":
+            "<img src=\"/img/12_garasje_600x275.png\" alt=\"Kun en etasje\"><p>Du har kun lov å bygge én etasje. Du må søke hvis du vil ha kjeller eller loftsetasje.</p><p>Du kan likevel ha et lite oppbevaringsareal eller kryploft over garasjen uten at du trenger å søke.</p>",
           "options": [
             {
               "id": "buildingFloors.yes",
@@ -288,6 +342,33 @@
               "type": "Answer",
               "heading": "Nei",
               "value": "no"
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "buildingFloors",
+                "operator": "eq",
+                "value": "yes"
+              },
+              "children": [
+                {
+                  "id": "buildingFloors.error",
+                  "type": "Error",
+                  "children": [
+                    {
+                      "id": "buildingFloors.msg",
+                      "type": "Text",
+                      "warning": true,
+                      "heading":
+                        "Du må bygge uten kjeller eller loftsetasje, eller sende byggesøknad til kommunen. Du kan ikke bygge før søknaden er godkjent."
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
@@ -303,19 +384,50 @@
           "property": "buildingsDistance",
           "type": "Radio",
           "heading":
-            "Skal bygningen plasseres minst 1,0 meter fra andre bygninger på eiendommen?",
+            "Skal bygningen plasseres minst 1,0 meter fra andre bygninger på eiendommen din?",
+          "text":
+            "<img src=\"/img/07_garasje_600x275.png\" alt=\"Illustrasjon av et hus\"><p>Bygningen må plasseres minst 1,0 meter fra andre bygninger på eiendommen din.</p>",
           "options": [
             {
               "id": "buildingsDistance.yes",
               "type": "Answer",
-              "heading": "Ja",
+              "heading":
+                "Ja, det blir minst 1,0 meter til andre bygninger på eiendommen min",
               "value": "yes"
             },
             {
               "id": "buildingsDistance.no",
               "type": "Answer",
-              "heading": "Nei",
+              "heading":
+                "Nei, det blir mindre enn 1,0 meter til andre bygninger",
               "value": "no"
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "buildingsDistance",
+                "operator": "eq",
+                "value": "no"
+              },
+              "children": [
+                {
+                  "id": "buildingsDistance.error",
+                  "type": "Error",
+                  "children": [
+                    {
+                      "id": "buildingsDistance.msg",
+                      "type": "Text",
+                      "warning": true,
+                      "heading":
+                        "Du må plassere bygningen minst 1,0 meter fra andre bygninger på eiendommen din, eller sende byggesøknad til kommunen. Du kan ikke bygge før søknaden er godkjent."
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -330,14 +442,43 @@
             {
               "id": "neighborDistance.yes",
               "type": "Answer",
-              "heading": "Ja",
+              "heading":
+                "Ja, bygningen skal plasseres minst 1,0 meter fra nabogrensa",
               "value": "yes"
             },
             {
               "id": "neighborDistance.no",
               "type": "Answer",
-              "heading": "Nei",
+              "heading":
+                "Nei, bygningen skal plasseres nærmere enn 1,0 meter fra nabogrensa",
               "value": "no"
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "neighborDistance",
+                "operator": "eq",
+                "value": "no"
+              },
+              "children": [
+                {
+                  "id": "neighborDistance.error",
+                  "type": "Error",
+                  "children": [
+                    {
+                      "id": "neighborDistance.msg",
+                      "type": "Text",
+                      "warning": true,
+                      "heading":
+                        "Du må plassere bygningen minst 1,0 fra nabogrensa eller sende byggesøknad til kommunen. Du kan ikke bygge før søknaden er godkjent."
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -346,38 +487,49 @@
           "property": "neighborBuildingDistance",
           "type": "Radio",
           "heading": "Er det mindre enn 2,0 meter til bygning på naboeiendom?",
+          "text":
+            "<img src=\"/img/07_garasje_600x275.png\" alt=\"Illustrasjon\"><p>Hvis det er mindre enn 2,0 meter mellom bygningen din og nærmeste bygning på naboeiendommen, er det strengere brannkrav. Da må du brannsikre de delene av bygningen som er nærmere naboen enn 2,0 meter. Dette kan gjelde både tak og vegger.</p>",
           "options": [
             {
               "id": "neighborBuildingDistance.yes",
               "type": "Answer",
-              "heading": "Ja",
+              "heading":
+                "Ja, det er mindre enn 2,0 meter til bygning på naboeiendom",
               "value": "yes"
             },
             {
               "id": "neighborBuildingDistance.no",
               "type": "Answer",
-              "heading": "Nei",
+              "heading":
+                "Nei, det er minst 2,0 meter til bygning på naboeiendom",
               "value": "no"
             }
           ]
         },
         {
-          "id": "neighborBuildingDistance",
-          "property": "neighborBuildingDistance",
-          "type": "Radio",
-          "heading": "Er det mindre enn 2,0 meter til bygning på naboeiendom?",
-          "options": [
+          "type": "Branch",
+          "branches": [
             {
-              "id": "neighborBuildingDistance.yes",
-              "type": "Answer",
-              "heading": "Ja",
-              "value": "yes"
-            },
-            {
-              "id": "neighborBuildingDistance.no",
-              "type": "Answer",
-              "heading": "Nei",
-              "value": "no"
+              "test": {
+                "field": "neighborBuildingDistance",
+                "operator": "eq",
+                "value": "yes"
+              },
+              "children": [
+                {
+                  "id": "neighborBuildingDistance.error",
+                  "type": "Error",
+                  "children": [
+                    {
+                      "id": "neighborBuildingDistance.msg",
+                      "type": "Text",
+                      "warning": true,
+                      "heading":
+                        "Du må plassere bygningen minst 2,0 meter fra andre bygninger på naboeiendommen, eller brannsikre de delene av bygningen som er nærmere naboen enn 2,0 meter. Brannmotstanden må være minst EI 30 (motstandsdyktig mot brann i 30 minutter). Du finner mer informasjon om tiltak mot brannspredning i § 11-6 i byggteknisk forskrift."
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -386,18 +538,49 @@
           "property": "drainagePlacement",
           "type": "Radio",
           "heading": "Skal bygningen plasseres over vann- og avløpsledninger?",
+          "text":
+            "<img src=\"/img/16_garasje_600x275.png\" alt=\"Illustrasjon\"><p>Du kan ikke plassere bygningen over vann- og avløpsledninger. Kommunen må ha tilgang til disse ledningene for vedlikehold og reparasjon.</p>Du må derfor passe på: <ul><li>at du bruker et oppdatert kart hvor alle ledninger vises</li><li>å sjekke om det finnes lokale regler som fastsetter hvor langt unna ledninger det er lov å bygge</li></ul><p>Ta kontakt med kommunen om du er usikker på hvor ledningene er.</p>",
           "options": [
             {
               "id": "drainagePlacement.yes",
               "type": "Answer",
-              "heading": "Ja",
+              "heading":
+                "Ja, bygningen skal plasseres over vann- og avløpsledninger",
               "value": "yes"
             },
             {
               "id": "drainagePlacement.no",
               "type": "Answer",
-              "heading": "Nei",
+              "heading":
+                "Nei, bygningen skal ikke plasseres over vann- og avløpsledninger",
               "value": "no"
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "drainagePlacement",
+                "operator": "eq",
+                "value": "yes"
+              },
+              "children": [
+                {
+                  "id": "drainagePlacement.error",
+                  "type": "Error",
+                  "children": [
+                    {
+                      "id": "drainagePlacement.msg",
+                      "type": "Text",
+                      "warning": true,
+                      "heading":
+                        "Du kan ikke bygge over vann- og avløpsledninger, inkludert stikkledninger. Du må plassere bygningen et annet sted eller kontakte kommunen for hjelp til å finne alternativ plassering."
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
@@ -409,107 +592,119 @@
       "heading": "Bruk av bygningen",
       "children": [
         {
-          "id": "uses",
-          "property": "uses",
-          "type": "Group",
-          "heading": "Bruksområde",
+          "id": "usesType",
+          "property": "usesType",
+          "type": "Radio",
+          "heading": "Hva skal bygningen brukes til?",
           "text":
-            "<p>Du må søke hvis du skal ha kjøkken, stue, bad, våtrom eller soverom i bygningen.</p>",
-          "children": [
+            "<img src=\"/img/13A_garasje_600x275.png\" alt=\"Illustrasjon\">",
+          "options": [
             {
-              "id": "usesType",
-              "property": "usesType",
-              "type": "Radio",
-              "heading": "Hva skal bygningen brukes til?",
-              "options": [
+              "id": "usesType.garasje",
+              "type": "Answer",
+              "text": "Kun bod eller garasje",
+              "value": "garasje"
+            },
+            {
+              "id": "usesType.bolig",
+              "type": "Answer",
+              "text": "Noen skal bo eller sove der",
+              "value": "bolig"
+            },
+            {
+              "id": "usesType.hobby",
+              "type": "Answer",
+              "text": "Kontor, atelier, hobbyrom eller treningsrom",
+              "value": "hobby"
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "usesType",
+                "operator": "eq",
+                "value": "bolig"
+              },
+              "children": [
                 {
-                  "id": "usesType.garasje",
-                  "type": "Answer",
-                  "text": "Kun bod eller garasje",
-                  "value": "garasje"
-                },
-                {
-                  "id": "usesType.bolig",
-                  "type": "Answer",
-                  "text": "Noen skal bo eller sove der",
-                  "value": "bolig"
-                },
-                {
-                  "id": "usesType.hobby",
-                  "type": "Answer",
-                  "text": "Kontor, atelier, hobbyrom eller treningsrom",
-                  "value": "hobby"
+                  "id": "usesType.error",
+                  "type": "Error",
+                  "children": [
+                    {
+                      "id": "usesType.msg",
+                      "type": "Text",
+                      "warning": true,
+                      "heading":
+                        "Du må sende byggesøknad til kommunen. Du kan ikke bygge før søknaden er godkjent."
+                    }
+                  ]
                 }
               ]
+            }
+          ]
+        },
+        {
+          "id": "usesNabo",
+          "property": "usesNabo",
+          "type": "Radio",
+          "heading":
+            "Er det mindre enn 8,0 meter til nærmeste bygning på naboeiendommen?",
+          "options": [
+            {
+              "id": "usesNabo.yes",
+              "type": "Answer",
+              "text": "Ja",
+              "value": "yes"
             },
             {
-              "id": "usesNabo",
-              "property": "usesNabo",
-              "type": "Radio",
-              "heading":
-                "Er det mindre enn 8,0 meter til nærmeste bygning på naboeiendommen?",
-              "options": [
-                {
-                  "id": "usesNabo.yes",
-                  "type": "Answer",
-                  "text": "Ja",
-                  "value": "yes"
-                },
-                {
-                  "id": "usesNabo.no",
-                  "type": "Answer",
-                  "text": "Nei",
-                  "value": "no"
-                }
-              ],
-              "hidden": {
-                "type": "or",
-                "clauses": [
-                  {
-                    "field": "usesType",
-                    "operator": "not"
-                  },
-                  {
-                    "field": "usesType",
-                    "operator": "neq",
-                    "value": "hobby"
-                  }
-                ]
+              "id": "usesNabo.no",
+              "type": "Answer",
+              "text": "Nei",
+              "value": "no"
+            }
+          ],
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "usesType",
+                "operator": "not"
+              },
+              {
+                "field": "usesType",
+                "operator": "neq",
+                "value": "hobby"
               }
-            },
+            ]
+          }
+        },
+        {
+          "type": "Branch",
+          "branches": [
             {
-              "id": "usesNaboGarasje",
-              "property": "usesNaboGarasje",
-              "type": "Radio",
-              "heading": "Er bygningen på naboeiendommen en garasje?",
-              "options": [
+              "test": {
+                "field": "usesNabo",
+                "operator": "eq",
+                "value": "yes"
+              },
+              "children": [
                 {
-                  "id": "usesNaboGarasje.yes",
-                  "type": "Answer",
-                  "text": "Ja",
-                  "value": "yes"
-                },
-                {
-                  "id": "usesNaboGarasje.no",
-                  "type": "Answer",
-                  "text": "Nei",
-                  "value": "no"
+                  "id": "usesNabo.error",
+                  "type": "Error",
+                  "children": [
+                    {
+                      "id": "usesNabo.msg",
+                      "type": "Text",
+                      "warning": true,
+                      "heading":
+                        "Du må plassere bygningen minst 8,0 meter fra andre bygninger på naboeiendommen, eller brannsikre de delene av bygningen som er nærmere naboen enn 2,0 meter. Brannmotstanden må være på minst El 30. Se § 11-6 i byggteknisk forskrift."
+                    }
+                  ]
                 }
-              ],
-              "hidden": {
-                "type": "or",
-                "clauses": [
-                  {
-                    "field": "usesNabo",
-                    "operator": "not"
-                  },
-                  {
-                    "field": "usesNabo",
-                    "operator": "eq",
-                    "value": "yes"
-                  }
-                ]
-              }
+              ]
             }
           ]
         }
@@ -797,19 +992,49 @@
           "type": "Radio",
           "heading":
             "Har eiendommen din stort nok areal til bygningen du ønsker å sette opp?",
-          "text": "<p><span style=\"color:deeppink\">INFOTEKST</span></p>",
+          "text":
+            "<img src=\"/img/42_garasje_600x275.png\" alt=\"Illustrasjon\"><p>Eiendommen din har en begrensning på hvor mye areal eller volum du kan ha bygninger på. Dette er som regel oppgitt i situasjonskart eller reguleringsplan som:</p> <ul><li>BYA: Bebygd areal. Se etter prosent BYA eller antall kvadratmeter BYA</li><li>BRA: Bruksareal. Se etter prosent BRA eller antall kvadratmeter BRA</li><li>TU: Tomteutnyttelse. Se etter prosent TU. Finnes kun på eldre planer</li></ul> <p>20% BYA betyr det at du kan dekke til 20 prosent av eiendommen din med bygninger. Står det 200 kvm BYA betyr det at du kan dekke til 200 kvm med bygninger.</p><p></p>For å finne ut hvor mye plass du har til den ny bygningen, må du regne ut hvor mye plass de eksisterende bygningene opptar. Når du har gjort det, vil du kunne regne ut om du har plass nok til den nye bygningen, eller om du må bygge mindre enn planlagt.<p>Kontakt kommunen hvis du er usikker på hvor mye areal du har lov til å bygge på, og hva slags utregningsmåte du skal bruke.</p><p>Du kan finne mer informasjon om utregningsmåter i <a href=\"https://www.regjeringen.no/globalassets/upload/kmd/boby/grad_av_utnytting.pdf\">Grad av utnytting - beregnings- og måleregler (PDF).</a></p>",
           "options": [
             {
               "id": "areaAvailable.yes",
               "type": "Answer",
-              "text": "Ja",
+              "text":
+                "Ja, eiendommen min har stort nok areal til bygningen jeg ønsker å sette opp",
               "value": "yes"
             },
             {
               "id": "areaAvailable.no",
               "type": "Answer",
-              "text": "Nei",
+              "text":
+                "Nei, eiendommen min har ikke stort nok areal til bygningen jeg ønsker å sette opp",
               "value": "no"
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "areaAvailable",
+                "operator": "eq",
+                "value": "no"
+              },
+              "children": [
+                {
+                  "id": "areaAvailable.error",
+                  "type": "Error",
+                  "children": [
+                    {
+                      "id": "areaAvailable.msg",
+                      "type": "Text",
+                      "warning": true,
+                      "heading":
+                        "Du må sette opp en mindre bygning, eller søke om dispensasjon om å kunne bygge større. Dispensasjonen må være innvilget før du kan bygge. Ta kontakt med kommunen for å høre om mulighetene for å få innvilget en slik dispensasjon."
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -819,19 +1044,47 @@
           "type": "Radio",
           "heading":
             "Er det andre forhold som hindrer deg i å bygge der du ønsker?",
-          "text": "<p><span style=\"color:deeppink\">INFOTEKST</span></p>",
+          "text":
+            "<img src=\"/img/43_garasje_600x275.png\" alt=\"Illustrasjon\"><p>Det kan være andre forhold som hindrer deg i å bygge slik du ønsker. Dette vil du finne informasjon om i reguleringsplan, kommuneplanens arealdel, andre plandokumenter eller situasjonskart.</p><p>Eksempler på begrensninger du kan finne der er:</p><ul><li>strengere krav til hvor høy eller stor bygningen din kan være</li><li>strengere krav til hvor langt unna nabogrensa du kan bygge</li><li>krav til bygningens utseende, for eksempel fargevalg, takvinkel, plassering og materialvalg</li><li>verneverdige kulturminner som begrenser hvor eller hva du kan bygge</li><li>sjeldne dyre- eller plantearter som begrenser hvor eller hva du kan bygge</li></ul><p>Les derfor grundig gjennom reguleringsplan, kommuneplanens arealdel, situasjonskartet og andre dokumenter om eiendommen.</p>",
           "options": [
             {
               "id": "other.yes",
               "type": "Answer",
-              "text": "Ja",
+              "text": "Ja, det finnes andre begrensninger",
               "value": "yes"
             },
             {
               "id": "other.no",
               "type": "Answer",
-              "text": "Nei",
+              "text": "Nei, det finnes ikke andre begrensninger",
               "value": "no"
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "other",
+                "operator": "eq",
+                "value": "yes"
+              },
+              "children": [
+                {
+                  "id": "other.error",
+                  "type": "Error",
+                  "children": [
+                    {
+                      "id": "other.msg",
+                      "type": "Text",
+                      "warning": true,
+                      "heading":
+                        "Ta kontakt med kommunen for å høre hva du kan gjøre uten å søke, og om mulighetene for dispensasjon."
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
