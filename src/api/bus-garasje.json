@@ -652,17 +652,20 @@
           "type": "Radio",
           "heading":
             "Er det mindre enn 8,0 meter til nærmeste bygning på naboeiendommen?",
+          "text":
+            "<img src=\"/img/09_garasje_600x275.png\" alt=\"Illustrasjon\"><p>Hvis det er mindre enn 2,0 meter mellom bygningen din og nærmeste bygning på naboeiendommen, er det strengere brannkrav. Da må du brannsikre de delene av bygningen som er nærmere naboen enn 2,0 meter. Dette kan gjelde både tak og vegger.</p>",
           "options": [
             {
               "id": "usesNabo.yes",
               "type": "Answer",
-              "text": "Ja",
+              "text":
+                "Ja, det er mindre enn 2,0 meter til bygning på naboeiendom",
               "value": "yes"
             },
             {
               "id": "usesNabo.no",
               "type": "Answer",
-              "text": "Nei",
+              "text": "Nei, det er minst 2,0 meter til bygning på naboeiendom",
               "value": "no"
             }
           ],
@@ -686,9 +689,19 @@
           "branches": [
             {
               "test": {
-                "field": "usesNabo",
-                "operator": "eq",
-                "value": "yes"
+                "type": "and",
+                "clauses": [
+                  {
+                    "field": "usesNabo",
+                    "operator": "eq",
+                    "value": "yes"
+                  },
+                  {
+                    "field": "usesType",
+                    "operator": "eq",
+                    "value": "hobby"
+                  }
+                ]
               },
               "children": [
                 {
@@ -699,8 +712,8 @@
                       "id": "usesNabo.msg",
                       "type": "Text",
                       "warning": true,
-                      "heading":
-                        "Du må plassere bygningen minst 8,0 meter fra andre bygninger på naboeiendommen, eller brannsikre de delene av bygningen som er nærmere naboen enn 2,0 meter. Brannmotstanden må være på minst El 30. Se § 11-6 i byggteknisk forskrift."
+                      "text":
+                        "Du må plassere bygningen minst 8,0 meter fra andre bygninger på naboeiendommen, eller brannsikre de delene av bygningen som er nærmere naboen enn 2,0 meter. Brannmotstanden må være på minst El 30. Se <a href=\"https://dibk.no/byggeregler/tek/3/11/iii/11-6/\">§ 11-6 i byggteknisk forskrift</a>."
                     }
                   ]
                 }
