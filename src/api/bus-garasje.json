@@ -719,6 +719,7 @@
           "id": "road",
           "property": "road",
           "type": "Group",
+          "simple": true,
           "heading": "Nærhet til offentlig vei",
           "text":
             "<img src=\"/img/40_garasje_600x275.png\" alt=\"Illustrasjon som viser avstand til veien\"><p>Du bygger i nærheten av offentlig vei hvis det er mindre enn:<ul><li>15 meter til gang- og sykkelvei</li><li>15 meter til kommunal vei</li><li>50 meter til fylkesvei</li><li>100 meter til riksvei (50 meter hvis området er uregulert)</li></ul>Avstanden måles fra midtlinjen i kjørebanen.</p>",
@@ -744,40 +745,138 @@
               ]
             },
             {
-              "id": "roadDistanceOk",
-              "property": "road.distanceOk",
-              "type": "Radio",
-              "heading": "Kan du likevel plassere bygningen der du ønsker?",
-              "text":
-                "<p><span style=\"color:deeppink\">LAG VARIABLER HER BASERT PÅ HVA MAN SVARTE OM REGULERINGSPLAN I STEG 1</span><br /><strong>I uregulert område</strong><br />Ønsker du å bygge nærmere offentlig vei enn avstandene som var oppgitt på forrige spørsmål, må du søke om dispensasjon.</p><p><strong>I regulert område</strong><br />Se etter byggegrense mot vei i reguleringsplan eller i kommuneplanens arealdel. Hvis plasseringen til bygningen ikke er i strid med denne byggegrensa, kan du plassere bygningen der du ønsker.</p><p>Er det ikke oppgitt byggegrense mot vei i planene? Sjekk hvilket årstall reguleringsplanen din er vedtatt, og finn byggegrensen i tabellen under. Vil du bygge nærmere enn dette, må du søke om dispensasjon.</p><p>Du kan lese mer om byggegrense mot offentlig vei i <a href=\"https://lovdata.no/dokument/NL/lov/1963-06-21-23#KAPITTEL_5\">kapittel 5 i veglova</a>.</p>",
-              "options": [
+              "type": "Branch",
+              "branches": [
                 {
-                  "id": "roadDistanceOk.yes",
-                  "type": "Answer",
-                  "text": "Ja",
-                  "value": "yes"
-                },
-                {
-                  "id": "roadDistanceOk.no",
-                  "type": "Answer",
-                  "text": "Nei",
-                  "value": "no"
-                }
-              ],
-              "hidden": {
-                "type": "or",
-                "clauses": [
-                  {
-                    "field": "roadDistance",
-                    "operator": "not"
+                  "test": {
+                    "field": "regplan",
+                    "operator": "eq",
+                    "value": "yes"
                   },
-                  {
-                    "field": "roadDistance",
+                  "children": [
+                    {
+                      "id": "roadDistanceWithRegplan",
+                      "property": "roadDistanceWithRegplan",
+                      "type": "Radio",
+                      "heading":
+                        "Kan du likevel plassere bygningen der du ønsker?",
+                      "text":
+                        "<strong>I regulert område</strong><br />Se etter byggegrense mot vei i reguleringsplan eller i kommuneplanens arealdel. Hvis plasseringen til bygningen ikke er i strid med denne byggegrensa, kan du plassere bygningen der du ønsker.</p><p>Er det ikke oppgitt byggegrense mot vei i planene? Sjekk hvilket årstall reguleringsplanen din er vedtatt, og finn byggegrensen i tabellen under. Vil du bygge nærmere enn dette, må du søke om dispensasjon.</p><p>Du kan lese mer om byggegrense mot offentlig vei i <a href=\"https://lovdata.no/dokument/NL/lov/1963-06-21-23#KAPITTEL_5\">kapittel 5 i veglova</a>.</p><table> <thead> <tr> <th>Tidsrom</th> <th>Avstand til kommunal vei</th> <th>Avstand til fylkesvei</th> <th>Avstand til riksvei</th> <th>Avstanden måles fra</th> </tr> </thead> <tbody> <tr> <td>1912 - 1931</td> <td>3,5 meter</td> <td>3,5 meter</td> <td>3,5 meter</td> <td>Veikant</td> </tr> <tr> <td>1931 - 1938</td> <td>5,0 meter</td> <td>5,0 meter</td> <td>5,0 meter</td> <td>Veikant</td> </tr> <tr> <td>1938 - 1964</td> <td>7,5 meter</td> <td>7,5 meter</td> <td>7,5 meter</td> <td>Veikant</td> </tr> <tr> <td>1964 - 31. juni 1996</td> <td>12,5 meter</td> <td>12,5 meter</td> <td>30,0 meter</td> <td>Veiens midtlinje</td> </tr> <tr> <td>1. juli 1996 - 31. desember 2009</td> <td>15,0 meter</td> <td>15,0 meter</td> <td>50,0 meter</td> <td>Veiens midtlinje</td> </tr> <tr> <td>1. januar 2010 - nå</td> <td>15,0 meter</td> <td>50,0 meter</td> <td>50,0 meter</td> <td>Veiens midtlinje</td> </tr> </tbody></table>",
+                      "options": [
+                        {
+                          "id": "roadDistanceWithRegplan.yes",
+                          "type": "Answer",
+                          "text": "Ja, jeg bygger langt nok unna vei",
+                          "value": "yes"
+                        },
+                        {
+                          "id": "roadDistanceWithRegplan.no",
+                          "type": "Answer",
+                          "text": "Nei, jeg bygger ikke langt nok unna vei",
+                          "value": "no"
+                        }
+                      ],
+                      "hidden": {
+                        "type": "or",
+                        "clauses": [
+                          {
+                            "field": "roadDistance",
+                            "operator": "not"
+                          },
+                          {
+                            "field": "roadDistance",
+                            "operator": "eq",
+                            "value": "no"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Branch",
+              "branches": [
+                {
+                  "test": {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "regplan",
+                        "operator": "eq",
+                        "value": "yes"
+                      },
+                      {
+                        "field": "roadDistance",
+                        "operator": "eq",
+                        "value": "yes"
+                      },
+                      {
+                        "field": "roadDistanceWithRegplan",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "id": "roadDistanceWithRegplan.error",
+                      "type": "Error",
+                      "children": [
+                        {
+                          "id": "roadDistanceWithRegplan.msg",
+                          "type": "Text",
+                          "warning": true,
+                          "text":
+                            "Du må søke om dispensasjon for byggegrense mot offentlig vei. Ta kontakt med kommunen for informasjon om kommunal vei, og med Statens vegvesen for <a href=\"http://www.vegvesen.no/Fag/Veg+og+gate/Prosjektering+og+bygging/bygge+langs+veg\">informasjon om andre offentlige veier</a>."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Branch",
+              "branches": [
+                {
+                  "test": {
+                    "field": "regplan",
                     "operator": "eq",
                     "value": "no"
-                  }
-                ]
-              }
+                  },
+                  "children": [
+                    {
+                      "id": "roadDistanceWithoutRegplan.error",
+                      "type": "Error",
+                      "children": [
+                        {
+                          "id": "roadDistanceWithoutRegplan.msg",
+                          "type": "Text",
+                          "warning": true,
+                          "heading":
+                            "Ønsker du å bygge nærmere offentlig vei i uregulert område enn avstandene som er nevnt, må du søke om dispensasjon."
+                        }
+                      ],
+                      "hidden": {
+                        "type": "or",
+                        "clauses": [
+                          {
+                            "field": "roadDistance",
+                            "operator": "not"
+                          },
+                          {
+                            "field": "roadDistance",
+                            "operator": "eq",
+                            "value": "no"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -804,9 +903,37 @@
           ]
         },
         {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "flood",
+                "operator": "eq",
+                "value": "yes"
+              },
+              "children": [
+                {
+                  "id": "flood.error",
+                  "type": "Error",
+                  "children": [
+                    {
+                      "id": "flood.msg",
+                      "type": "Text",
+                      "warning": true,
+                      "heading":
+                        "Det kan være begrensninger på hva du har lov til å bygge i et slikt område. Ta kontakt med kommunen for informasjon om hva du har lov å bygge på eiendommen."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
           "id": "sea",
           "property": "sea",
           "type": "Group",
+          "simple": true,
           "heading": "Nærhet til sjøen",
           "text":
             "<img src=\"/img/19_garasje_600x275.png\" alt=\"Illustrasjon som viser avstand til veien\"><p>Det er i utgangspunktet forbudt å bygge nærmere enn 100 meter fra sjøen. Dette området kalles 100-metersbeltet. Avstanden måles fra alminnelig høyvannsstand.</p><p>Det kan også være begrensninger på hva du kan bygge nærmere enn 100 meter fra elver og innsjøer (vassdrag).</p><p>Svaret finner du i reguleringsplan eller i kommuneplanens arealdel.</p>",
@@ -820,20 +947,20 @@
                 {
                   "id": "seaDistance.yes",
                   "type": "Answer",
-                  "text": "Ja",
+                  "text": "Ja, jeg skal bygge nærmere sjøen",
                   "value": "yes"
                 },
                 {
                   "id": "seaDistance.no",
                   "type": "Answer",
-                  "text": "Nei",
+                  "text": "Nei, jeg skal bygge minst 100 meter fra sjøen",
                   "value": "no"
                 }
               ]
             },
             {
               "id": "seaDistanceOk",
-              "property": "sea.distanceOk",
+              "property": "seaDistanceOk",
               "type": "Radio",
               "heading":
                 "Finnes det en egen byggegrense på eiendommen som ikke er i strid med ønsker plassering?",
@@ -843,13 +970,15 @@
                 {
                   "id": "seaDistanceOk.yes",
                   "type": "Answer",
-                  "text": "Ja",
+                  "text":
+                    "Ja, det finnes en annen byggegrense på eiendommen, og denne kommer ikke i strid med ønsket plassering",
                   "value": "yes"
                 },
                 {
                   "id": "seaDistanceOk.no",
                   "type": "Answer",
-                  "text": "Nei",
+                  "text":
+                    "Nei, det finnes ikke en annen byggegrense på eiendommen som gjør ønsket plassering lovlig",
                   "value": "no"
                 }
               ],
@@ -867,6 +996,33 @@
                   }
                 ]
               }
+            },
+            {
+              "type": "Branch",
+              "branches": [
+                {
+                  "test": {
+                    "field": "seaDistanceOk",
+                    "operator": "eq",
+                    "value": "no"
+                  },
+                  "children": [
+                    {
+                      "id": "seaDistanceOk.error",
+                      "type": "Error",
+                      "children": [
+                        {
+                          "id": "seaDistanceOk.msg",
+                          "type": "Text",
+                          "warning": true,
+                          "heading":
+                            "Du må søke om dispensasjon. Dispensasjonen må være innvilget før du kan bygge i 100-metersbeltet. Ta kontakt med kommunen for å høre om mulighetene for å få innvilget en slik dispensasjon."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -875,47 +1031,51 @@
           "property": "railroad",
           "type": "Group",
           "heading": "Nærhet til jernbanespor",
-          "text": "<p><span style=\"color:deeppink\">INFOTEKST</span></p>",
+          "simple": true,
           "children": [
             {
               "id": "railroadDistance",
               "property": "railroadDistance",
               "type": "Radio",
               "heading": "Er det minst 30 meter til nærmeste jernbanespor?",
-              "text": "<p><span style=\"color:deeppink\">INFOTEKST</span></p>",
+              "text":
+                "<img src=\"/img/26_garasje_600x275.png\" alt=\"Illustrasjon \"><p>Det må være minst 30 meter til nærmeste jernbanespor. Dette gjelder både togspor, t-banespor og trikkespor. Avstanden måles fra nærmeste spors midtlinje.</p>",
               "options": [
                 {
                   "id": "railroadDistance.yes",
                   "type": "Answer",
-                  "text": "Ja",
+                  "text": "Ja, det er minst 30 meter til nærmeste jernbanespor",
                   "value": "yes"
                 },
                 {
                   "id": "railroadDistance.no",
                   "type": "Answer",
-                  "text": "Nei",
+                  "text":
+                    "Nei, det er under 30 meter til nærmeste jernbanespor",
                   "value": "no"
                 }
               ]
             },
             {
               "id": "railroadDistanceOk",
-              "property": "railroad.distanceOk",
+              "property": "railroadDistanceOk",
               "type": "Radio",
               "heading":
                 "Har du fått tillatelse til å bygge nærmere enn 30 meter?",
-              "text": "<p><span style=\"color:deeppink\">INFOTEKST</span></p>",
+              "text":
+                "<img src=\"/img/27_garasje_600x275.png\" alt=\"Illustrasjon \"><p>For å bygge nærmere enn 30 meter fra nærmeste spors midtlinje, må du søke Bane NOR om tillatelse. Dette må du gjøre selv om det finnes en nærmere byggegrense mot jernbane i reguleringsplan.</p><p>Les mer om byggegrense mot jernbane hos <a href=\"http://www.banenor.no/Sikkerhet/Byggegrense/\">Bane NOR.</a></p></p>",
               "options": [
                 {
                   "id": "railroadDistanceOk.yes",
                   "type": "Answer",
-                  "text": "Ja",
+                  "text":
+                    "Ja, jeg har fått tillatelse til å bygge nærmere enn 30 meter",
                   "value": "yes"
                 },
                 {
                   "id": "railroadDistanceOk.no",
                   "type": "Answer",
-                  "text": "Nei",
+                  "text": "Nei, jeg må søke om tillatelse for å bygge nærmere",
                   "value": "no"
                 }
               ],
@@ -933,6 +1093,33 @@
                   }
                 ]
               }
+            },
+            {
+              "type": "Branch",
+              "branches": [
+                {
+                  "test": {
+                    "field": "railroadDistanceOk",
+                    "operator": "eq",
+                    "value": "no"
+                  },
+                  "children": [
+                    {
+                      "id": "railroadDistanceOk.error",
+                      "type": "Error",
+                      "children": [
+                        {
+                          "id": "railroadDistanceOk.msg",
+                          "type": "Text",
+                          "warning": true,
+                          "text":
+                            "Du må kontakte <a href=\"http://www.banenor.no/Om-oss/Kontakt-oss/\">Bane NOR</a> og søke om tillatelse til å bygge nærmere enn 30 meter fra nærmeste spors midtlinje."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -941,19 +1128,47 @@
           "property": "exitRoad",
           "type": "Radio",
           "heading": "Trenger du ny eller endret avkjørsel mot vei?",
-          "text": "<p><span style=\"color:deeppink\">INFOTEKST</span></p>",
+          "text":
+            "<img src=\"/img/41_garasje_600x275.png\" alt=\"Illustrasjon \"><p>Du må ha godkjent avkjørsel mot vei for å kunne bygge garasje. Trenger du ny eller endret avkjørsel mot kommunal vei, kontakter du kommunen. Trenger du ny eller endret avkjørsel mot riks- eller fylkesvei kontakter du <a href=\"http://www.vegvesen.no/Fag/Veg+og+gate/Prosjektering+og+bygging/bygge+langs+veg\">Statens vegvesen.</a> Du kan trenge ny eller endret avkjørsel hvis garasjen gir dårligere sikt enn det du har i dag.</p>",
           "options": [
             {
               "id": "exitRoad.yes",
               "type": "Answer",
-              "text": "Ja",
+              "text": "Ja, jeg trenger ny eller endret avkjørsel mot vei",
               "value": "yes"
             },
             {
               "id": "exitRoad.no",
               "type": "Answer",
-              "text": "Nei",
+              "text": "Nei, jeg trenger ikke ny eller endret avkjørsel mot vei",
               "value": "no"
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "exitRoad",
+                "operator": "eq",
+                "value": "yes"
+              },
+              "children": [
+                {
+                  "id": "exitRoad.error",
+                  "type": "Error",
+                  "children": [
+                    {
+                      "id": "exitRoad.msg",
+                      "type": "Text",
+                      "warning": true,
+                      "heading":
+                        "Du må skaffe godkjent avkjørsel mot vei. Du kan ikke bygge før du har en godkjent avkjørsel."
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -963,19 +1178,48 @@
           "type": "Radio",
           "heading":
             "Er mønehøyde maksimalt 4,0 meter, og gesimshøyde maksimalt 3.0 meter?",
-          "text": "<p><span style=\"color:deeppink\">INFOTEKST</span></p>",
+          "text":
+            "<img src=\"/img/14A_garasje_600x275.png\" alt=\"Illustrasjon \"><img src=\"/img/14B_garasje_600x275.png\" alt=\"Illustrasjon \"><p>Mønehøyde kan maksimalt være 4,0 meter og gesimshøyde maksimalt 3,0 meter. Høydene måles vanligvis i forhold til gjennomsnittsnivået av det ferdig planerte terrenget rundt bygningen.</p><b>Hva er gesimshøyde?</b><p>Gesimshøyde er høyde til skjæringspunktet mellom ytterklednings ytre flate og taktekkingens ytre flate, oppå taket. Gesimshøyde måles fra dette punktet og til terrengets utregnete gjennomsnittsnivå rundt bygget.</p><b>Hva er mønehøyde?</b> <p>Mønehøyde er vanligvis høyden mellom to skrå flater, som ofte vil være takets høyeste punkt. Mønehøyde måles fra dette punktet og til terrengets utregnete gjennomsnittsnivå rundt bygget.</p><b>Er du usikker på hvordan å måle høyden på bygningen?</b><p>Finn mer informasjon i kapittel 4 i <a  href=\"https://www.regjeringen.no/globalassets/upload/kmd/boby/grad_av_utnytting.pdf\">Grad av utnytting - beregnings- og måleregler (PDF)</a></p>",
           "options": [
             {
               "id": "heights.yes",
               "type": "Answer",
-              "text": "Ja",
+              "text":
+                "Ja, mønehøyden er maksimalt 4,0 meter og gesimshøyden er maksimalt 3,0 meter",
               "value": "yes"
             },
             {
               "id": "heights.no",
               "type": "Answer",
-              "text": "Nei",
+              "text": "Nei, bygningen blir høyere enn dette",
               "value": "no"
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "heights",
+                "operator": "eq",
+                "value": "no"
+              },
+              "children": [
+                {
+                  "id": "heights.error",
+                  "type": "Error",
+                  "children": [
+                    {
+                      "id": "heights.msg",
+                      "type": "Text",
+                      "warning": true,
+                      "heading":
+                        "Du må ha lavere mønehøyde og gesimshøyde, eller sende byggesøknad til kommunen. Du kan ikke bygge før søknaden er godkjent."
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
