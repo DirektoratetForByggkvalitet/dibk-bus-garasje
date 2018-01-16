@@ -97,7 +97,7 @@
                       "id": "regplan.yes.error.msg",
                       "type": "Text",
                       "warning": true,
-                      "heading": "Hva skal denne feilmeldingen være??"
+                      "heading": " Du må søke om dispensasjon. Dispensasjonen må være innvilget før du kan bygge i uregulert område. Ta kontakt med kommunen for å høre om mulighetene for å få innvilget en slik dispensasjon."
                     }
                   ]
                 }
@@ -186,66 +186,6 @@
                       "warning": true,
                       "heading":
                         "Dispensasjonen må være innvilget før du kan sette opp en slik bygning i et LNF-område. Ta kontakt med kommunen for å høre om mulighetene for å få innvilget en slik dispensasjon."
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "byggerett",
-          "property": "byggerett",
-          "type": "Radio",
-          "heading": "Har du rett til å bygge på eiendommen?",
-          "options": [
-            {
-              "id": "byggerett.yes",
-              "type": "Answer",
-              "heading": "Ja",
-              "value": "yes"
-            },
-            {
-              "id": "byggerett.no",
-              "type": "Answer",
-              "heading": "Nei",
-              "value": "no"
-            }
-          ],
-          "hidden": {
-            "type": "or",
-            "clauses": [
-              {
-                "field": "lnfArea",
-                "operator": "not"
-              },
-              {
-                "field": "lnfArea",
-                "operator": "eq",
-                "value": "no"
-              }
-            ]
-          }
-        },
-        {
-          "type": "Branch",
-          "branches": [
-            {
-              "test": {
-                "field": "byggerett",
-                "operator": "eq",
-                "value": "no"
-              },
-              "children": [
-                {
-                  "id": "insufficientCompentency",
-                  "type": "Error",
-                  "children": [
-                    {
-                      "id": "insufficientCompentency",
-                      "type": "Text",
-                      "warning": true,
-                      "heading": "Feilemlding."
                     }
                   ]
                 }
@@ -978,7 +918,7 @@
               "heading":
                 "Finnes det en egen byggegrense på eiendommen som ikke er i strid med ønsker plassering?",
               "text":
-                "<p><span style=\"color:deeppink\">JUSTERE DENNE???</span><br />Kommunen kan ha fastsatt en annen byggegrense i 100-metersbeltet. Denne finner du i reguleringsplanen eller i kommuneplanens arealdel. Hvis plasseringen til bygningen ikke er i strid med denne byggegrensa, kan du bygge. Ta kontakt med kommunen om du er usikker på hva og hvor du kan bygge.</p>",
+                "Kommunen kan ha fastsatt en annen byggegrense i 100-metersbeltet. Denne finner du i reguleringsplanen eller i kommuneplanens arealdel. Hvis plasseringen til bygningen ikke er i strid med denne byggegrensa, kan du bygge. Ta kontakt med kommunen om du er usikker på hva og hvor du kan bygge.",
               "options": [
                 {
                   "id": "seaDistanceOk.yes",
