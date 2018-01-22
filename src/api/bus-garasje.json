@@ -62,8 +62,7 @@
           "property": "regplan",
           "type": "Radio",
           "heading": "Finnes det en reguleringsplan for eiendommen?",
-          "text":
-            "<p>Reguleringsplanen for eiendommen finner du hos kommunen.</p>",
+          "text": "<p>Reguleringsplanen for eiendommen finner du hos kommunen.</p>",
           "options": [
             {
               "id": "regplan.yes",
@@ -97,7 +96,8 @@
                       "id": "regplan.yes.error.msg",
                       "type": "Text",
                       "warning": true,
-                      "heading": " Du må søke om dispensasjon. Dispensasjonen må være innvilget før du kan bygge i uregulert område. Ta kontakt med kommunen for å høre om mulighetene for å få innvilget en slik dispensasjon."
+                      "heading":
+                        " Du må søke om dispensasjon. Dispensasjonen må være innvilget før du kan bygge i uregulert område. Ta kontakt med kommunen for å høre om mulighetene for å få innvilget en slik dispensasjon."
                     }
                   ]
                 }
@@ -331,15 +331,13 @@
             {
               "id": "buildingsDistance.yes",
               "type": "Answer",
-              "heading":
-                "Ja, det blir minst 1,0 meter til andre bygninger på eiendommen min",
+              "heading": "Ja, det blir minst 1,0 meter til andre bygninger på eiendommen min",
               "value": "yes"
             },
             {
               "id": "buildingsDistance.no",
               "type": "Answer",
-              "heading":
-                "Nei, det blir mindre enn 1,0 meter til andre bygninger",
+              "heading": "Nei, det blir mindre enn 1,0 meter til andre bygninger",
               "value": "no"
             }
           ]
@@ -382,15 +380,13 @@
             {
               "id": "neighborDistance.yes",
               "type": "Answer",
-              "heading":
-                "Ja, bygningen skal plasseres minst 1,0 meter fra nabogrensa",
+              "heading": "Ja, bygningen skal plasseres minst 1,0 meter fra nabogrensa",
               "value": "yes"
             },
             {
               "id": "neighborDistance.no",
               "type": "Answer",
-              "heading":
-                "Nei, bygningen skal plasseres nærmere enn 1,0 meter fra nabogrensa",
+              "heading": "Nei, bygningen skal plasseres nærmere enn 1,0 meter fra nabogrensa",
               "value": "no"
             }
           ]
@@ -433,15 +429,13 @@
             {
               "id": "neighborBuildingDistance.yes",
               "type": "Answer",
-              "heading":
-                "Ja, det er mindre enn 2,0 meter til bygning på naboeiendom",
+              "heading": "Ja, det er mindre enn 2,0 meter til bygning på naboeiendom",
               "value": "yes"
             },
             {
               "id": "neighborBuildingDistance.no",
               "type": "Answer",
-              "heading":
-                "Nei, det er minst 2,0 meter til bygning på naboeiendom",
+              "heading": "Nei, det er minst 2,0 meter til bygning på naboeiendom",
               "value": "no"
             }
           ]
@@ -484,15 +478,13 @@
             {
               "id": "drainagePlacement.yes",
               "type": "Answer",
-              "heading":
-                "Ja, bygningen skal plasseres over vann- og avløpsledninger",
+              "heading": "Ja, bygningen skal plasseres over vann- og avløpsledninger",
               "value": "yes"
             },
             {
               "id": "drainagePlacement.no",
               "type": "Answer",
-              "heading":
-                "Nei, bygningen skal ikke plasseres over vann- og avløpsledninger",
+              "heading": "Nei, bygningen skal ikke plasseres over vann- og avløpsledninger",
               "value": "no"
             }
           ]
@@ -536,8 +528,7 @@
           "property": "usesType",
           "type": "Radio",
           "heading": "Hva skal bygningen brukes til?",
-          "text":
-            "<img src=\"/img/13A_garasje_600x275.png\" alt=\"Illustrasjon\">",
+          "text": "<img src=\"/img/13A_garasje_600x275.png\" alt=\"Illustrasjon\">",
           "options": [
             {
               "id": "usesType.garasje",
@@ -590,22 +581,20 @@
           "id": "usesNabo",
           "property": "usesNabo",
           "type": "Radio",
-          "heading":
-            "Er det mindre enn 8,0 meter til nærmeste bygning på naboeiendommen?",
+          "heading": "Er det mindre enn 8,0 meter til nærmeste bygning på naboeiendommen?",
           "text":
             "<img src=\"/img/09_garasje_600x275.png\" alt=\"Illustrasjon\"><p>Hvis det er mindre enn 2,0 meter mellom bygningen din og nærmeste bygning på naboeiendommen, er det strengere brannkrav. Da må du brannsikre de delene av bygningen som er nærmere naboen enn 2,0 meter. Dette kan gjelde både tak og vegger.</p>",
           "options": [
             {
               "id": "usesNabo.yes",
               "type": "Answer",
-              "text":
-                "Ja, det er mindre enn 2,0 meter til bygning på naboeiendom",
+              "text": "Ja, det er mindre enn 8,0 meter til bygning på naboeiendom",
               "value": "yes"
             },
             {
               "id": "usesNabo.no",
               "type": "Answer",
-              "text": "Nei, det er minst 2,0 meter til bygning på naboeiendom",
+              "text": "Nei, det er minst 8,0 meter til bygning på naboeiendom",
               "value": "no"
             }
           ],
@@ -711,8 +700,7 @@
                       "id": "roadDistanceWithRegplan",
                       "property": "roadDistanceWithRegplan",
                       "type": "Radio",
-                      "heading":
-                        "Kan du likevel plassere bygningen der du ønsker?",
+                      "heading": "Kan du likevel plassere bygningen der du ønsker?",
                       "text":
                         "<strong>I regulert område</strong><br />Se etter byggegrense mot vei i reguleringsplan eller i kommuneplanens arealdel. Hvis plasseringen til bygningen ikke er i strid med denne byggegrensa, kan du plassere bygningen der du ønsker.</p><p>Er det ikke oppgitt byggegrense mot vei i planene? Sjekk hvilket årstall reguleringsplanen din er vedtatt, og finn byggegrensen i tabellen under. Vil du bygge nærmere enn dette, må du søke om dispensasjon.</p><p>Du kan lese mer om byggegrense mot offentlig vei i <a href=\"https://lovdata.no/dokument/NL/lov/1963-06-21-23#KAPITTEL_5\">kapittel 5 i veglova</a>.</p><table> <thead> <tr> <th>Tidsrom</th> <th>Avstand til kommunal vei</th> <th>Avstand til fylkesvei</th> <th>Avstand til riksvei</th> <th>Avstanden måles fra</th> </tr> </thead> <tbody> <tr> <td>1912 - 1931</td> <td>3,5 meter</td> <td>3,5 meter</td> <td>3,5 meter</td> <td>Veikant</td> </tr> <tr> <td>1931 - 1938</td> <td>5,0 meter</td> <td>5,0 meter</td> <td>5,0 meter</td> <td>Veikant</td> </tr> <tr> <td>1938 - 1964</td> <td>7,5 meter</td> <td>7,5 meter</td> <td>7,5 meter</td> <td>Veikant</td> </tr> <tr> <td>1964 - 31. juni 1996</td> <td>12,5 meter</td> <td>12,5 meter</td> <td>30,0 meter</td> <td>Veiens midtlinje</td> </tr> <tr> <td>1. juli 1996 - 31. desember 2009</td> <td>15,0 meter</td> <td>15,0 meter</td> <td>50,0 meter</td> <td>Veiens midtlinje</td> </tr> <tr> <td>1. januar 2010 - nå</td> <td>15,0 meter</td> <td>50,0 meter</td> <td>50,0 meter</td> <td>Veiens midtlinje</td> </tr> </tbody></table>",
                       "options": [
@@ -1003,8 +991,7 @@
                 {
                   "id": "railroadDistance.no",
                   "type": "Answer",
-                  "text":
-                    "Nei, det er under 30 meter til nærmeste jernbanespor",
+                  "text": "Nei, det er under 30 meter til nærmeste jernbanespor",
                   "value": "no"
                 }
               ]
@@ -1013,16 +1000,14 @@
               "id": "railroadDistanceOk",
               "property": "railroadDistanceOk",
               "type": "Radio",
-              "heading":
-                "Har du fått tillatelse til å bygge nærmere enn 30 meter?",
+              "heading": "Har du fått tillatelse til å bygge nærmere enn 30 meter?",
               "text":
                 "<img src=\"/img/27_garasje_600x275.png\" alt=\"Illustrasjon \"><p>For å bygge nærmere enn 30 meter fra nærmeste spors midtlinje, må du søke Bane NOR om tillatelse. Dette må du gjøre selv om det finnes en nærmere byggegrense mot jernbane i reguleringsplan.</p><p>Les mer om byggegrense mot jernbane hos <a href=\"http://www.banenor.no/Sikkerhet/Byggegrense/\">Bane NOR.</a></p></p>",
               "options": [
                 {
                   "id": "railroadDistanceOk.yes",
                   "type": "Answer",
-                  "text":
-                    "Ja, jeg har fått tillatelse til å bygge nærmere enn 30 meter",
+                  "text": "Ja, jeg har fått tillatelse til å bygge nærmere enn 30 meter",
                   "value": "yes"
                 },
                 {
@@ -1129,8 +1114,7 @@
           "id": "heights",
           "property": "heights",
           "type": "Radio",
-          "heading":
-            "Er mønehøyde maksimalt 4,0 meter, og gesimshøyde maksimalt 3.0 meter?",
+          "heading": "Er mønehøyde maksimalt 4,0 meter, og gesimshøyde maksimalt 3.0 meter?",
           "text":
             "<img src=\"/img/14A_garasje_600x275.png\" alt=\"Illustrasjon \"><img src=\"/img/14B_garasje_600x275.png\" alt=\"Illustrasjon \"><p>Mønehøyde kan maksimalt være 4,0 meter og gesimshøyde maksimalt 3,0 meter. Høydene måles vanligvis i forhold til gjennomsnittsnivået av det ferdig planerte terrenget rundt bygningen.</p><b>Hva er gesimshøyde?</b><p>Gesimshøyde er høyde til skjæringspunktet mellom ytterklednings ytre flate og taktekkingens ytre flate, oppå taket. Gesimshøyde måles fra dette punktet og til terrengets utregnete gjennomsnittsnivå rundt bygget.</p><b>Hva er mønehøyde?</b> <p>Mønehøyde er vanligvis høyden mellom to skrå flater, som ofte vil være takets høyeste punkt. Mønehøyde måles fra dette punktet og til terrengets utregnete gjennomsnittsnivå rundt bygget.</p><b>Er du usikker på hvordan å måle høyden på bygningen?</b><p>Finn mer informasjon i kapittel 4 i <a  href=\"https://www.regjeringen.no/globalassets/upload/kmd/boby/grad_av_utnytting.pdf\">Grad av utnytting - beregnings- og måleregler (PDF)</a></p>",
           "options": [
@@ -1187,16 +1171,14 @@
           "id": "areaAvailable",
           "property": "areaAvailable",
           "type": "Radio",
-          "heading":
-            "Har eiendommen din stort nok areal til bygningen du ønsker å sette opp?",
+          "heading": "Har eiendommen din stort nok areal til bygningen du ønsker å sette opp?",
           "text":
             "<img src=\"/img/42_garasje_600x275.png\" alt=\"Illustrasjon\"><p>Eiendommen din har en begrensning på hvor mye areal eller volum du kan ha bygninger på. Dette er som regel oppgitt i situasjonskart eller reguleringsplan som:</p> <ul><li>BYA: Bebygd areal. Se etter prosent BYA eller antall kvadratmeter BYA</li><li>BRA: Bruksareal. Se etter prosent BRA eller antall kvadratmeter BRA</li><li>TU: Tomteutnyttelse. Se etter prosent TU. Finnes kun på eldre planer</li></ul> <p>20% BYA betyr det at du kan dekke til 20 prosent av eiendommen din med bygninger. Står det 200 kvm BYA betyr det at du kan dekke til 200 kvm med bygninger.</p><p></p>For å finne ut hvor mye plass du har til den ny bygningen, må du regne ut hvor mye plass de eksisterende bygningene opptar. Når du har gjort det, vil du kunne regne ut om du har plass nok til den nye bygningen, eller om du må bygge mindre enn planlagt.<p>Kontakt kommunen hvis du er usikker på hvor mye areal du har lov til å bygge på, og hva slags utregningsmåte du skal bruke.</p><p>Du kan finne mer informasjon om utregningsmåter i <a href=\"https://www.regjeringen.no/globalassets/upload/kmd/boby/grad_av_utnytting.pdf\">Grad av utnytting - beregnings- og måleregler (PDF).</a></p>",
           "options": [
             {
               "id": "areaAvailable.yes",
               "type": "Answer",
-              "text":
-                "Ja, eiendommen min har stort nok areal til bygningen jeg ønsker å sette opp",
+              "text": "Ja, eiendommen min har stort nok areal til bygningen jeg ønsker å sette opp",
               "value": "yes"
             },
             {
@@ -1239,8 +1221,7 @@
           "id": "other",
           "property": "other",
           "type": "Radio",
-          "heading":
-            "Er det andre forhold som hindrer deg i å bygge der du ønsker?",
+          "heading": "Er det andre forhold som hindrer deg i å bygge der du ønsker?",
           "text":
             "<img src=\"/img/43_garasje_600x275.png\" alt=\"Illustrasjon\"><p>Det kan være andre forhold som hindrer deg i å bygge slik du ønsker. Dette vil du finne informasjon om i reguleringsplan, kommuneplanens arealdel, andre plandokumenter eller situasjonskart.</p><p>Eksempler på begrensninger du kan finne der er:</p><ul><li>strengere krav til hvor høy eller stor bygningen din kan være</li><li>strengere krav til hvor langt unna nabogrensa du kan bygge</li><li>krav til bygningens utseende, for eksempel fargevalg, takvinkel, plassering og materialvalg</li><li>verneverdige kulturminner som begrenser hvor eller hva du kan bygge</li><li>sjeldne dyre- eller plantearter som begrenser hvor eller hva du kan bygge</li></ul><p>Les derfor grundig gjennom reguleringsplan, kommuneplanens arealdel, situasjonskartet og andre dokumenter om eiendommen.</p>",
           "options": [
