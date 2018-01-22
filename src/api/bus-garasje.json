@@ -109,7 +109,8 @@
           "id": "lnfArea",
           "property": "lnfArea",
           "type": "Radio",
-          "heading": "Skal du bygge i et LNF-område?",
+          "heading":
+            "Skal du bygge i et område regulert til landbruks-, natur- og friluftsformål eller reindrift? (LNF-område)",
           "text":
             "<img src=\"/img/17_garasje_600x275.png\" alt=\"Fire sauer\"><p>Det er begrensninger på hva du kan bygge i områder som er regulerte til landbruk, natur og friluftsformål samt reindrift. Dette kalles LNF-områder eller LNFR-områder. Du finner som regel informasjon om dette i kommuneplanens arealdel.</p>",
           "options": [
