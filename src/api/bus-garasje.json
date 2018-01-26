@@ -1,6 +1,7 @@
 {
   "meta": {
-    "title": "Bygg garasje uten å søke"
+    "title": "Bygg garasje uten å søke",
+    "name": "bus-garasje"
   },
   "schema": [
     {
