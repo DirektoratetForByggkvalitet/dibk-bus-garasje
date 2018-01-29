@@ -11,7 +11,7 @@ function Intro({ close, data }) {
   return (
     <Primitives.Wizard>
       <IntroMain>
-        <Primitives.Heading.H1>Bygg uten å søke!</Primitives.Heading.H1>
+        <Primitives.Heading.H1>Bygg uten å søke garasje!</Primitives.Heading.H1>
         <p>
           Skal du bygge garasje, hagebod eller en annen frittliggende bygning? Svar på spørsmålene i
           denne veiviseren for å finne ut om du
