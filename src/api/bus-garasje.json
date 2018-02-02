@@ -529,26 +529,48 @@
           "id": "usesType",
           "property": "usesType",
           "type": "Radio",
-          "heading": "Hva skal bygningen brukes til?",
+          "heading": "Hvilken type bygning skal du bygge?",
           "text": "<img src=\"/img/13A_garasje_600x275.png\" alt=\"Illustrasjon\">",
           "options": [
             {
               "id": "usesType.garasje",
               "type": "Answer",
-              "text": "Kun bod eller garasje",
-              "value": "garasje"
+              "heading": "Garasje",
+              "value": "garasje",
+              "image": {
+                "url": "/img/garasje.png",
+                "alt": "Garasje"
+              }
             },
             {
               "id": "usesType.bolig",
               "type": "Answer",
-              "text": "Noen skal bo eller sove der",
-              "value": "bolig"
+              "heading": "Hagebod, vedbod, sykkelbod, lysthus eller drivhus",
+              "value": "bod",
+              "image": {
+                "url": "/img/lysthus.png",
+                "alt": "Bod"
+              }
             },
             {
               "id": "usesType.hobby",
               "type": "Answer",
-              "text": "Kontor, atelier, hobbyrom eller treningsrom",
-              "value": "hobby"
+              "heading": "Verksted, atelier eller kontor",
+              "value": "hobby",
+              "image": {
+                "url": "/img/anneks_flerbruk.png",
+                "alt": "Verksted, atelier eller kontor"
+              }
+            },
+            {
+              "id": "usesType.hytte",
+              "type": "Answer",
+              "heading": "Hytte, fritidsbolig eller anneks ",
+              "value": "hytte",
+              "image": {
+                "url": "/img/anneks.png",
+                "alt": "Hytte, fritidsbolig eller anneks "
+              }
             }
           ]
         },
@@ -559,7 +581,7 @@
               "test": {
                 "field": "usesType",
                 "operator": "eq",
-                "value": "bolig"
+                "value": "bod"
               },
               "children": [
                 {
@@ -568,6 +590,75 @@
                   "children": [
                     {
                       "id": "usesType.msg",
+                      "type": "Text",
+                      "warning": true,
+                      "heading":
+                        "Du må sende byggesøknad til kommunen. Du kan ikke bygge før søknaden er godkjent."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "usesType",
+                "operator": "eq",
+                "value": "hytte"
+              },
+              "children": [
+                {
+                  "id": "aaausesType.hytte.result",
+                  "type": "Result",
+                  "heading":
+                    "Du må søke hvis du skal bygge hytte, fritidsbolig eller et anneks som noen kan bo eller sove i. Det samme gjelder hvis du skal ha kjøkken, stue, bad, våtrom eller soverom i bygningen.",
+                  "errorlead":
+                    "Du må søke hvis du skal bygge hytte, fritidsbolig eller et anneks som noen kan bo eller sove i. Det samme gjelder hvis du skal ha kjøkken, stue, bad, våtrom eller soverom i bygningen."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sleep",
+          "property": "sleep",
+          "type": "Radio",
+          "heading": "Skal noen bo eller sove i bygningen?",
+          "options": [
+            {
+              "id": "sleep.yes",
+              "type": "Answer",
+              "text": "Ja, noen skal bo eller sove i bygningen ",
+              "value": "yes"
+            },
+            {
+              "id": "sleep.no",
+              "type": "Answer",
+              "text": "Nei, ingen skal bo eller sove i bygningen",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "sleep",
+                "operator": "eq",
+                "value": "yes"
+              },
+              "children": [
+                {
+                  "id": "sleep.error",
+                  "type": "Error",
+                  "children": [
+                    {
+                      "id": "sleep.error.msg",
                       "type": "Text",
                       "warning": true,
                       "heading":
@@ -1171,7 +1262,7 @@
               {
                 "field": "usesType",
                 "operator": "eq",
-                "value": "bolig"
+                "value": "bod"
               }
             ]
           },
@@ -1220,7 +1311,7 @@
                       {
                         "field": "usesType",
                         "operator": "eq",
-                        "value": "bolig"
+                        "value": "bod"
                       }
                     ]
                   },
