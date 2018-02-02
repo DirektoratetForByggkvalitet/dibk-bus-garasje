@@ -1104,6 +1104,54 @@
           ]
         },
         {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "exitRoad",
+                "operator": "eq",
+                "value": "yes"
+              },
+              "children": [
+                {
+                  "id": "exitRoad.error",
+                  "type": "Error",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "usesType",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "usesType",
+                        "operator": "eq",
+                        "value": "hobby"
+                      },
+                      {
+                        "field": "usesType",
+                        "operator": "eq",
+                        "value": "garasje"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "id": "exitRoad.msg",
+                      "type": "Text",
+                      "warning": true,
+                      "heading":
+                        "Du må skaffe godkjent avkjørsel mot vei. Du kan ikke bygge før du har en godkjent avkjørsel.",
+                      "text":
+                        "Du må ha godkjent avkjørsel mot vei for å kunne bygge garasje. Trenger du ny eller endret avkjørsel mot kommunal vei, kontakter du kommunen. Trenger du ny eller endret avkjørsel mot riks- eller fylkesvei kontakter du Statens vegvesen. Du kan trenge ny eller endret avkjørsel hvis garasjen gir dårligere sikt enn det du har i dag."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
           "id": "exitRoad",
           "property": "exitRoad",
           "type": "Radio",
@@ -1157,13 +1205,34 @@
                 {
                   "id": "exitRoad.error",
                   "type": "Error",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "usesType",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "usesType",
+                        "operator": "eq",
+                        "value": "garasje"
+                      },
+                      {
+                        "field": "usesType",
+                        "operator": "eq",
+                        "value": "bolig"
+                      }
+                    ]
+                  },
                   "children": [
                     {
                       "id": "exitRoad.msg",
                       "type": "Text",
                       "warning": true,
                       "heading":
-                        "Du må skaffe godkjent avkjørsel mot vei. Du kan ikke bygge før du har en godkjent avkjørsel."
+                        "Du må skaffe godkjent avkjørsel mot vei. Du kan ikke bygge før du har en godkjent avkjørsel.",
+                      "text":
+                        "Du kan ha behov for avkjørsel mot vei hvis du har hobbyverksted, atelier eller kontor. Trenger du ny eller endret avkjørsel mot kommunal vei, kontakter du kommunen. Trenger du ny eller endret avkjørsel mot riks- eller fylkesvei kontakter du Statens vegvesen. Ny eller endret avkjørsel kan være aktuelt hvis bygningen vil gi dårligere siktforhold, eller fører til økt trafikk til og fra eiendommen."
                     }
                   ]
                 }
