@@ -206,24 +206,24 @@
           "id": "buildingSize",
           "property": "buildingSize",
           "type": "Radio",
-          "heading": "Skal bygningen være større enn 50 kvadratmeter?",
+          "heading": "Hvor stor blir bygningen?",
           "options": [
-            {
-              "id": "buildingSize.yesbut",
-              "type": "Answer",
-              "text": "Ja, men mindre enn 70 m<sup>2</sup>",
-              "value": "yesbut"
-            },
             {
               "id": "buildingSize.yesand",
               "type": "Answer",
-              "text": "Ja, og større enn 70 m<sup>2</sup>",
+              "text": "Større enn 70 m<sup>2</sup>",
               "value": "yesand"
+            },
+            {
+              "id": "buildingSize.yesbut",
+              "type": "Answer",
+              "text": "Mellom 50-70 m<sup>2</sup>",
+              "value": "yesbut"
             },
             {
               "id": "buildingSize.no",
               "type": "Answer",
-              "text": "Nei",
+              "text": "Under 50 m<sup>2</sup>",
               "value": "no"
             }
           ]
@@ -905,8 +905,7 @@
               "id": "seaDistanceOk",
               "property": "seaDistanceOk",
               "type": "Radio",
-              "heading":
-                "Finnes det en egen byggegrense på eiendommen som ikke er i strid med ønsker plassering?",
+              "heading": "Kan du likevel plassere bygningen der du ønsker?",
               "text":
                 "Kommunen kan ha fastsatt en annen byggegrense i 100-metersbeltet. Denne finner du i reguleringsplanen eller i kommuneplanens arealdel. Hvis plasseringen til bygningen ikke er i strid med denne byggegrensa, kan du bygge. Ta kontakt med kommunen om du er usikker på hva og hvor du kan bygge.",
               "options": [
@@ -1068,8 +1067,68 @@
           "property": "exitRoad",
           "type": "Radio",
           "heading": "Trenger du ny eller endret avkjørsel mot vei?",
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "usesType",
+                "operator": "not"
+              },
+              {
+                "field": "usesType",
+                "operator": "eq",
+                "value": "hobby"
+              },
+              {
+                "field": "usesType",
+                "operator": "eq",
+                "value": "garasje"
+              }
+            ]
+          },
           "text":
             "<img src=\"/img/41_garasje_600x275.png\" alt=\"Illustrasjon \"><p>Du må ha godkjent avkjørsel mot vei for å kunne bygge garasje. Trenger du ny eller endret avkjørsel mot kommunal vei, kontakter du kommunen. Trenger du ny eller endret avkjørsel mot riks- eller fylkesvei kontakter du <a href=\"http://www.vegvesen.no/Fag/Veg+og+gate/Prosjektering+og+bygging/bygge+langs+veg\">Statens vegvesen.</a> Du kan trenge ny eller endret avkjørsel hvis garasjen gir dårligere sikt enn det du har i dag.</p>",
+          "options": [
+            {
+              "id": "exitRoad.yes",
+              "type": "Answer",
+              "text": "Ja, jeg trenger ny eller endret avkjørsel mot vei",
+              "value": "yes"
+            },
+            {
+              "id": "exitRoad.no",
+              "type": "Answer",
+              "text": "Nei, jeg trenger ikke ny eller endret avkjørsel mot vei",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "exitRoad",
+          "property": "exitRoad",
+          "type": "Radio",
+          "heading": "Trenger du ny eller endret avkjørsel mot vei?",
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "usesType",
+                "operator": "not"
+              },
+              {
+                "field": "usesType",
+                "operator": "eq",
+                "value": "garasje"
+              },
+              {
+                "field": "usesType",
+                "operator": "eq",
+                "value": "bolig"
+              }
+            ]
+          },
+          "text":
+            "<img src=\"/img/41_garasje_600x275.png\" alt=\"Illustrasjon \"><p>Du kan ha behov for avkjørsel mot vei hvis du har hobbyverksted, atelier eller kontor. Trenger du ny eller endret avkjørsel mot kommunal vei, kontakter du kommunen. Trenger du ny eller endret avkjørsel mot riks- eller fylkesvei kontakter du <a target='_blank' href='http://www.vegvesen.no/Fag/Veg+og+gate/Prosjektering+og+bygging/Bygge+langs+veg'>Statens vegvesen.</a> Ny eller endret avkjørsel kan være aktuelt hvis bygningen vil gi dårligere siktforhold, eller fører til økt trafikk til og fra eiendommen.</p>",
           "options": [
             {
               "id": "exitRoad.yes",
