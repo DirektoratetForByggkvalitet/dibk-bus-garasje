@@ -421,55 +421,6 @@
           ]
         },
         {
-          "id": "neighborBuildingDistance",
-          "property": "neighborBuildingDistance",
-          "type": "Radio",
-          "heading": "Er det mindre enn 2,0 meter til bygning på naboeiendom?",
-          "text":
-            "<img src=\"/img/07_garasje_600x275.png\" alt=\"Illustrasjon\"><p>Hvis det er mindre enn 2,0 meter mellom bygningen din og nærmeste bygning på naboeiendommen, er det strengere brannkrav. Da må du brannsikre de delene av bygningen som er nærmere naboen enn 2,0 meter. Dette kan gjelde både tak og vegger.</p>",
-          "options": [
-            {
-              "id": "neighborBuildingDistance.yes",
-              "type": "Answer",
-              "heading": "Ja, det er mindre enn 2,0 meter til bygning på naboeiendom",
-              "value": "yes"
-            },
-            {
-              "id": "neighborBuildingDistance.no",
-              "type": "Answer",
-              "heading": "Nei, det er minst 2,0 meter til bygning på naboeiendom",
-              "value": "no"
-            }
-          ]
-        },
-        {
-          "type": "Branch",
-          "branches": [
-            {
-              "test": {
-                "field": "neighborBuildingDistance",
-                "operator": "eq",
-                "value": "yes"
-              },
-              "children": [
-                {
-                  "id": "neighborBuildingDistance.error",
-                  "type": "Error",
-                  "children": [
-                    {
-                      "id": "neighborBuildingDistance.msg",
-                      "type": "Text",
-                      "warning": true,
-                      "heading":
-                        "Du må plassere bygningen minst 2,0 meter fra andre bygninger på naboeiendommen, eller brannsikre de delene av bygningen som er nærmere naboen enn 2,0 meter. Brannmotstanden må være minst EI 30 (motstandsdyktig mot brann i 30 minutter). Du finner mer informasjon om tiltak mot brannspredning i § 11-6 i byggteknisk forskrift."
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
           "id": "drainagePlacement",
           "property": "drainagePlacement",
           "type": "Radio",
