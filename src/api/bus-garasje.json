@@ -1924,12 +1924,12 @@
             {
               "id": "applicationResult",
               "type": "Result",
-              "heading": "DEN ER BEBYGDDu kan bygge uten å søke!",
+              "heading": "Du må søke",
               "errorheading": "Du har ikke svart på alle spørsmålene",
               "lead":
-                "<p><strong>Så bra for deg!</strong><br />Sjekk at du har svart riktig på alle spørsmålene. I oppsummeringen under kan du klikke deg inn på hvert steg i veiviseren for å legge til og endre svarene dine.</p>",
+                "<p>Svarene dine viser at du må søke. Sjekk oppsummeringen under for å finne ut om du trenger å sende inn byggesøknad, dispensasjon eller om du trenger andre tillatelser.</p><p>Er du i tvil om du har svart riktig? Ta en utskrift av svarene dine og kontakt kommunen. De kan også fortelle deg mer om søknadsprosessen.</p><p>Husk at det er ditt ansvar at du bygger lovlig. Dersom bygningen er ulovlig kan den i verste fall rives.</p>",
               "errorlead":
-                "Vi kan derfor ikke gi deg svar på om du kan bygge uten å søke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar."
+                "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
             }
           ]
         }
@@ -1941,9 +1941,9 @@
       "heading": "Du kan bygge uten å søke!",
       "errorheading": "Du har ikke svart på alle spørsmålene",
       "lead":
-        "<p><strong>Så bra for deg!</strong><br />Sjekk at du har svart riktig på alle spørsmålene. I oppsummeringen under kan du klikke deg inn på hvert steg i veiviseren for å legge til og endre svarene dine.</p>",
+        "<p>Svarene dine viser at du kan bygge uten å søke. Sjekk oppsummeringen under for å finne ut om det er ting du trenger å være ekstra oppmerksom på før du starter byggingen.</p><p>Er du i tvil om du har svart riktig? Ta en utskrift av svarene dine og kontakt kommunen.</p><p>Du trenger ikke varsle naboene om byggingen skriftlig, men vi anbefaler likevel å snakke med dem om byggeplanene dine i forkant.</p><p>Selv om du slipper å søke, er du nødt til å informere kommunen etter at bygget er ferdig. Bruk skjemaet <a href=\"https://dibk.no/globalassets/blanketter_utfyllbare/alle-blanketter/5188-melding-om-bygning-eller-tilbygg-som-er-unntatt-soknadsplikt.pdf\">”Melding om bygning eller tilbygg som er unntatt søknadsplikt”</a>.</p><p>Husk at det er ditt ansvar at du bygger lovlig. Dersom bygningen er ulovlig kan den i verste fall rives.</p>",
       "errorlead":
-        "Vi kan derfor ikke gi deg svar på om du kan bygge uten å søke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.",
+        "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>",
       "exporter": "dataExport"
     }
   ]
