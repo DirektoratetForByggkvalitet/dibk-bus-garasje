@@ -1360,13 +1360,12 @@
               },
               "children": [
                 {
-                  "id": "flood.error",
-                  "type": "Error",
+                  "id": "flood.group",
+                  "type": "Group",
                   "children": [
                     {
                       "id": "flood.msg",
-                      "type": "Text",
-                      "warning": true,
+                      "type": "Information",
                       "heading":
                         "Det kan være begrensninger på hva du har lov til å bygge i et slikt område. Ta kontakt med kommunen for informasjon om hva du har lov å bygge på eiendommen."
                     }
@@ -1538,29 +1537,33 @@
               }
             },
             {
-              "type": "Branch",
-              "branches": [
-                {
-                  "test": {
+              "id": "railroadDistanceOk.error",
+              "type": "Group",
+              "hidden": {
+                "type": "or",
+                "clauses": [
+                  {
+                    "field": "railroadDistanceOk",
+                    "operator": "not"
+                  },
+                  {
+                    "field": "railroadDistance",
+                    "operator": "eq",
+                    "value": "yes"
+                  },
+                  {
                     "field": "railroadDistanceOk",
                     "operator": "eq",
-                    "value": "no"
-                  },
-                  "children": [
-                    {
-                      "id": "railroadDistanceOk.error",
-                      "type": "Error",
-                      "children": [
-                        {
-                          "id": "railroadDistanceOk.msg",
-                          "type": "Text",
-                          "warning": true,
-                          "text":
-                            "Du må kontakte <a href=\"http://www.banenor.no/Om-oss/Kontakt-oss/\">Bane NOR</a> og søke om tillatelse til å bygge nærmere enn 30 meter fra nærmeste spors midtlinje."
-                        }
-                      ]
-                    }
-                  ]
+                    "value": "yes"
+                  }
+                ]
+              },
+              "children": [
+                {
+                  "id": "railroadDistanceOk.msg",
+                  "type": "Information",
+                  "text":
+                    "Du må kontakte <a href=\"http://www.banenor.no/Om-oss/Kontakt-oss/\">Bane NOR</a> og søke om tillatelse til å bygge nærmere enn 30 meter fra nærmeste spors midtlinje."
                 }
               ]
             }
