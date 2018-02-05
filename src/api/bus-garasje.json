@@ -458,8 +458,7 @@
                   "children": [
                     {
                       "id": "drainagePlacement.msg",
-                      "type": "Text",
-                      "warning": true,
+                      "type": "Information",
                       "heading":
                         "Du kan ikke bygge over vann- og avløpsledninger, inkludert stikkledninger. Du må plassere bygningen et annet sted eller kontakte kommunen for hjelp til å finne alternativ plassering."
                     }
