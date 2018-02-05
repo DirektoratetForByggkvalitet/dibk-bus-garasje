@@ -1365,10 +1365,12 @@
               "children": [
                 {
                   "id": "flood.group",
+                  "property": "flood.group",
                   "type": "Group",
                   "children": [
                     {
-                      "id": "flood.msg",
+                      "id": "flood.group.msg",
+                      "property": "flood.group.msg",
                       "type": "Information",
                       "optional": "true",
                       "text":
@@ -1543,6 +1545,7 @@
             },
             {
               "id": "railroadDistanceOk.error",
+              "property": "railroadDistanceOk.error",
               "type": "Group",
               "hidden": {
                 "type": "or",
@@ -1566,6 +1569,7 @@
               "children": [
                 {
                   "id": "railroadDistanceOk.msg",
+                  "property": "railroadDistanceOk.msg",
                   "type": "Information",
                   "optional": "true",
                   "text":
