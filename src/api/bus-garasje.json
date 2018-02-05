@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Bygg garasje uten å søke",
-    "name": "bus-garasje"
+    "title": "Bygg uten å søke",
+    "name": "bus"
   },
   "schema": [
     {
@@ -571,33 +571,6 @@
                 "url": "/img/anneks.png",
                 "alt": "Hytte, fritidsbolig eller anneks "
               }
-            }
-          ]
-        },
-        {
-          "type": "Branch",
-          "branches": [
-            {
-              "test": {
-                "field": "usesType",
-                "operator": "eq",
-                "value": "bod"
-              },
-              "children": [
-                {
-                  "id": "usesType.error",
-                  "type": "Error",
-                  "children": [
-                    {
-                      "id": "usesType.msg",
-                      "type": "Text",
-                      "warning": true,
-                      "heading":
-                        "Du må sende byggesøknad til kommunen. Du kan ikke bygge før søknaden er godkjent."
-                    }
-                  ]
-                }
-              ]
             }
           ]
         },
