@@ -1483,21 +1483,21 @@
               "id": "railroadDistance",
               "property": "railroadDistance",
               "type": "Radio",
-              "heading": "Er det minst 30 meter til nærmeste jernbanespor?",
+              "heading": "Skal du bygge nærmere enn 30 meter til et jernbanespor?",
               "text":
                 "<img src=\"/img/26_garasje_600x275.png\" alt=\"Illustrasjon \"><p>Det må være minst 30 meter til nærmeste jernbanespor. Dette gjelder både togspor, t-banespor og trikkespor. Avstanden måles fra nærmeste spors midtlinje.</p>",
               "options": [
                 {
-                  "id": "railroadDistance.yes",
-                  "type": "Answer",
-                  "text": "Ja, det er minst 30 meter til nærmeste jernbanespor",
-                  "value": "yes"
-                },
-                {
                   "id": "railroadDistance.no",
                   "type": "Answer",
-                  "text": "Nei, det er under 30 meter til nærmeste jernbanespor",
+                  "text": "Ja, jeg skal bygge nærmere enn 30 meter til et jernbanespor",
                   "value": "no"
+                },
+                {
+                  "id": "railroadDistance.yes",
+                  "type": "Answer",
+                  "text": "Nei, jeg skal ikke bygge nærmere enn 30 meter til et jernbanespor",
+                  "value": "yes"
                 }
               ]
             },
