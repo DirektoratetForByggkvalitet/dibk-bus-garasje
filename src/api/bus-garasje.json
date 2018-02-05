@@ -1117,6 +1117,49 @@
           ]
         },
         {
+          "id": "distanceNaboSmallNotice",
+          "property": "distanceNaboSmallNotice",
+          "type": "Group",
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "distanceNaboSmall",
+                "operator": "not"
+              },
+              {
+                "field": "distanceNaboSmall",
+                "operator": "eq",
+                "value": "no"
+              },
+              {
+                "type": "and",
+                "clauses": [
+                  {
+                    "field": "garasjeMoreRoom",
+                    "operator": "eq",
+                    "value": "yes"
+                  },
+                  {
+                    "field": "extraRoomHobbyGarasje",
+                    "operator": "eq",
+                    "value": "yes"
+                  }
+                ]
+              }
+            ]
+          },
+          "children": [
+            {
+              "id": "distanceNaboSmallNoticeText",
+              "property": "distanceNaboSmallNoticeText",
+              "type": "Information",
+              "text":
+                "Du må plassere bygningen minst 2,0 meter fra andre bygninger på naboeiendommen, eller brannsikre de delene av bygningen som er nærmere naboen enn 2,0 meter. Brannmotstanden må være minst EI 30 (motstandsdyktig mot brann i 30 minutter)."
+            }
+          ]
+        },
+        {
           "id": "usesNabo",
           "property": "usesNabo",
           "type": "Radio",
