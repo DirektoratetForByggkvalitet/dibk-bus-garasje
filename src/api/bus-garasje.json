@@ -612,7 +612,7 @@
               },
               "children": [
                 {
-                  "id": "aaausesType.hytte.result",
+                  "id": "usesType.hytte.result",
                   "type": "Result",
                   "heading":
                     "Du må søke hvis du skal bygge hytte, fritidsbolig eller et anneks som noen kan bo eller sove i. Det samme gjelder hvis du skal ha kjøkken, stue, bad, våtrom eller soverom i bygningen.",
@@ -667,6 +667,452 @@
                   ]
                 }
               ]
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "usesType",
+                "operator": "eq",
+                "value": "garasje"
+              },
+              "children": [
+                {
+                  "id": "garasjeMoreRoom",
+                  "property": "garasjeMoreRoom",
+                  "type": "Radio",
+                  "heading": "Skal bygningen ha flere rom?",
+                  "options": [
+                    {
+                      "id": "garasjeMoreRoom.yes",
+                      "type": "Answer",
+                      "text": "Ja",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "garasjeMoreRoom.no",
+                      "type": "Answer",
+                      "text": "Nei",
+                      "value": "no"
+                    }
+                  ]
+                },
+                {
+                  "id": "extraRoomHobbyGarasje",
+                  "property": "extraRoomHobbyGarasje",
+                  "type": "Radio",
+                  "heading":
+                    "Skal noen av rommene være enten kontor, atelier, hobby, arbeidsrom eller treningsrom?",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "garasjeMoreRoom",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "garasjeMoreRoom",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "options": [
+                    {
+                      "id": "extraRoomHobbyGarasje.yes",
+                      "type": "Answer",
+                      "text": "Ja",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "extraRoomHobbyGarasje.no",
+                      "type": "Answer",
+                      "text": "Nei",
+                      "value": "no"
+                    }
+                  ]
+                },
+                {
+                  "id": "opplysningSkillevegg",
+                  "property": "opplysningSkillevegg",
+                  "type": "Group",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "usesType",
+                            "operator": "eq",
+                            "value": "garasje"
+                          },
+                          {
+                            "field": "garasjeMoreRoom",
+                            "operator": "eq",
+                            "value": "yes"
+                          },
+                          {
+                            "field": "extraRoomHobbyGarasje",
+                            "operator": "eq",
+                            "value": "no"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "usesType",
+                            "operator": "eq",
+                            "value": "garasje"
+                          },
+                          {
+                            "field": "garasjeMoreRoom",
+                            "operator": "eq",
+                            "value": "no"
+                          }
+                        ]
+                      },
+                      {
+                        "field": "extraRoomHobbyGarasje",
+                        "operator": "not"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "id": "opplysningSkilleveggText",
+                      "property": "opplysningSkilleveggText",
+                      "type": "Information",
+                      "text":
+                        "Opplysning: Du må lage en gasstett skillevegg mellom garasjen og dette rommet, for å beskytte de som skal bruke rommet mot gass og eksos"
+                    }
+                  ]
+                },
+                {
+                  "id": "distanceNabo",
+                  "property": "distanceNabo",
+                  "type": "Radio",
+                  "heading": "Er det mindre enn 8,0 meter til nærmeste bygning på naboeiendommen?",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "garasjeMoreRoom",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "garasjeMoreRoom",
+                        "operator": "eq",
+                        "value": "no"
+                      },
+                      {
+                        "field": "extraRoomHobbyGarasje",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "options": [
+                    {
+                      "id": "distanceNabo.yes",
+                      "type": "Answer",
+                      "text":
+                        "Ja, det er mindre enn 8,0 meter til slike bygninger på naboeiendommen",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "distanceNabo.no",
+                      "type": "Answer",
+                      "text": "Nei, det er minst 8,0 meter til slike bygninger på naboeiendommen",
+                      "value": "no"
+                    }
+                  ]
+                },
+                {
+                  "id": "distanceNaboNotice",
+                  "property": "distanceNaboNotice",
+                  "type": "Group",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "usesType",
+                            "operator": "eq",
+                            "value": "garasje"
+                          },
+                          {
+                            "field": "garasjeMoreRoom",
+                            "operator": "eq",
+                            "value": "yes"
+                          },
+                          {
+                            "field": "extraRoomHobbyGarasje",
+                            "operator": "eq",
+                            "value": "yes"
+                          },
+                          {
+                            "field": "distanceNabo",
+                            "operator": "eq",
+                            "value": "no"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "usesType",
+                            "operator": "eq",
+                            "value": "garasje"
+                          },
+                          {
+                            "field": "garasjeMoreRoom",
+                            "operator": "eq",
+                            "value": "no"
+                          }
+                        ]
+                      },
+                      {
+                        "field": "distanceNabo",
+                        "operator": "not"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "id": "distanceNaboNoticeText",
+                      "property": "distanceNaboNoticeText",
+                      "type": "Information",
+                      "text":
+                        "Det kan gjelde strengere brannkrav for slike bygninger. Plasserer du bygningen din minst 8,0 meter fra bygning på naboeiendom er brannsikring ivaretatt. Plasseres den nærmere må du brannsikre de delene av bygningen som er nærmere naboen enn 8,0 meter. Brannmotstanden må være på minst El 30 (motstandsdyktig mot brann i 30 minutter)"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "usesType",
+                "operator": "eq",
+                "value": "bod"
+              },
+              "children": [
+                {
+                  "id": "garasjeMoreRoom",
+                  "property": "garasjeMoreRoom",
+                  "type": "Radio",
+                  "heading": "Skal bygningen ha flere rom?",
+                  "options": [
+                    {
+                      "id": "garasjeMoreRoom.yes",
+                      "type": "Answer",
+                      "text": "Ja",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "garasjeMoreRoom.no",
+                      "type": "Answer",
+                      "text": "Nei",
+                      "value": "no"
+                    }
+                  ]
+                },
+                {
+                  "id": "extraRoomHobbyGarasje",
+                  "property": "extraRoomHobbyGarasje",
+                  "type": "Radio",
+                  "heading":
+                    "Skal noen av rommene være enten kontor, atelier, hobby, arbeidsrom eller treningsrom?",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "garasjeMoreRoom",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "garasjeMoreRoom",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "options": [
+                    {
+                      "id": "extraRoomHobbyGarasje.yes",
+                      "type": "Answer",
+                      "text": "Ja",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "extraRoomHobbyGarasje.no",
+                      "type": "Answer",
+                      "text": "Nei",
+                      "value": "no"
+                    }
+                  ]
+                },
+                {
+                  "id": "distanceNabo",
+                  "property": "distanceNabo",
+                  "type": "Radio",
+                  "heading": "Er det mindre enn 8,0 meter til nærmeste bygning på naboeiendommen?",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "garasjeMoreRoom",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "garasjeMoreRoom",
+                        "operator": "eq",
+                        "value": "no"
+                      },
+                      {
+                        "field": "extraRoomHobbyGarasje",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "options": [
+                    {
+                      "id": "distanceNabo.yes",
+                      "type": "Answer",
+                      "text":
+                        "Ja, det er mindre enn 8,0 meter til slike bygninger på naboeiendommen",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "distanceNabo.no",
+                      "type": "Answer",
+                      "text": "Nei, det er minst 8,0 meter til slike bygninger på naboeiendommen",
+                      "value": "no"
+                    }
+                  ]
+                },
+                {
+                  "id": "distanceNaboNotice",
+                  "property": "distanceNaboNotice",
+                  "type": "Group",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "usesType",
+                            "operator": "eq",
+                            "value": "garasje"
+                          },
+                          {
+                            "field": "garasjeMoreRoom",
+                            "operator": "eq",
+                            "value": "yes"
+                          },
+                          {
+                            "field": "extraRoomHobbyGarasje",
+                            "operator": "eq",
+                            "value": "yes"
+                          },
+                          {
+                            "field": "distanceNabo",
+                            "operator": "eq",
+                            "value": "no"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "usesType",
+                            "operator": "eq",
+                            "value": "garasje"
+                          },
+                          {
+                            "field": "garasjeMoreRoom",
+                            "operator": "eq",
+                            "value": "no"
+                          }
+                        ]
+                      },
+                      {
+                        "field": "distanceNabo",
+                        "operator": "not"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "id": "distanceNaboNoticeText",
+                      "property": "distanceNaboNoticeText",
+                      "type": "Information",
+                      "text":
+                        "Det kan gjelde strengere brannkrav for slike bygninger. Plasserer du bygningen din minst 8,0 meter fra bygning på naboeiendom er brannsikring ivaretatt. Plasseres den nærmere må du brannsikre de delene av bygningen som er nærmere naboen enn 8,0 meter. Brannmotstanden må være på minst El 30 (motstandsdyktig mot brann i 30 minutter)"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "distanceNaboSmall",
+          "property": "distanceNaboSmall",
+          "type": "Radio",
+          "heading": "Er det mindre enn 2,0 meter til bygning på naboeiendom?",
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "garasjeMoreRoom",
+                "operator": "not"
+              },
+              {
+                "type": "and",
+                "clauses": [
+                  {
+                    "field": "garasjeMoreRoom",
+                    "operator": "eq",
+                    "value": "yes"
+                  },
+                  {
+                    "field": "extraRoomHobbyGarasje",
+                    "operator": "eq",
+                    "value": "yes"
+                  }
+                ]
+              }
+            ]
+          },
+          "options": [
+            {
+              "id": "distanceNaboSmall.yes",
+              "type": "Answer",
+              "text": "Ja, det er mindre enn 2,0 meter til bygning på naboeiendom",
+              "value": "yes"
+            },
+            {
+              "id": "distanceNaboSmall.no",
+              "type": "Answer",
+              "text": "Nei, det er minst 2,0 meter til bygning på naboeiendom",
+              "value": "no"
             }
           ]
         },
