@@ -1371,7 +1371,7 @@
                       "id": "flood.msg",
                       "type": "Information",
                       "optional": "true",
-                      "heading":
+                      "text":
                         "Det kan være begrensninger på hva du har lov til å bygge i et slikt område. Ta kontakt med kommunen for informasjon om hva du har lov å bygge på eiendommen."
                     }
                   ]
