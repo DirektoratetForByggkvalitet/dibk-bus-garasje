@@ -656,7 +656,7 @@
           "type": "Radio",
           "heading": "Er det mindre enn 8,0 meter til nærmeste bygning på naboeiendommen?",
           "text":
-            "<img src=\"/img/09_garasje_600x275.png\" alt=\"Illustrasjon\"><p>Hvis det er mindre enn 2,0 meter mellom bygningen din og nærmeste bygning på naboeiendommen, er det strengere brannkrav. Da må du brannsikre de delene av bygningen som er nærmere naboen enn 2,0 meter. Dette kan gjelde både tak og vegger.</p>",
+            "<img src=\"/img/09_garasje_600x275.png\" alt=\"Illustrasjon\"><p>Hvis det er mindre enn 8,0 meter mellom bygningen din og nærmeste bygning på naboeiendommen, er det strengere brannkrav. Da må du brannsikre de delene av bygningen som er nærmere naboen enn 8,0 meter. Dette kan gjelde både tak og vegger.</p>",
           "options": [
             {
               "id": "usesNabo.yes",
