@@ -707,15 +707,16 @@
               },
               "children": [
                 {
-                  "id": "usesNabo.error",
-                  "type": "Error",
+                  "id": "usesNabo.group",
+                  "type": "Group",
                   "children": [
                     {
                       "id": "usesNabo.msg",
-                      "type": "Text",
-                      "warning": true,
+                      "property": "usesNabo.msg",
+                      "type": "Information",
+                      "optional": "true",
                       "text":
-                        "Du må plassere bygningen minst 8,0 meter fra andre bygninger på naboeiendommen, eller brannsikre de delene av bygningen som er nærmere naboen enn 2,0 meter. Brannmotstanden må være på minst El 30. Se <a href=\"https://dibk.no/byggeregler/tek/3/11/iii/11-6/\">§ 11-6 i byggteknisk forskrift</a>."
+                        "Det kan gjelde strengere brannkrav for slike bygninger. Plasserer du bygningen din minst 8,0 meter fra bygning på naboeiendom er brannsikring ivaretatt. Plasseres den nærmere må du brannsikre de delene av bygningen som er nærmere naboen enn 8,0 meter. Brannmotstanden må være på minst El 30 (motstandsdyktig mot brann i 30 minutter)"
                     }
                   ]
                 }
