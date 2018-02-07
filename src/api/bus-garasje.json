@@ -1380,7 +1380,7 @@
           "id": "floodarea",
           "property": "floodarea",
           "type": "Radio",
-          "heading": " Kan du likevel plassere bygningen der du ønsker?",
+          "heading": "Kan du likevel plassere bygningen der du ønsker?",
           "text":
             "Det kan være begrensninger på hva du har lov til å bygge i et flom- eller skredutsatt område. Ta kontakt med kommunen for informasjon om du likevel kan bygge der du ønsker.",
           "hidden": {
@@ -2010,7 +2010,7 @@
               {
                 "field": "buildingFloors",
                 "operator": "eq",
-                "value": "no"
+                "value": "yes"
               },
               {
                 "field": "buildingsDistance",
