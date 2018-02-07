@@ -249,17 +249,10 @@
               },
               "children": [
                 {
-                  "id": "tooBigbuildingSize",
-                  "type": "Error",
-                  "children": [
-                    {
-                      "id": "tooBigbuildingSize.msg",
-                      "type": "Text",
-                      "warning": true,
-                      "heading":
-                        "Er bygningen større enn 50 kvadratmeter må du sende byggesøknad til kommunen. Du kan ikke bygge før søknaden er godkjent."
-                    }
-                  ]
+                  "id": "tooBigbuildingSize.msg",
+                  "type": "Result",
+                  "heading":
+                    "Er bygningen større enn 50 kvadratmeter må du sende byggesøknad til kommunen. Du kan ikke bygge før søknaden er godkjent."
                 }
               ]
             }
