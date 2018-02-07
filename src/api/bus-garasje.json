@@ -2000,9 +2000,49 @@
       "branches": [
         {
           "test": {
-            "field": "bebygd",
-            "operator": "eq",
-            "value": "yes"
+            "type": "or",
+            "clauses": [
+              {
+                "field": "bebygd",
+                "operator": "eq",
+                "value": "no"
+              },
+              {
+                "field": "buildingFloors",
+                "operator": "eq",
+                "value": "no"
+              },
+              {
+                "field": "buildingsDistance",
+                "operator": "eq",
+                "value": "no"
+              },
+              {
+                "field": "neighborDistance",
+                "operator": "eq",
+                "value": "no"
+              },
+              {
+                "field": "usesType",
+                "operator": "eq",
+                "value": "hytte"
+              },
+              {
+                "field": "sleep",
+                "operator": "eq",
+                "value": "yes"
+              },
+              {
+                "field": "floodarea",
+                "operator": "eq",
+                "value": "no"
+              },
+              {
+                "field": "heights",
+                "operator": "eq",
+                "value": "no"
+              }
+            ]
           },
           "children": [
             {
