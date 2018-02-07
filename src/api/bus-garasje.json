@@ -2060,6 +2060,90 @@
       ]
     },
     {
+      "type": "Branch",
+      "branches": [
+        {
+          "test": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "regplan",
+                "operator": "eq",
+                "value": "no"
+              },
+              {
+                "field": "lnfBuilding",
+                "operator": "eq",
+                "value": "no"
+              },
+              {
+                "field": "roadDistanceWithRegplan",
+                "operator": "eq",
+                "value": "no"
+              },
+              {
+                "field": "seaDistanceOk",
+                "operator": "eq",
+                "value": "no"
+              },
+              {
+                "type": "and",
+                "clauses": [
+                  {
+                    "field": "usesType",
+                    "operator": "eq",
+                    "value": "hobby"
+                  },
+                  {
+                    "field": "exitRoad",
+                    "operator": "eq",
+                    "value": "yes"
+                  }
+                ]
+              },
+              {
+                "type": "and",
+                "clauses": [
+                  {
+                    "field": "usesType",
+                    "operator": "eq",
+                    "value": "garasje"
+                  },
+                  {
+                    "field": "exitRoad",
+                    "operator": "eq",
+                    "value": "yes"
+                  }
+                ]
+              },
+              {
+                "field": "areaAvailable",
+                "operator": "eq",
+                "value": "no"
+              },
+              {
+                "field": "other",
+                "operator": "eq",
+                "value": "yes"
+              }
+            ]
+          },
+          "children": [
+            {
+              "id": "dispResult",
+              "type": "Result",
+              "heading": "Du må søke",
+              "errorheading": "Du har ikke svart på alle spørsmålene",
+              "lead":
+                "<p>Svarene dine viser at du må søke. Sjekk oppsummeringen under for å finne ut om du trenger å sende inn byggesøknad, dispensasjon eller om du trenger andre tillatelser.</p><p>Er du i tvil om du har svart riktig? Ta en utskrift av svarene dine og kontakt kommunen. De kan også fortelle deg mer om søknadsprosessen.</p><p>Husk at det er ditt ansvar at du bygger lovlig. Dersom bygningen er ulovlig kan den i verste fall rives.</p>",
+              "errorlead":
+                "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "hooray",
       "type": "Result",
       "heading": "Du kan bygge uten å søke!",
