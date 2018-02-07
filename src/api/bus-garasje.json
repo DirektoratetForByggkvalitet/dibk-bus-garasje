@@ -792,6 +792,11 @@
                             "value": "garasje"
                           },
                           {
+                            "field": "extraRoomHobbyGarasje",
+                            "operator": "eq",
+                            "value": "yes"
+                          },
+                          {
                             "field": "garasjeMoreRoom",
                             "operator": "eq",
                             "value": "no"
@@ -963,6 +968,11 @@
                             "field": "usesType",
                             "operator": "eq",
                             "value": "garasje"
+                          },
+                          {
+                            "field": "extraRoomHobbyGarasje",
+                            "operator": "eq",
+                            "value": "yes"
                           },
                           {
                             "field": "garasjeMoreRoom",
