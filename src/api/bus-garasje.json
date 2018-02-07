@@ -492,7 +492,7 @@
                           {
                             "field": "usesType",
                             "operator": "eq",
-                            "value": "garasje"
+                            "value": "bod"
                           },
                           {
                             "field": "garasjeMoreRoom",
@@ -517,7 +517,7 @@
                           {
                             "field": "usesType",
                             "operator": "eq",
-                            "value": "garasje"
+                            "value": "bod"
                           },
                           {
                             "field": "garasjeMoreRoom",
@@ -1224,7 +1224,7 @@
               "branches": [
                 {
                   "test": {
-                    "field": "regplan",
+                    "field": "roadDistance",
                     "operator": "eq",
                     "value": "yes"
                   },
