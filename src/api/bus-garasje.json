@@ -787,6 +787,21 @@
                         "type": "and",
                         "clauses": [
                           {
+                            "field": "garasjeMoreRoom",
+                            "operator": "eq",
+                            "value": "yes"
+                          },
+                          {
+                            "field": "extraRoomHobbyGarasje",
+                            "operator": "eq",
+                            "value": "no"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
                             "field": "usesType",
                             "operator": "eq",
                             "value": "garasje"
@@ -966,6 +981,21 @@
                           },
                           {
                             "field": "garasjeMoreRoom",
+                            "operator": "eq",
+                            "value": "no"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "garasjeMoreRoom",
+                            "operator": "eq",
+                            "value": "yes"
+                          },
+                          {
+                            "field": "extraRoomHobbyGarasje",
                             "operator": "eq",
                             "value": "no"
                           }
