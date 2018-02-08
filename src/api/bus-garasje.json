@@ -575,6 +575,11 @@
                 "operator": "not"
               },
               {
+                "field": "usesType",
+                "operator": "eq",
+                "value": "hobby"
+              },
+              {
                 "type": "and",
                 "clauses": [
                   {
@@ -621,6 +626,11 @@
                 "field": "distanceNaboSmall",
                 "operator": "eq",
                 "value": "no"
+              },
+              {
+                "field": "usesType",
+                "operator": "eq",
+                "value": "hobby"
               },
               {
                 "type": "and",
