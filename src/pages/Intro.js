@@ -13,8 +13,7 @@ function Intro({ close, data }) {
       <IntroMain>
         <Primitives.Heading.H1>Bygg uten å søke: Frittliggende bygning</Primitives.Heading.H1>
         <Primitives.Paragraphs.P>
-          Skal du bygge garasje, hagebod eller en annen frittliggende bygning? Svar på spørsmålene i
-          denne veiviseren for å finne ut om du:
+          Skal du bygge garasje, hagebod eller en annen frittliggende bygning? Svar på spørsmålene i denne veiviseren for å finne ut om du:
           <ul>
             <li>må sende byggesøknad til kommunen</li>
             <li>må søke om dispensasjon</li>

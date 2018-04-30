@@ -1,4 +1,4 @@
-# [dibk-bus-garasje](https://dibk-bus-garasje.firebaseapp.com/) [![Build Status](https://travis-ci.com/netliferesearch/dibk-bus-garasje.svg?token=7NpjNJdFW93Qs1rPvcce&branch=master)](https://travis-ci.com/netliferesearch/dibk-bus-garasje)
+# [dibk-bus-garasje](https://dibk-bus-garasje.firebaseapp.com/)
 
 The dibk-bus-garasje project is a wizard that uses
 [losen](https://github.com/netliferesearch/losen).\
