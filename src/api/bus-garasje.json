@@ -1300,11 +1300,6 @@
                     "type": "and",
                     "clauses": [
                       {
-                        "field": "regplan",
-                        "operator": "eq",
-                        "value": "yes"
-                      },
-                      {
                         "field": "roadDistance",
                         "operator": "eq",
                         "value": "yes"
