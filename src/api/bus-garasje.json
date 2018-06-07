@@ -972,26 +972,31 @@
           "branches": [
             {
               "test": {
-                "type": "or",
-                "clauses": [
-                  {
-                    "field": "buildingSize",
-                    "operator": "eq",
-                    "value": "yesbut"
-                  },
-                  {
-                    "field": "buildingSize",
-                    "operator": "eq",
-                    "value": "yesand"
-                  }
-                ]
+                  "field": "buildingSize",
+                  "operator": "eq",
+                  "value": "yesand"
               },
               "children": [
                 {
-                  "id": "tooBigbuildingSize.msg",
+                  "id": "tooBigbuildingSize.msg1",
                   "type": "Result",
-                  "heading":
-                    "Er bygningen større enn 70 kvadratmeter må du bruke ansvarlige foretak i hele søknads- og byggeprosessen. Du kan ikke bygge før søknaden er godkjent."
+                  "heading": "Du må søke",
+                  "lead": "Er bygningen større enn 70 kvadratmeter må du bruke ansvarlige foretak i hele søknads- og byggeprosessen. Du kan ikke bygge før søknaden er godkjent."
+                }
+              ]
+            },
+            {
+              "test": {
+                  "field": "buildingSize",
+                  "operator": "eq",
+                  "value": "yesbut"
+              },
+              "children": [
+                {
+                  "id": "tooBigbuildingSize.msg2",
+                  "type": "Result",
+                  "heading": "Du må søke",
+                  "lead": "Er bygningen mellom 50-70 kvadratmeter må du sende byggesøknad til kommunen. Du kan ikke bygge før søknaden er godkjent."
                 }
               ]
             }
