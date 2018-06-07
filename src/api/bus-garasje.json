@@ -371,7 +371,7 @@
                       "type": "Information",
                       "optional": "true",
                       "text":
-                        "Det kan gjelde strengere brannkrav for slike bygninger. Plasserer du bygningen din minst 8,0 meter fra bygning på naboeiendom er brannsikring ivaretatt. Plasseres den nærmere må du brannsikre de delene av bygningen som er nærmere naboen enn 8,0 meter. Brannmotstanden må være på minst El 30 (motstandsdyktig mot brann i 30 minutter)"
+                        "Det gjelder strengere brannkrav om det blir under 8,0 meter til for eksempel et bolighus eller et verksted på naboeiendom. I så fall må du brannsikre de delene av de du bygger som blir nærmere enn 8,0 meter fra naboen bygning. Brannmotstanden må være på minst El 30 (motstandsdyktig mot brann i 30 minutter)."
                     }
                   ]
                 }
