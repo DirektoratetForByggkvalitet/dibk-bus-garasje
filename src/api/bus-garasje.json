@@ -70,10 +70,12 @@
                 {
                   "id": "usesType.hytte.result",
                   "type": "Result",
-                  "heading":
-                    "Du må søke hvis du skal bygge hytte, fritidsbolig eller et anneks som noen kan bo eller sove i. Det samme gjelder hvis du skal ha kjøkken, stue, bad, våtrom eller soverom i bygningen.",
+                  "heading": "Du må søke",
+                  "lead":
+                    "Hvis du skal bygge hytte, fritidsbolig eller et anneks som noen kan bo eller sove i, er du nødt til å søke. Det samme gjelder hvis du skal ha kjøkken, stue, bad, våtrom eller soverom i bygningen.",
+                  "errorheading": "Du må søke",
                   "errorlead":
-                    "Du må søke hvis du skal bygge hytte, fritidsbolig eller et anneks som noen kan bo eller sove i. Det samme gjelder hvis du skal ha kjøkken, stue, bad, våtrom eller soverom i bygningen."
+                    "Hvis du skal bygge hytte, fritidsbolig eller et anneks som noen kan bo eller sove i, er du nødt til å søke. Det samme gjelder hvis du skal ha kjøkken, stue, bad, våtrom eller soverom i bygningen."
                 }
               ]
             }
@@ -262,12 +264,12 @@
                   "type": "Radio",
                   "heading": "Er det mindre enn 8,0 meter til nærmeste bygning på naboeiendommen?",
                   "text":
-                    "Da kan det være du må brannsikre de delene som er nærmere naboen enn 8,0 meter. Dette gjelder hvis f.eks. nabobygningen brukes som for eksempel hus, hytte, verksted, atelier eller kontor. Be om hjelp fra fagperson om du er usikker på om du trenger brannsikring.",
+                    "<p>Da kan det være du må brannsikre de delene som er nærmere naboen enn 8,0 meter. Dette gjelder hvis f.eks. nabobygningen brukes som for eksempel hus, hytte, verksted, atelier eller kontor. Be om hjelp fra fagperson om du er usikker på om du trenger brannsikring.</p>",
                   "hidden": {
                     "type": "or",
                     "clauses": [
                       {
-                        "field": "garasjeMoreRoom",
+                        "field": "extraRoomHobbyGarasje",
                         "operator": "not"
                       },
                       {
@@ -450,11 +452,13 @@
                   "property": "distanceNabo",
                   "type": "Radio",
                   "heading": "Er det mindre enn 8,0 meter til nærmeste bygning på naboeiendommen?",
+                  "text":
+                    "<p>Da kan det være du må brannsikre de delene som er nærmere naboen enn 8,0 meter. Dette gjelder hvis f.eks. nabobygningen brukes som for eksempel hus, hytte, verksted, atelier eller kontor. Be om hjelp fra fagperson om du er usikker på om du trenger brannsikring.</p>",
                   "hidden": {
                     "type": "or",
                     "clauses": [
                       {
-                        "field": "garasjeMoreRoom",
+                        "field": "extraRoomHobbyGarasje",
                         "operator": "not"
                       },
                       {
@@ -574,7 +578,7 @@
           "type": "Radio",
           "heading": "Er det mindre enn 2,0 meter til bygning på naboeiendom?",
           "text":
-            "Det er strengere brannkrav, hvis det på noe som helst punkt er mindre enn 2,0 meter fra det du bygger, til nærmeste bygning på naboeiendom. Da må du brannsikre de delene av bygningen som er nærmere naboen enn 2,0 meter. Dette kan gjelde både tak og vegger.",
+            "<p>Det er strengere brannkrav, hvis det på noe som helst punkt er mindre enn 2,0 meter fra det du bygger, til nærmeste bygning på naboeiendom. Da må du brannsikre de delene av bygningen som er nærmere naboen enn 2,0 meter. Dette kan gjelde både tak og vegger.</p>",
           "hidden": {
             "type": "or",
             "clauses": [
@@ -674,7 +678,7 @@
           "type": "Radio",
           "heading": "Er det mindre enn 8,0 meter til nærmeste bygning på naboeiendommen?",
           "text":
-            "<img src=\"/img/09_garasje_600x275.png\" alt=\"Illustrasjon\"><p>Hvis det er mindre enn 8,0 meter mellom bygningen din og nærmeste bygning på naboeiendommen, er det strengere brannkrav. Da må du brannsikre de delene av bygningen som er nærmere naboen enn 8,0 meter. Dette kan gjelde både tak og vegger.</p>",
+            "<p>Da kan det være du må brannsikre de delene som er nærmere naboen enn 8,0 meter. Dette gjelder hvis f.eks. nabobygningen brukes som for eksempel hus, hytte, verksted, atelier eller kontor. Be om hjelp fra fagperson om du er usikker på om du trenger brannsikring.</p>",
           "options": [
             {
               "id": "usesNabo.yes",
