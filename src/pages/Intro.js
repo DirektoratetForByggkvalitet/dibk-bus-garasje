@@ -10,34 +10,35 @@ function Intro({ close, data }) {
       <IntroMain>
         <Primitives.Heading.H1>Bygg uten å søke: Frittliggende bygning</Primitives.Heading.H1>
         <div>
-          Skal du bygge garasje, hagebod eller en annen frittliggende bygning? Svar på spørsmålene i
-          denne veiviseren for å finne ut om du:
+        <Primitives.Paragraphs.P>Skal du bygge garasje, hagebod eller en annen frittliggende bygning? Svar på spørsmålene i denne veiviseren for å finne ut om du:</Primitives.Paragraphs.P>
           <ul>
             <li>må sende byggesøknad til kommunen</li>
             <li>må søke om dispensasjon</li>
             <li>kan tilpasse bygningen slik at du slipper å søke</li>
           </ul>
-          Du vil bruke omtrent 20-30 minutter.
+          <Primitives.Paragraphs.P>Du vil bruke omtrent 20-30 minutter.</Primitives.Paragraphs.P>
         </div>
 
         <Primitives.Heading.H2>Før du begynner</Primitives.Heading.H2>
         <div>
-          Før du begynner er det lurt å kontakte kommunen for å få tak i:
+          <Primitives.Paragraphs.P>
+            Før du begynner er det lurt å kontakte kommunen for å få tak i:
+          </Primitives.Paragraphs.P>
           <ol>
             <li>Situasjonskart for din eiendom</li>
             <li>Reguleringsplan</li>
             <li>Kommuneplanens arealdel</li>
             <li>Kommunale vedtekter</li>
           </ol>
-          Sett deg godt inn i disse dokumentene før du starter byggingen. De gir blant annet svar
-          på:
+          <Primitives.Paragraphs.P>
+            Sett deg godt inn i disse dokumentene før du starter byggingen. De gir blant annet svar på:
+          </Primitives.Paragraphs.P>
           <ul>
             <li>hva du har lov til å bygge på eiendommen din</li>
             <li>hvor du har lov til å bygge på eiendommen din</li>
             <li>hvor mye du har lov til å bygge på eiendommen din</li>
           </ul>
-          Husk at det er du som er ansvarlig for at alle lover og regler blir fulgt når du bygger.
-          Kontakt kommunen om du er usikker på om du kan bygge uten å søke.
+          <Primitives.Paragraphs.P>Husk at det er du som er ansvarlig for at alle lover og regler blir fulgt når du bygger. Kontakt kommunen om du er usikker på om du kan bygge uten å søke.</Primitives.Paragraphs.P>
         </div>
         <Primitives.Heading.H2>Start nå og fullfør senere</Primitives.Heading.H2>
         <Primitives.Paragraphs.P>
