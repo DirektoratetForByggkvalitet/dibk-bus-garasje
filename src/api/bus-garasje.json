@@ -84,7 +84,8 @@
           "property": "sleep",
           "type": "Radio",
           "heading": "Skal noen bo eller sove i bygningen?",
-          "text": "<p>Du må søke hvis du skal ha kjøkken, stue, bad, våtrom eller soverom i bygningen. Du kan ikke bo eller sove i bygningen.</p>",
+          "text":
+            "<p>Du må søke hvis du skal ha kjøkken, stue, bad, våtrom eller soverom i bygningen. Du kan ikke bo eller sove i bygningen.</p>",
           "image": {
             "url": "/img/13A_garasje_600x275.png",
             "alt": "Garasjebygning og boligbygning"
@@ -260,7 +261,8 @@
                   "property": "distanceNabo",
                   "type": "Radio",
                   "heading": "Er det mindre enn 8,0 meter til nærmeste bygning på naboeiendommen?",
-                  "text": "Da kan det være du må brannsikre de delene som er nærmere naboen enn 8,0 meter. Dette gjelder hvis f.eks. nabobygningen brukes som for eksempel hus, hytte, verksted, atelier eller kontor. Be om hjelp fra fagperson om du er usikker på om du trenger brannsikring.",
+                  "text":
+                    "Da kan det være du må brannsikre de delene som er nærmere naboen enn 8,0 meter. Dette gjelder hvis f.eks. nabobygningen brukes som for eksempel hus, hytte, verksted, atelier eller kontor. Be om hjelp fra fagperson om du er usikker på om du trenger brannsikring.",
                   "hidden": {
                     "type": "or",
                     "clauses": [
@@ -284,8 +286,7 @@
                     {
                       "id": "distanceNabo.yes",
                       "type": "Answer",
-                      "text":
-                        "Ja, det er mindre enn 8,0 meter til bygning på naboeiendommen",
+                      "text": "Ja, det er mindre enn 8,0 meter til bygning på naboeiendommen",
                       "value": "yes"
                     },
                     {
@@ -572,7 +573,8 @@
           "property": "distanceNaboSmall",
           "type": "Radio",
           "heading": "Er det mindre enn 2,0 meter til bygning på naboeiendom?",
-          "text": "Det er strengere brannkrav, hvis det på noe som helst punkt er mindre enn 2,0 meter fra det du bygger, til nærmeste bygning på naboeiendom. Da må du brannsikre de delene av bygningen som er nærmere naboen enn 2,0 meter. Dette kan gjelde både tak og vegger.",
+          "text":
+            "Det er strengere brannkrav, hvis det på noe som helst punkt er mindre enn 2,0 meter fra det du bygger, til nærmeste bygning på naboeiendom. Da må du brannsikre de delene av bygningen som er nærmere naboen enn 2,0 meter. Dette kan gjelde både tak og vegger.",
           "hidden": {
             "type": "or",
             "clauses": [
@@ -801,7 +803,8 @@
           "property": "regplan",
           "type": "Radio",
           "heading": "Finnes det en reguleringsplan for eiendommen?",
-          "text": "<p>Er eiendommen regulert, finner du som regel reguleringsplanen på kommunens nettside.</p>",
+          "text":
+            "<p>Er eiendommen regulert, finner du som regel reguleringsplanen på kommunens nettside.</p>",
           "options": [
             {
               "id": "regplan.yes",
@@ -945,7 +948,8 @@
           "property": "buildingSize",
           "type": "Radio",
           "heading": "Hvor stort blir det nye du skal bygge?",
-          "text": "Du må søke hvis det du bygger får et samlet bruksareal (BRA) eller bebygd areal (BYA) som er større enn 50 kvadratmeter.",
+          "text":
+            "Du må søke hvis det du bygger får et samlet bruksareal (BRA) eller bebygd areal (BYA) som er større enn 50 kvadratmeter.",
           "options": [
             {
               "id": "buildingSize.yesand",
@@ -972,31 +976,33 @@
           "branches": [
             {
               "test": {
-                  "field": "buildingSize",
-                  "operator": "eq",
-                  "value": "yesand"
+                "field": "buildingSize",
+                "operator": "eq",
+                "value": "yesand"
               },
               "children": [
                 {
                   "id": "tooBigbuildingSize.msg1",
                   "type": "Result",
                   "heading": "Du må søke",
-                  "lead": "Er bygningen større enn 70 kvadratmeter må du bruke ansvarlige foretak i hele søknads- og byggeprosessen. Du kan ikke bygge før søknaden er godkjent."
+                  "lead":
+                    "Er bygningen større enn 70 kvadratmeter må du bruke ansvarlige foretak i hele søknads- og byggeprosessen. Du kan ikke bygge før søknaden er godkjent."
                 }
               ]
             },
             {
               "test": {
-                  "field": "buildingSize",
-                  "operator": "eq",
-                  "value": "yesbut"
+                "field": "buildingSize",
+                "operator": "eq",
+                "value": "yesbut"
               },
               "children": [
                 {
                   "id": "tooBigbuildingSize.msg2",
                   "type": "Result",
                   "heading": "Du må søke",
-                  "lead": "Er bygningen mellom 50-70 kvadratmeter må du sende byggesøknad til kommunen. Du kan ikke bygge før søknaden er godkjent."
+                  "lead":
+                    "Er bygningen mellom 50-70 kvadratmeter må du sende byggesøknad til kommunen. Du kan ikke bygge før søknaden er godkjent."
                 }
               ]
             }
@@ -1419,8 +1425,7 @@
             {
               "id": "floodarea.yes",
               "type": "Answer",
-              "text":
-                "Ja, jeg har avklart med kommunen at jeg likevel kan bygge der jeg ønsker",
+              "text": "Ja, jeg har avklart med kommunen at jeg likevel kan bygge der jeg ønsker",
               "value": "yes"
             },
             {
@@ -1517,8 +1522,7 @@
                 {
                   "id": "seaDistanceOk.no",
                   "type": "Answer",
-                  "text":
-                    "Nei, jeg kan ikke plassere bygningen der jeg ønsker",
+                  "text": "Nei, jeg kan ikke plassere bygningen der jeg ønsker",
                   "value": "no"
                 }
               ],
@@ -1929,8 +1933,7 @@
             {
               "id": "areaAvailable.no",
               "type": "Answer",
-              "text":
-                "Nei, eiendommen min har ikke stort nok areal til å bygge det jeg ønsker",
+              "text": "Nei, eiendommen min har ikke stort nok areal til å bygge det jeg ønsker",
               "value": "no"
             }
           ]
