@@ -5,46 +5,50 @@ import { Primitives } from 'losen';
 import { IntroMain } from '../primitives/IntroMain';
 
 function Intro({ close, data }) {
+  const arrayWithData = Object.keys(data);
+
+  // close / hide intro page if user has begun schema journey
+  // TODO: a better approach might be to exclude the $computed prop if
+  // it's values is non-existent, in losen.
+  if (
+    arrayWithData.length !== 0 &&
+    !(arrayWithData.length === 1 && !arrayWithData[0] !== '$computed')
+  ) {
+    close();
+  }
+
   return (
     <Primitives.Wizard>
       <IntroMain>
-        <Primitives.Heading.H1>Bygg uten å søke: Frittliggende bygning</Primitives.Heading.H1>
-        <div>
-        <Primitives.Paragraphs.P>Skal du bygge garasje, hagebod eller en annen frittliggende bygning? Svar på spørsmålene i denne veiviseren for å finne ut om du:</Primitives.Paragraphs.P>
-          <ul>
-            <li>må sende byggesøknad til kommunen</li>
-            <li>må søke om dispensasjon</li>
-            <li>kan tilpasse bygningen slik at du slipper å søke</li>
-          </ul>
-          <Primitives.Paragraphs.P>Du vil bruke omtrent 20-30 minutter.</Primitives.Paragraphs.P>
-        </div>
-
+        <Primitives.Heading.H1>Bygg uten å søke</Primitives.Heading.H1>
+        <Primitives.Paragraphs.Lead>Skal du bygge en garasje, bod eller annen bygning på eiendommen din? Finn ut om du må søke, eller om du kan tilpasse bygningen slik at du slipper å søke.</Primitives.Paragraphs.Lead>
         <Primitives.Heading.H2>Før du begynner</Primitives.Heading.H2>
         <div>
           <Primitives.Paragraphs.P>
-            Før du begynner er det lurt å kontakte kommunen for å få tak i:
+            Før du begynner er det lurt å finne fram til kommunale regler som gjelder for din eiendom. Dette er typisk:
           </Primitives.Paragraphs.P>
-          <ol>
+          <ul>
             <li>Situasjonskart for din eiendom</li>
             <li>Reguleringsplan</li>
             <li>Kommuneplanens arealdel</li>
             <li>Kommunale vedtekter</li>
-          </ol>
+          </ul>
           <Primitives.Paragraphs.P>
-            Sett deg godt inn i disse dokumentene før du starter byggingen. De gir blant annet svar på:
+            Disse dokumentene gir blant annet svar på:
           </Primitives.Paragraphs.P>
           <ul>
             <li>hva du har lov til å bygge på eiendommen din</li>
             <li>hvor du har lov til å bygge på eiendommen din</li>
             <li>hvor mye du har lov til å bygge på eiendommen din</li>
           </ul>
-          <Primitives.Paragraphs.P>Husk at det er du som er ansvarlig for at alle lover og regler blir fulgt når du bygger. Kontakt kommunen om du er usikker på om du kan bygge uten å søke.</Primitives.Paragraphs.P>
+          <Primitives.Paragraphs.P>Dette kan hjelpe deg å svare riktig i veiviseren. </Primitives.Paragraphs.P>
         </div>
+        <br />
         <Primitives.Heading.H2>Start nå og fullfør senere</Primitives.Heading.H2>
         <Primitives.Paragraphs.P>
-          Er det noen spørsmål du er usikker på underveis? Du kan ta en pause og fortsette senere.
-          Nettleseren husker hvor du var.
+          Det er du som er ansvarlig for at alle lover og regler blir fulgt når du bygger. Er det noen spørsmål du er usikker på underveis? Du kan ta en pause og fortsette senere. Nettleseren husker hvor du var.
         </Primitives.Paragraphs.P>
+        <br />
         <Primitives.Heading.H2>Har du funnet ut det du trenger?</Primitives.Heading.H2>
         <Primitives.Paragraphs.P>
           Da er det bare å sette i gang med veiviseren! Du får hjelp til hvert spørsmål underveis.
