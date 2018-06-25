@@ -23,26 +23,24 @@ function Intro({ close, data }) {
         <Primitives.Heading.H1>Bygg uten å søke</Primitives.Heading.H1>
         <Primitives.Paragraphs.Lead>Skal du bygge en garasje, bod eller annen bygning på eiendommen din? Finn ut om du må søke, eller om du kan tilpasse bygningen slik at du slipper å søke.</Primitives.Paragraphs.Lead>
         <Primitives.Heading.H2>Før du begynner</Primitives.Heading.H2>
-        <div>
-          <Primitives.Paragraphs.P>
-            Før du begynner er det lurt å finne fram til kommunale regler som gjelder for din eiendom. Dette er typisk:
-          </Primitives.Paragraphs.P>
-          <ul>
-            <li>Situasjonskart for din eiendom</li>
-            <li>Reguleringsplan</li>
-            <li>Kommuneplanens arealdel</li>
-            <li>Kommunale vedtekter</li>
-          </ul>
-          <Primitives.Paragraphs.P>
-            Disse dokumentene gir blant annet svar på:
-          </Primitives.Paragraphs.P>
-          <ul>
-            <li>hva du har lov til å bygge på eiendommen din</li>
-            <li>hvor du har lov til å bygge på eiendommen din</li>
-            <li>hvor mye du har lov til å bygge på eiendommen din</li>
-          </ul>
-          <Primitives.Paragraphs.P>Dette kan hjelpe deg å svare riktig i veiviseren. </Primitives.Paragraphs.P>
-        </div>
+        <Primitives.Paragraphs.P>
+          Før du begynner er det lurt å finne fram til kommunale regler som gjelder for din eiendom. Dette er typisk:
+        </Primitives.Paragraphs.P>
+        <ul>
+          <li>Situasjonskart for din eiendom</li>
+          <li>Reguleringsplan</li>
+          <li>Kommuneplanens arealdel</li>
+          <li>Kommunale vedtekter</li>
+        </ul>
+        <Primitives.Paragraphs.P>
+          Disse dokumentene gir blant annet svar på:
+        </Primitives.Paragraphs.P>
+        <ul>
+          <li>hva du har lov til å bygge på eiendommen din</li>
+          <li>hvor du har lov til å bygge på eiendommen din</li>
+          <li>hvor mye du har lov til å bygge på eiendommen din</li>
+        </ul>
+        <Primitives.Paragraphs.P>Dette kan hjelpe deg å svare riktig i veiviseren. </Primitives.Paragraphs.P>
         <br />
         <Primitives.Heading.H2>Start nå og fullfør senere</Primitives.Heading.H2>
         <Primitives.Paragraphs.P>
