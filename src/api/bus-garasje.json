@@ -1259,11 +1259,15 @@
           "heading": "Nærhet til offentlig vei",
           "text":
             "<p>Du bygger i nærheten av offentlig vei hvis det er mindre enn:<ul><li>15 meter til gang- og sykkelvei</li><li>15 meter til kommunal vei</li><li>50 meter til fylkesvei</li><li>100 meter til riksvei (50 meter hvis området er uregulert)</li></ul>Avstanden måles fra midtlinjen i kjørebanen.</p>",
-          "image": {
-            "url": "/images/40_garasje_600x275.png",
-            "alt": "Illustrasjon som viser avstand til veien"
-          },
           "children": [
+            {
+              "id": "seaDistanceImage",
+              "type": "Image",
+              "image": {
+                "url": "/images/40_garasje_600x275.png",
+                "alt": "Illustrasjon som viser avstand til veien"
+              }
+            },
             {
               "id": "roadDistance",
               "property": "roadDistance",
@@ -1523,11 +1527,15 @@
           "heading": "Nærhet til sjøen",
           "text":
             "<p>Det er i utgangspunktet forbudt å bygge nærmere enn 100 meter fra sjøen. Dette området kalles 100-metersbeltet. Avstanden måles fra alminnelig høyvannsstand.</p><p>Det kan også være begrensninger på hva du kan bygge nærmere enn 100 meter fra elver og innsjøer (vassdrag).</p><p>Svaret finner du i reguleringsplan eller i kommuneplanens arealdel.</p>",
-          "image": {
-            "url": "/images/19_garasje_600x275.png",
-            "alt": "Illustrasjon som viser avstand til veien"
-          },
           "children": [
+            {
+              "id": "seaDistanceImage",
+              "type": "Image",
+              "image": {
+                "url": "/images/19_garasje_600x275.png",
+                "alt": "Illustrasjon som viser avstand til sjøen"
+              }
+            },
             {
               "id": "seaDistance",
               "property": "seaDistance",
