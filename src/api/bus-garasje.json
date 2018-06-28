@@ -1261,7 +1261,7 @@
             "<p>Du bygger i nærheten av offentlig vei hvis det er mindre enn:<ul><li>15 meter til gang- og sykkelvei</li><li>15 meter til kommunal vei</li><li>50 meter til fylkesvei</li><li>100 meter til riksvei (50 meter hvis området er uregulert)</li></ul>Avstanden måles fra midtlinjen i kjørebanen.</p>",
           "children": [
             {
-              "id": "seaDistanceImage",
+              "id": "roadDistanceImage",
               "type": "Image",
               "image": {
                 "url": "/images/40_garasje_600x275.png",
