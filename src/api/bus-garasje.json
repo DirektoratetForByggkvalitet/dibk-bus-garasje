@@ -759,7 +759,11 @@
           "type": "Radio",
           "heading": "Er eiendommen bebygd?",
           "text":
-            "<img src=\"/images/05_garasje_600x275.png\" alt=\"Illustrasjon av et hus\"><p>For å slippe å søke må eiendommen din være bebygd. Eiendommen din er bebygd hvis det for eksempel er et bolighus eller hytte på eiendommen fra før.</p>",
+            "<p>For å slippe å søke må eiendommen din være bebygd. Eiendommen din er bebygd hvis det for eksempel er et bolighus eller hytte på eiendommen fra før.</p>",
+          "image": {
+            "url": "/images/05_garasje_600x275.png",
+            "alt": "Illustrasjon av et hus"
+          },
           "options": [
             {
               "id": "bebygd.yes",
@@ -858,7 +862,11 @@
           "heading":
             "Skal du bygge i et område regulert til landbruks-, natur- og friluftsformål eller reindrift? (LNF-område)",
           "text":
-            "<img src=\"/images/17_garasje_600x275.png\" alt=\"Fire sauer\"><p>Det er begrensninger på hva du kan bygge i områder som er regulerte til landbruk, natur og friluftsformål samt reindrift. Dette kalles LNF-områder eller LNFR-områder. Du finner som regel informasjon om dette i kommuneplanens arealdel.</p>",
+            "Det er begrensninger på hva du kan bygge i områder som er regulerte til landbruk, natur og friluftsformål samt reindrift. Dette kalles LNF-områder eller LNFR-områder. Du finner som regel informasjon om dette i kommuneplanens arealdel.</p>",
+          "image": {
+            "url": "/images/17_garasje_600x275.png",
+            "alt": "Fire sauer"
+          },
           "options": [
             {
               "id": "lnfArea.yes",
@@ -880,7 +888,11 @@
           "type": "Radio",
           "heading": "Skal du sette opp en landbruksbygning?",
           "text":
-            "<img src=\"/images/18_garasje_600x275.png\" alt=\"Garasje med traktor inni\"><p>I LNF-områder er det bare tillatt å sette opp bygninger som har direkte tilknytning til landbruk eller stedbunden næring (tradisjonell landbruksvirksomhet).</p>",
+            "<p>I LNF-områder er det bare tillatt å sette opp bygninger som har direkte tilknytning til landbruk eller stedbunden næring (tradisjonell landbruksvirksomhet).</p>",
+          "image": {
+            "url": "/images/18_garasje_600x275.png",
+            "alt": "Garasje med traktor inni"
+          },
           "summary": "Se eksempler",
           "details":
             "<p>Landbruksbygninger som kan være tillatt er:</p><ul><li>Naust eller rorbu som er nødvendige for landbruk</li><li>Hageveksthus som er knyttet til produksjon på gårdsbruk</li><li>Salgslokale som i hovedsak brukes til salg av egne gårdsprodukter</li><li>Garasje som bare brukes til landbruksformål</li></ul><p>Er du usikker på om bygningen din er en landbruksbygning, må du kontakte kommunen. Er det ikke en landbruksbygning, kan du også høre med kommunen om det er mulig å søke om dispensasjon.</p>",
@@ -1018,7 +1030,11 @@
           "type": "Radio",
           "heading": "Blir det en bygning med kjeller og/eller loft?",
           "text":
-            "<img src=\"/images/12_garasje_600x275.png\" alt=\"Kun en etasje\"><p>Du har kun lov å bygge én etasje. Du må søke hvis du vil ha kjeller eller loftsetasje.</p><p>Du kan likevel ha et lite oppbevaringsareal eller kryploft over for eksempel en garasje uten at du trenger å søke.</p>",
+            "<p>Du har kun lov å bygge én etasje. Du må søke hvis du vil ha kjeller eller loftsetasje.</p><p>Du kan likevel ha et lite oppbevaringsareal eller kryploft over for eksempel en garasje uten at du trenger å søke.</p>",
+          "image": {
+            "url": "/images/12_garasje_600x275.png",
+            "alt": "Kun en etasje"
+          },
           "options": [
             {
               "id": "buildingFloors.yes",
@@ -1075,7 +1091,11 @@
           "heading":
             "Skal bygningen plasseres minst 1,0 meter fra andre bygninger på eiendommen din?",
           "text":
-            "<img src=\"/images/07_garasje_600x275.png\" alt=\"Illustrasjon av et hus\"><p>Det du bygger må plasseres minst 1,0 meter fra andre bygninger på eiendommen din.</p>",
+            "<p>Det du bygger må plasseres minst 1,0 meter fra andre bygninger på eiendommen din.</p>",
+          "image": {
+            "url": "/images/07_garasje_600x275.png",
+            "alt": "Illustrasjon av et hus"
+          },
           "options": [
             {
               "id": "buildingsDistance.yes",
@@ -1124,7 +1144,11 @@
           "type": "Radio",
           "heading": "Skal det du bygger plasseres minst 1,0 meter fra nabogrensa?",
           "text":
-            "<img src=\"/images/08_garasje_600x275.png\" alt=\"Illustrasjon av et hus\"><p>Du må søke hvis det du bygger på noe som helst punkt er nærmere enn 1,0 meter fra nabogrensa. Pass på å regne med vegger og takutstikk.</p>",
+            "<p>Du må søke hvis det du bygger på noe som helst punkt er nærmere enn 1,0 meter fra nabogrensa. Pass på å regne med vegger og takutstikk.</p>",
+          "image": {
+            "url": "/images/08_garasje_600x275.png",
+            "alt": "Illustrasjon av et hus"
+          },
           "options": [
             {
               "id": "neighborDistance.yes",
@@ -1173,7 +1197,11 @@
           "type": "Radio",
           "heading": "Skal du bygge over vann- og avløpsledninger?",
           "text":
-            "<img src=\"/images/16_garasje_600x275.png\" alt=\"Illustrasjon\"><p>Du kan ikke plassere det du bygger over vann- og avløpsledninger. Kommunen må ha tilgang til disse ledningene for vedlikehold og reparasjon.</p>Du må derfor passe på: <ul><li>at du bruker et oppdatert kart hvor alle ledninger vises</li><li>å sjekke om det finnes lokale regler som fastsetter hvor langt unna ledninger det er lov å bygge</li></ul><p>Ta kontakt med kommunen om du er usikker på hvor ledningene er.</p>",
+            "<p>Du kan ikke plassere det du bygger over vann- og avløpsledninger. Kommunen må ha tilgang til disse ledningene for vedlikehold og reparasjon.</p>Du må derfor passe på: <ul><li>at du bruker et oppdatert kart hvor alle ledninger vises</li><li>å sjekke om det finnes lokale regler som fastsetter hvor langt unna ledninger det er lov å bygge</li></ul><p>Ta kontakt med kommunen om du er usikker på hvor ledningene er.</p>",
+          "image": {
+            "url": "/images/16_garasje_600x275.png",
+            "alt": "Illustrasjon"
+          },
           "options": [
             {
               "id": "drainagePlacement.yes",
@@ -1230,7 +1258,11 @@
           "simple": true,
           "heading": "Nærhet til offentlig vei",
           "text":
-            "<img src=\"/images/40_garasje_600x275.png\" alt=\"Illustrasjon som viser avstand til veien\"><p>Du bygger i nærheten av offentlig vei hvis det er mindre enn:<ul><li>15 meter til gang- og sykkelvei</li><li>15 meter til kommunal vei</li><li>50 meter til fylkesvei</li><li>100 meter til riksvei (50 meter hvis området er uregulert)</li></ul>Avstanden måles fra midtlinjen i kjørebanen.</p>",
+            "<p>Du bygger i nærheten av offentlig vei hvis det er mindre enn:<ul><li>15 meter til gang- og sykkelvei</li><li>15 meter til kommunal vei</li><li>50 meter til fylkesvei</li><li>100 meter til riksvei (50 meter hvis området er uregulert)</li></ul>Avstanden måles fra midtlinjen i kjørebanen.</p>",
+          "image": {
+            "url": "/images/40_garasje_600x275.png",
+            "alt": "Illustrasjon som viser avstand til veien"
+          },
           "children": [
             {
               "id": "roadDistance",
@@ -1388,7 +1420,11 @@
           "type": "Radio",
           "heading": "Skal du bygge i et flom- eller skredutsatt område?",
           "text":
-            "<img src=\"/images/25_garasje_600x275.png\" alt=\"Illustrasjon som viser avstand til veien\"><p>Det kan være begresninger på hva du kan bygge i områder hvor det er fare forfor eksempel ras, flom, stormflo og skred. For eksempel kan et kvikkleireskred bli utløst av veldig små terrenginngrep. Usikker på om du bor i et slikt område? Sjekk reguleringsplan, kommuneplan og hør med kommunen.</p>",
+            "<p>Det kan være begresninger på hva du kan bygge i områder hvor det er fare forfor eksempel ras, flom, stormflo og skred. For eksempel kan et kvikkleireskred bli utløst av veldig små terrenginngrep. Usikker på om du bor i et slikt område? Sjekk reguleringsplan, kommuneplan og hør med kommunen.</p>",
+          "image": {
+            "url": "/images/25_garasje_600x275.png",
+            "alt": "Illustrasjon som viser avstand til veien"
+          },
           "options": [
             {
               "id": "flood.yes",
@@ -1486,7 +1522,11 @@
           "simple": true,
           "heading": "Nærhet til sjøen",
           "text":
-            "<img src=\"/images/19_garasje_600x275.png\" alt=\"Illustrasjon som viser avstand til veien\"><p>Det er i utgangspunktet forbudt å bygge nærmere enn 100 meter fra sjøen. Dette området kalles 100-metersbeltet. Avstanden måles fra alminnelig høyvannsstand.</p><p>Det kan også være begrensninger på hva du kan bygge nærmere enn 100 meter fra elver og innsjøer (vassdrag).</p><p>Svaret finner du i reguleringsplan eller i kommuneplanens arealdel.</p>",
+            "<p>Det er i utgangspunktet forbudt å bygge nærmere enn 100 meter fra sjøen. Dette området kalles 100-metersbeltet. Avstanden måles fra alminnelig høyvannsstand.</p><p>Det kan også være begrensninger på hva du kan bygge nærmere enn 100 meter fra elver og innsjøer (vassdrag).</p><p>Svaret finner du i reguleringsplan eller i kommuneplanens arealdel.</p>",
+          "image": {
+            "url": "/images/19_garasje_600x275.png",
+            "alt": "Illustrasjon som viser avstand til veien"
+          },
           "children": [
             {
               "id": "seaDistance",
@@ -1597,7 +1637,11 @@
               "type": "Radio",
               "heading": "Skal du bygge nærmere enn 30 meter til et jernbanespor?",
               "text":
-                "<img src=\"/images/26_garasje_600x275.png\" alt=\"Illustrasjon \"><p>Det må være minst 30 meter til nærmeste jernbanespor. Dette gjelder både togspor, t-banespor og trikkespor. Avstanden måles fra nærmeste spors midtlinje.</p>",
+                "<p>Det må være minst 30 meter til nærmeste jernbanespor. Dette gjelder både togspor, t-banespor og trikkespor. Avstanden måles fra nærmeste spors midtlinje.</p>",
+              "image": {
+                "url": "/images/26_garasje_600x275.png",
+                "alt": "Illustrasjon"
+              },
               "options": [
                 {
                   "id": "railroadDistance.no",
@@ -1619,7 +1663,11 @@
               "type": "Radio",
               "heading": "Har du fått tillatelse til å bygge nærmere enn 30 meter?",
               "text":
-                "<img src=\"/images/27_garasje_600x275.png\" alt=\"Illustrasjon \"><p>For å bygge nærmere enn 30 meter fra nærmeste spors midtlinje, må du søke Bane NOR om tillatelse. Dette må du gjøre selv om det finnes en nærmere byggegrense mot jernbane i reguleringsplan.</p><p>Les mer om byggegrense mot jernbane hos <a href=\"http://www.banenor.no/Sikkerhet/Byggegrense/\">Bane NOR.</a></p></p>",
+                "<p>For å bygge nærmere enn 30 meter fra nærmeste spors midtlinje, må du søke Bane NOR om tillatelse. Dette må du gjøre selv om det finnes en nærmere byggegrense mot jernbane i reguleringsplan.</p><p>Les mer om byggegrense mot jernbane hos <a href=\"http://www.banenor.no/Sikkerhet/Byggegrense/\">Bane NOR.</a></p></p>",
+              "image": {
+                "url": "/images/27_garasje_600x275.png",
+                "alt": "Illustrasjon"
+              },
               "options": [
                 {
                   "id": "railroadDistanceOk.yes",
@@ -1710,7 +1758,11 @@
             ]
           },
           "text":
-            "<img src=\"/images/41_garasje_600x275.png\" alt=\"Illustrasjon \"><p>Du må ha godkjent avkjørsel mot vei for å kunne bygge garasje. Trenger du ny eller endret avkjørsel mot kommunal vei, kontakter du kommunen. Trenger du ny eller endret avkjørsel mot riks- eller fylkesvei kontakter du <a href=\"http://www.vegvesen.no/Fag/Veg+og+gate/Prosjektering+og+bygging/bygge+langs+veg\">Statens vegvesen.</a> Du kan trenge ny eller endret avkjørsel hvis garasjen gir dårligere sikt enn det du har i dag.</p>",
+            "<p>Du må ha godkjent avkjørsel mot vei for å kunne bygge garasje. Trenger du ny eller endret avkjørsel mot kommunal vei, kontakter du kommunen. Trenger du ny eller endret avkjørsel mot riks- eller fylkesvei kontakter du <a href=\"http://www.vegvesen.no/Fag/Veg+og+gate/Prosjektering+og+bygging/bygge+langs+veg\">Statens vegvesen.</a> Du kan trenge ny eller endret avkjørsel hvis garasjen gir dårligere sikt enn det du har i dag.</p>",
+          "image": {
+            "url": "/images/41_garasje_600x275.png",
+            "alt": "Illustrasjon"
+          },
           "options": [
             {
               "id": "exitRoad.yes",
@@ -1799,7 +1851,11 @@
             ]
           },
           "text":
-            "<img src=\"/images/41_garasje_600x275.png\" alt=\"Illustrasjon \"><p>Du kan ha behov for avkjørsel mot vei hvis du har hobbyverksted, atelier eller kontor. Trenger du ny eller endret avkjørsel mot kommunal vei, kontakter du kommunen. Trenger du ny eller endret avkjørsel mot riks- eller fylkesvei kontakter du <a target='_blank' href='http://www.vegvesen.no/Fag/Veg+og+gate/Prosjektering+og+bygging/Bygge+langs+veg'>Statens vegvesen.</a> Ny eller endret avkjørsel kan være aktuelt hvis bygningen vil gi dårligere siktforhold, eller fører til økt trafikk til og fra eiendommen.</p>",
+            "<p>Du kan ha behov for avkjørsel mot vei hvis du har hobbyverksted, atelier eller kontor. Trenger du ny eller endret avkjørsel mot kommunal vei, kontakter du kommunen. Trenger du ny eller endret avkjørsel mot riks- eller fylkesvei kontakter du <a target='_blank' href='http://www.vegvesen.no/Fag/Veg+og+gate/Prosjektering+og+bygging/Bygge+langs+veg'>Statens vegvesen.</a> Ny eller endret avkjørsel kan være aktuelt hvis bygningen vil gi dårligere siktforhold, eller fører til økt trafikk til og fra eiendommen.</p>",
+          "image": {
+            "url": "/images/41_garasje_600x275.png",
+            "alt": "Illustrasjon"
+          },
           "options": [
             {
               "id": "exitRoad.yes",
@@ -1869,7 +1925,11 @@
           "type": "Radio",
           "heading": "Er mønehøyde maksimalt 4,0 meter, og gesimshøyde maksimalt 3.0 meter?",
           "text":
-            "<img src=\"/images/14A_garasje_600x275.png\" alt=\"Illustrasjon \"><img src=\"/images/14B_garasje_600x275.png\" alt=\"Illustrasjon \"><p>Mønehøyde kan maksimalt være 4,0 meter og gesimshøyde maksimalt 3,0 meter. Høydene måles vanligvis i forhold til gjennomsnittsnivået av det ferdig planerte terrenget rundt bygningen.</p><b>Hva er gesimshøyde?</b><p>Gesimshøyde er høyde til skjæringspunktet mellom ytterklednings ytre flate og taktekkingens ytre flate, oppå taket. Gesimshøyde måles fra dette punktet og til terrengets utregnete gjennomsnittsnivå rundt bygget.</p><b>Hva er mønehøyde?</b> <p>Mønehøyde er vanligvis høyden mellom to skrå flater, som ofte vil være takets høyeste punkt. Mønehøyde måles fra dette punktet og til terrengets utregnete gjennomsnittsnivå rundt bygget.</p><b>Er du usikker på hvordan å måle høyden på bygningen?</b><p>Finn mer informasjon i kapittel 4 i <a  href=\"https://www.regjeringen.no/globalassets/upload/kmd/boby/grad_av_utnytting.pdf\">Grad av utnytting - beregnings- og måleregler (PDF)</a></p>",
+            "<p>Mønehøyde kan maksimalt være 4,0 meter og gesimshøyde maksimalt 3,0 meter. Høydene måles vanligvis i forhold til gjennomsnittsnivået av det ferdig planerte terrenget rundt bygningen.</p><b>Hva er gesimshøyde?</b><p>Gesimshøyde er høyde til skjæringspunktet mellom ytterklednings ytre flate og taktekkingens ytre flate, oppå taket. Gesimshøyde måles fra dette punktet og til terrengets utregnete gjennomsnittsnivå rundt bygget.</p><b>Hva er mønehøyde?</b> <p>Mønehøyde er vanligvis høyden mellom to skrå flater, som ofte vil være takets høyeste punkt. Mønehøyde måles fra dette punktet og til terrengets utregnete gjennomsnittsnivå rundt bygget.</p><b>Er du usikker på hvordan å måle høyden på bygningen?</b><p>Finn mer informasjon i kapittel 4 i <a  href=\"https://www.regjeringen.no/globalassets/upload/kmd/boby/grad_av_utnytting.pdf\">Grad av utnytting - beregnings- og måleregler (PDF)</a></p>",
+          "image": {
+            "url": "/images/14A_garasje_600x275.png",
+            "alt": "Illustrasjon"
+          },
           "options": [
             {
               "id": "heights.yes",
@@ -1926,7 +1986,11 @@
           "type": "Radio",
           "heading": "Har eiendommen din stort nok areal til bygningen du ønsker å sette opp?",
           "text":
-            "<img src=\"/images/42_garasje_600x275.png\" alt=\"Illustrasjon\"><p>Eiendommen din har en begrensning på hvor mye areal eller volum du kan ha bygninger på. Dette er som regel oppgitt i situasjonskart eller reguleringsplan som:</p> <ul><li>BYA: Bebygd areal. Se etter prosent BYA eller antall kvadratmeter BYA</li><li>BRA: Bruksareal. Se etter prosent BRA eller antall kvadratmeter BRA</li><li>TU: Tomteutnyttelse. Se etter prosent TU. Finnes kun på eldre planer</li></ul></p>For å finne ut hvor mye plass du har igjen å bygge på, må du regne ut hvor mye plass de eksisterende bygningene opptar.</p><p>Du kan ta vår veiviser <a href=\"http://hvorstortkandubygge.dibk.no/\">Hvor stort kan du bygge</a> for å få hjelp.",
+            "<p>Eiendommen din har en begrensning på hvor mye areal eller volum du kan ha bygninger på. Dette er som regel oppgitt i situasjonskart eller reguleringsplan som:</p> <ul><li>BYA: Bebygd areal. Se etter prosent BYA eller antall kvadratmeter BYA</li><li>BRA: Bruksareal. Se etter prosent BRA eller antall kvadratmeter BRA</li><li>TU: Tomteutnyttelse. Se etter prosent TU. Finnes kun på eldre planer</li></ul></p>For å finne ut hvor mye plass du har igjen å bygge på, må du regne ut hvor mye plass de eksisterende bygningene opptar.</p><p>Du kan ta vår veiviser <a href=\"http://hvorstortkandubygge.dibk.no/\">Hvor stort kan du bygge</a> for å få hjelp.",
+          "image": {
+            "url": "/images/42_garasje_600x275.png",
+            "alt": "Illustrasjon"
+          },
           "options": [
             {
               "id": "areaAvailable.yes",
@@ -1975,7 +2039,11 @@
           "type": "Radio",
           "heading": "Er det andre forhold som hindrer deg i å bygge der du ønsker?",
           "text":
-            "<img src=\"/images/43_garasje_600x275.png\" alt=\"Illustrasjon\"><p>Det kan være andre forhold som hindrer deg i å bygge slik du ønsker. Dette vil du finne informasjon om i reguleringsplan, kommuneplanens arealdel, andre plandokumenter eller situasjonskart.</p><p>Eksempler på begrensninger du kan finne der er:</p><ul><li>strengere krav til hvor høy eller stor bygningen din kan være</li><li>strengere krav til hvor langt unna nabogrensa du kan bygge</li><li>krav til bygningens utseende, for eksempel fargevalg, takvinkel, plassering og materialvalg</li><li>verneverdige kulturminner som begrenser hvor eller hva du kan bygge</li><li>sjeldne dyre- eller plantearter som begrenser hvor eller hva du kan bygge</li><li>avstand til kraftlinjer</li></ul><p>Les derfor grundig gjennom reguleringsplan, kommuneplanens arealdel, situasjonskartet og andre dokumenter om eiendommen.</p>",
+            "<p>Det kan være andre forhold som hindrer deg i å bygge slik du ønsker. Dette vil du finne informasjon om i reguleringsplan, kommuneplanens arealdel, andre plandokumenter eller situasjonskart.</p><p>Eksempler på begrensninger du kan finne der er:</p><ul><li>strengere krav til hvor høy eller stor bygningen din kan være</li><li>strengere krav til hvor langt unna nabogrensa du kan bygge</li><li>krav til bygningens utseende, for eksempel fargevalg, takvinkel, plassering og materialvalg</li><li>verneverdige kulturminner som begrenser hvor eller hva du kan bygge</li><li>sjeldne dyre- eller plantearter som begrenser hvor eller hva du kan bygge</li><li>avstand til kraftlinjer</li></ul><p>Les derfor grundig gjennom reguleringsplan, kommuneplanens arealdel, situasjonskartet og andre dokumenter om eiendommen.</p>",
+          "image": {
+            "url": "/images/43_garasje_600x275.png",
+            "alt": "Illustrasjon"
+          },
           "options": [
             {
               "id": "other.yes",
