@@ -125,7 +125,7 @@
                       "id": "sleep.error.msg",
                       "type": "Text",
                       "warning": true,
-                      "heading":
+                      "text":
                         "Du må sende byggesøknad til kommunen. Du kan ikke bygge før søknaden er godkjent."
                     }
                   ]
@@ -797,7 +797,7 @@
                       "id": "ikkeBebygd",
                       "type": "Text",
                       "warning": true,
-                      "heading":
+                      "text":
                         "Du må sende byggesøknad til kommunen. Du kan ikke bygge før søknaden er godkjent."
                     }
                   ]
@@ -810,20 +810,19 @@
           "id": "regplan",
           "property": "regplan",
           "type": "Radio",
-          "heading": "Finnes det en reguleringsplan for eiendommen?",
-          "text":
-            "<p>Er eiendommen regulert, finner du som regel reguleringsplanen på kommunens nettside.</p>",
+          "heading": "Er eiendommen regulert?",
+          "text": "<p>Sjekk med kommunen om eiendommen din er regulert i enten kommuneplan, kommunedelplan eller reguleringsplan. Du kan som regel finne ut dette på kommunens nettsted.</p>",
           "options": [
             {
               "id": "regplan.yes",
               "type": "Answer",
-              "heading": "Ja",
+              "heading": "Ja, det finnes en reguleringsplan",
               "value": "yes"
             },
             {
               "id": "regplan.no",
               "type": "Answer",
-              "heading": "Nei",
+              "heading": "Nei, det finnes ikke en reguleringsplan",
               "value": "no"
             }
           ]
@@ -846,8 +845,8 @@
                       "id": "regplan.yes.error.msg",
                       "type": "Text",
                       "warning": true,
-                      "heading":
-                        "Du må søke om dispensasjon. Dispensasjonen må være innvilget før du kan bygge i uregulert område. Ta kontakt med kommunen for å høre om mulighetene for å få innvilget en slik dispensasjon."
+                      "text":
+                        "Du trenger som regel en dispensasjon for å bygge noe på en eiendom hvor det ikke finnes en reguleringsplan. Hør med kommunen om hva det er lov å gjøre på eiendommen."
                     }
                   ]
                 }
@@ -943,7 +942,7 @@
                       "id": "lnfBuilding.error.msg",
                       "type": "Text",
                       "warning": true,
-                      "heading":
+                      "text":
                         "Du trenger dispensasjon. Dispensasjonen må være innvilget før du kan bygge det du ønsker i et LNF-område. Ta kontakt med kommunen for å høre om mulighetene for å få dispensasjon."
                     }
                   ]
@@ -1068,7 +1067,7 @@
                       "id": "buildingFloors.msg",
                       "type": "Text",
                       "warning": true,
-                      "heading":
+                      "text":
                         "Du må bygge uten kjeller eller loftsetasje, eller sende byggesøknad til kommunen. Du kan ikke bygge før søknaden er godkjent."
                     }
                   ]
@@ -1129,7 +1128,7 @@
                       "id": "buildingsDistance.msg",
                       "type": "Text",
                       "warning": true,
-                      "heading":
+                      "text":
                         "Du må plassere det du bygger minst 1,0 meter fra andre bygninger på eiendommen din."
                     }
                   ]
@@ -1182,7 +1181,7 @@
                       "id": "neighborDistance.msg",
                       "type": "Text",
                       "warning": true,
-                      "heading":
+                      "text":
                         "Du må plassere det du bygger minst 1,0 fra nabogrensa eller sende byggesøknad til kommunen. Du kan ikke bygge før søknaden er godkjent."
                     }
                   ]
@@ -1235,7 +1234,7 @@
                       "id": "drainagePlacement.msg",
                       "type": "Text",
                       "optional": true,
-                      "heading":
+                      "text":
                         "Du kan ikke bygge over vann- og avløpsledninger. Du må plassere det du bygger et annet sted eller kontakte kommunen for hjelp til å finne alternativ plassering."
                     }
                   ]
@@ -1393,7 +1392,7 @@
                           "id": "roadDistanceWithoutRegplan.msg",
                           "type": "Text",
                           "warning": true,
-                          "heading":
+                          "text":
                             "Ønsker du å bygge nærmere offentlig vei i uregulert område enn avstandene som er nevnt, må du søke om dispensasjon."
                         }
                       ],
@@ -1510,7 +1509,7 @@
                       "property": "flood.group.error.msg",
                       "type": "Text",
                       "warning": true,
-                      "heading":
+                      "text":
                         "Det kan være begrensninger på hva du har lov til å bygge i et slikt område. Ta kontakt med kommunen for informasjon om hva du har lov å bygge på eiendommen."
                     }
                   ]
@@ -1621,7 +1620,7 @@
                           "id": "seaDistanceOk.msg",
                           "type": "Text",
                           "warning": true,
-                          "heading":
+                          "text":
                             "Du må søke om dispensasjon. Dispensasjonen må være innvilget før du kan bygge i 100-metersbeltet. Ta kontakt med kommunen for å høre om mulighetene for å få innvilget en slik dispensasjon."
                         }
                       ]
@@ -1972,7 +1971,7 @@
                       "id": "heights.msg",
                       "type": "Text",
                       "warning": true,
-                      "heading":
+                      "text":
                         "Du må ha lavere mønehøyde og gesimshøyde, eller sende byggesøknad til kommunen. Du kan ikke bygge før søknaden er godkjent."
                     }
                   ]
