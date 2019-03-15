@@ -72,10 +72,10 @@
                   "type": "Result",
                   "heading": "Du må søke",
                   "lead":
-                    "Hvis du skal bygge hytte, fritidsbolig eller et anneks som noen kan bo eller sove i, er du nødt til å søke. Det samme gjelder hvis du skal ha kjøkken, stue, bad, våtrom eller soverom i bygningen.",
+                    "Hvis du skal bygge hytte, fritidsbolig eller et anneks som noen kan bo eller sove i, er du nødt til å søke. Det samme gjelder hvis du skal ha kjøkken, stue, bad, våtrom eller soverom i bygningen. Du kan få tips og råd om søknadsprosessen i vår veiledning <a target='_blank' href=\"https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/\">“Åtte steg fra idé til ferdig søknad“</a>.",
                   "errorheading": "Du må søke",
                   "errorlead":
-                    "Hvis du skal bygge hytte, fritidsbolig eller et anneks som noen kan bo eller sove i, er du nødt til å søke. Det samme gjelder hvis du skal ha kjøkken, stue, bad, våtrom eller soverom i bygningen."
+                    "Hvis du skal bygge hytte, fritidsbolig eller et anneks som noen kan bo eller sove i, er du nødt til å søke. Det samme gjelder hvis du skal ha kjøkken, stue, bad, våtrom eller soverom i bygningen.Du kan få tips og råd om søknadsprosessen i vår veiledning <a target='_blank' href=\"https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/\">“Åtte steg fra idé til ferdig søknad“</a>."
                 }
               ]
             }
@@ -1001,7 +1001,7 @@
                   "type": "Result",
                   "heading": "Du må søke",
                   "lead":
-                    "Er bygningen større enn 70 kvadratmeter må du bruke ansvarlige foretak i hele søknads- og byggeprosessen. Du kan ikke bygge før søknaden er godkjent."
+                    "<p>Er bygningen større enn 70 kvadratmeter må du bruke ansvarlige foretak i hele søknads- og byggeprosessen. Du kan ikke bygge før søknaden er godkjent. </p><p>Du kan lese mer om søknadsprosessen i vår veiledning <a target=‘blank’ href=\"https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/\">“Åtte steg fra idé til ferdig søknad“</a>.</p>"
                 }
               ]
             },
@@ -1017,7 +1017,7 @@
                   "type": "Result",
                   "heading": "Du må søke",
                   "lead":
-                    "Er bygningen mellom 50-70 kvadratmeter må du sende byggesøknad til kommunen. Du kan ikke bygge før søknaden er godkjent."
+                    "<p>Er bygningen mellom 50-70 kvadratmeter må du sende byggesøknad til kommunen. Du kan ikke bygge før søknaden er godkjent. <br> Du kan få tips og råd til søknadsprosessen i <a target=‘blank’ href=\"https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/\">denne kortfilmen</a> og i vår veiledning <a target=‘blank’ href=\"https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/\">“Åtte steg fra idé til ferdig søknad“</a>. </p><p>Skjema for nabovarsling byggesøknad finner du på siden <a target=‘blank’ href=\"https://dibk.no/bygge-selv/soknadsskjema-for-mindre-byggeprosjekter-pa-boligeiendom/\">“Søknadsskjemaer for mindre byggeprosjekter på boligeiendom“</a>.</p>"
                 }
               ]
             }
@@ -1366,7 +1366,7 @@
                           "type": "Text",
                           "warning": true,
                           "text":
-                            "Du må søke om dispensasjon for byggegrense mot offentlig vei. Ta kontakt med kommunen for informasjon om kommunal vei, og med Statens vegvesen for <a href=\"http://www.vegvesen.no/Fag/Veg+og+gate/Prosjektering+og+bygging/bygge+langs+veg\">informasjon om andre offentlige veier</a>."
+                            "Du må søke om dispensasjon fra byggegrense mot offentlig vei. Gjelder det en fylkesvei eller en riksvei, kan du <a target='_blank' href=\"https://www.vegvesen.no/trafikkinformasjon/langs-veien/soknad-om-dispensasjon-fra-byggegrenser/send-inn-soknad-om-dispensasjon-fra-byggegrenser\">søke digitalt til Statens Vegvesen</a>. Gjelder det en kommunal vei, sender du inn søknad til kommunen din.  "
                         }
                       ]
                     }
@@ -1765,7 +1765,7 @@
             ]
           },
           "text":
-            "<p>Du må ha godkjent avkjørsel mot vei for å kunne bygge garasje. Trenger du ny eller endret avkjørsel mot kommunal vei, kontakter du kommunen. Trenger du ny eller endret avkjørsel mot riks- eller fylkesvei kontakter du <a href=\"http://www.vegvesen.no/Fag/Veg+og+gate/Prosjektering+og+bygging/bygge+langs+veg\">Statens vegvesen.</a> Du kan trenge ny eller endret avkjørsel hvis garasjen gir dårligere sikt enn det du har i dag.</p>",
+            "<p>Du kan ha behov for ny eller endret avkjørsel mot vei hvis hobbyverkstedet, atelieet eller kontoret ditt fører til dårligere siktforhold eller gir økt trafikk til eiendommen. Bygger du i nærheten av fylkesvei eller en riksvei, kan du <a target='_blank' href=\"https://www.vegvesen.no/trafikkinformasjon/langs-veien/soknad-om-avkjorsel/send-inn-soknad-om-avkjorsel\">søke digitalt til Statens Vegvesen.</a> Gjelder det en kommunal vei, sender du inn søknad til kommunen din.</p>",
           "image": {
             "url": "/images/41_garasje_600x275.png",
             "alt": "Illustrasjon"
@@ -1823,9 +1823,9 @@
                       "type": "Text",
                       "warning": true,
                       "heading":
-                        "Du må skaffe godkjent avkjørsel mot vei. Du kan ikke bygge før du har en godkjent avkjørsel.",
+                        "Du må skaffe godkjent avkjørsel mot vei.",
                       "text":
-                        "Du må ha godkjent avkjørsel mot vei for å kunne bygge garasje. Trenger du ny eller endret avkjørsel mot kommunal vei, kontakter du kommunen. Trenger du ny eller endret avkjørsel mot riks- eller fylkesvei kontakter du Statens vegvesen. Du kan trenge ny eller endret avkjørsel hvis garasjen gir dårligere sikt enn det du har i dag."
+                      "<p>Du kan ikke bygge før du har skaffet en godkjent avkjørsel mot vei. Bygger du i nærheten av fylkesvei eller en riksvei, kan du <a target='_blank' href=\"https://www.vegvesen.no/trafikkinformasjon/langs-veien/soknad-om-avkjorsel/send-inn-soknad-om-avkjorsel\">søke digitalt til Statens vegvesen.</a> Gjelder det en kommunal vei, sender du inn søknad til kommunen din.</p>"
                     }
                   ]
                 }
@@ -1858,7 +1858,7 @@
             ]
           },
           "text":
-            "<p>Du kan ha behov for avkjørsel mot vei hvis du har hobbyverksted, atelier eller kontor. Trenger du ny eller endret avkjørsel mot kommunal vei, kontakter du kommunen. Trenger du ny eller endret avkjørsel mot riks- eller fylkesvei kontakter du <a target='_blank' href='http://www.vegvesen.no/Fag/Veg+og+gate/Prosjektering+og+bygging/Bygge+langs+veg'>Statens vegvesen.</a> Ny eller endret avkjørsel kan være aktuelt hvis bygningen vil gi dårligere siktforhold, eller fører til økt trafikk til og fra eiendommen.</p>",
+            "<p>Du kan ha behov for avkjørsel mot vei hvis du har hobbyverksted, atelier eller kontor. Trenger du ny eller endret avkjørsel mot kommunal vei, kontakter du kommunen. Trenger du ny eller endret avkjørsel mot riks- eller fylkesvei kan du <a target='_blank' href=\"https://www.vegvesen.no/trafikkinformasjon/langs-veien/soknad-om-avkjorsel/send-inn-soknad-om-avkjorsel\">søke digitalt til Statens Vegvesen</a>.</p>",
           "image": {
             "url": "/images/41_garasje_600x275.png",
             "alt": "Illustrasjon"
@@ -1916,9 +1916,9 @@
                       "type": "Text",
                       "warning": true,
                       "heading":
-                        "Du må skaffe godkjent avkjørsel mot vei. Du kan ikke bygge før du har en godkjent avkjørsel.",
+                        "Du må skaffe godkjent avkjørsel mot vei.",
                       "text":
-                        "Du kan ha behov for avkjørsel mot vei hvis du har hobbyverksted, atelier eller kontor. Trenger du ny eller endret avkjørsel mot kommunal vei, kontakter du kommunen. Trenger du ny eller endret avkjørsel mot riks- eller fylkesvei kontakter du Statens vegvesen. Ny eller endret avkjørsel kan være aktuelt hvis bygningen vil gi dårligere siktforhold, eller fører til økt trafikk til og fra eiendommen."
+                        "Du kan ikke bygge før du har skaffet en godkjent avkjørsel mot vei. Bygger du i nærheten av en fylkesvei eller en riksvei,  kan du <a target='_blank' href=\"https://www.vegvesen.no/trafikkinformasjon/langs-veien/soknad-om-avkjorsel/send-inn-soknad-om-avkjorsel\">søke digitalt til Statens vegvesen.</a> Gjelder det en kommunal vei, sender du inn søknad til kommunen din."
                     }
                   ]
                 }
@@ -2153,7 +2153,7 @@
               "lead":
                 "<p>Svarene dine viser at du må søke. Sjekk oppsummeringen under for å finne ut om du trenger å sende inn byggesøknad, dispensasjon eller om du trenger andre tillatelser.</p><p>Er du i tvil om du har svart riktig? Ta en utskrift av svarene dine og kontakt kommunen. De kan også fortelle deg mer om søknadsprosessen.</p><p>Husk at det er ditt ansvar at du bygger lovlig. Dersom bygningen er ulovlig kan den i verste fall rives.</p>",
               "errorlead":
-                "<p>Vi kan derfor ikke fortelle deg hva du trenger av søknader og dispensasjoner. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
+                "<p>Vi kan derfor ikke fortelle deg hva du trenger av søknader og dispensasjoner. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p><p>Du kan få tips og råd om søknadsprosessen i <a target=‘blank’ href=\"https://www.youtube.com/watch?v=s6oTf12Q-rY&feature=youtu.be\">denne kortfilmen</a> og i vår veiledning <a target=‘blank’ href=\"https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/\">“Åtte steg fra idé til ferdig søknad“</a>.</p>"
             }
           ]
         }
@@ -2235,7 +2235,8 @@
               "heading": "Du må søke",
               "errorheading": "Du har ikke svart på alle spørsmålene",
               "lead":
-                "<p>Svarene dine viser at du må søke. Sjekk oppsummeringen under for å finne ut om du trenger å sende inn byggesøknad, dispensasjon eller om du trenger andre tillatelser.</p><p>Er du i tvil om du har svart riktig? Ta en utskrift av svarene dine og kontakt kommunen. De kan også fortelle deg mer om søknadsprosessen.</p><p>Husk at det er ditt ansvar at du bygger lovlig. Dersom bygningen er ulovlig kan den i verste fall rives.</p>",
+                "<p>Svarene dine viser at du må søke. Sjekk oppsummeringen under for å finne ut om du trenger å sende inn byggesøknad, dispensasjon eller om du trenger andre tillatelser. Er du i tvil om du har svart riktig? Ta en utskrift av svarene dine og kontakt kommunen. De kan også fortelle deg mer om søknadsprosessen.</p><p>Du kan få tips og råd til søknadsprosessen i kortfilmen <a target=‘blank’ href=\"https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/\">“Hva må til for å sende inn byggesøknad?“</a> og i vår veiledning <a target=‘blank’ href=\"https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/\">“Åtte steg fra idé til ferdig søknad“</a>. Skjema for nabovarsling og byggesøknad finner du på siden <a target=‘blank’ href=\"https://dibk.no/bygge-selv/soknadsskjema-for-mindre-byggeprosjekter-pa-boligeiendom/\">“Søknadsskjemaer for mindre byggeprosjekter på boligeiendom“</a>.<p>Husk at det er ditt ansvar at du bygger lovlig. Dersom bygningen er ulovlig kan den i verste fall rives.</p>"
+                ,
               "errorlead":
                 "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
             }
