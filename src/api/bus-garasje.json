@@ -18,7 +18,7 @@
             {
               "id": "usesType.garasje",
               "type": "Answer",
-              "heading": "Garasje",
+              "heading": "Garasje eller carport",
               "value": "garasje",
               "image": {
                 "url": "/images/garasje.png",
