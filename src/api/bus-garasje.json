@@ -26,7 +26,7 @@
               }
             },
             {
-              "id": "usesType.bolig",
+              "id": "usesType.bod",
               "type": "Answer",
               "heading": "Hagebod, vedbod, sykkelbod eller drivhus",
               "value": "bod",
@@ -1755,17 +1755,12 @@
               {
                 "field": "usesType",
                 "operator": "eq",
-                "value": "hobby"
-              },
-              {
-                "field": "usesType",
-                "operator": "eq",
-                "value": "garasje"
+                "value": "hytte"
               }
             ]
           },
           "text":
-            "<p>Du kan ha behov for ny eller endret avkjørsel mot vei hvis hobbyverkstedet, atelieet eller kontoret ditt fører til dårligere siktforhold eller gir økt trafikk til eiendommen. Bygger du i nærheten av fylkesvei eller en riksvei, kan du <a target='_blank' href=\"https://www.vegvesen.no/trafikkinformasjon/langs-veien/soknad-om-avkjorsel/send-inn-soknad-om-avkjorsel\">søke digitalt til Statens Vegvesen.</a> Gjelder det en kommunal vei, sender du inn søknad til kommunen din.</p>",
+            "<p>Du kan ha behov for ny eller endret avkjørsel mot vei hvis bygningen vil føre til dårligere siktforhold eller gi økt trafikk til eiendommen. Bygger du i nærheten av fylkesvei eller en riksvei, kan du <a target='_blank' href=\"https://www.vegvesen.no/trafikkinformasjon/langs-veien/soknad-om-avkjorsel/send-inn-soknad-om-avkjorsel\">søke digitalt til Statens Vegvesen.</a> Gjelder det en kommunal vei, sender du inn søknad til kommunen din.</p>",
           "image": {
             "url": "/images/41_garasje_600x275.png",
             "alt": "Illustrasjon"
