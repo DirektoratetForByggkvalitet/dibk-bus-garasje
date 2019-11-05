@@ -1027,9 +1027,9 @@
           "id": "buildingFloors",
           "property": "buildingFloors",
           "type": "Radio",
-          "heading": "Blir det en bygning med kjeller og/eller loft?",
+          "heading": "Blir det en bygning med kjeller, loft eller takterrasse?",
           "text":
-            "<p>Du har kun lov å bygge én etasje. Du må søke hvis du vil ha kjeller eller loftsetasje.</p><p>Du kan likevel ha et lite oppbevaringsareal eller kryploft over for eksempel en garasje uten at du trenger å søke.</p>",
+            "<p>Du har kun lov å bygge én etasje. Du må søke hvis du vil ha kjeller, loftsetasje eller takterrasse.</p><p>Du kan likevel ha et lite oppbevaringsareal eller kryploft uten at du trenger å søke.</p>",
           "image": {
             "url": "/images/12_garasje_600x275.png",
             "alt": "Kun en etasje"
@@ -2245,7 +2245,7 @@
       "heading": "Du kan bygge uten å søke!",
       "errorheading": "Du har ikke svart på alle spørsmålene",
       "lead":
-        "<p>Svarene dine viser at du kan bygge uten å søke. Sjekk oppsummeringen under for å finne ut om det er ting du trenger å være ekstra oppmerksom på før du starter byggingen.</p><p>Er du i tvil om du har svart riktig? Ta en utskrift av svarene dine og kontakt kommunen.</p><p>Du trenger ikke varsle naboene om byggingen skriftlig, men vi anbefaler likevel å snakke med dem om byggeplanene dine i forkant.</p><p>Selv om du slipper å søke, er du nødt til å informere kommunen etter at bygget er ferdig. Bruk skjemaet <a href=\"https://dibk.no/globalassets/blanketter_utfyllbare/alle-blanketter/5188-melding-om-bygning-eller-tilbygg-som-er-unntatt-soknadsplikt.pdf\">”Melding om bygning eller tilbygg som er unntatt søknadsplikt”</a>.</p><p>Husk at det er ditt ansvar at du bygger lovlig. Dersom bygningen er ulovlig kan den i verste fall rives.</p>",
+        "<p>Svarene dine viser at du kan bygge uten å søke. Sjekk oppsummeringen under for å finne ut om du har svart riktig. Dette gjelder særlig  spørsmålene om kommunale planer. Disse kan begrense hva du kan gjøre på eiendommen din uten å søke. </p><p>Er du i tvil om du har svart riktig? Ta en utskrift av svarene dine og kontakt kommunen.</p><p>Du trenger ikke varsle naboene om byggingen skriftlig, men vi anbefaler likevel å snakke med dem om byggeplanene dine i forkant.</p><p>Selv om du slipper å søke, er du nødt til å informere kommunen etter at bygget er ferdig. Bruk skjemaet <a href=\"https://dibk.no/globalassets/blanketter_utfyllbare/alle-blanketter/5188-melding-om-bygning-eller-tilbygg-som-er-unntatt-soknadsplikt.pdf\">”Melding om bygning eller tilbygg som er unntatt søknadsplikt”</a>.</p><p>Husk at det er ditt ansvar at du bygger lovlig. Dersom bygningen er ulovlig kan den i verste fall rives.</p>",
       "errorlead":
         "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
     }
