@@ -1027,9 +1027,9 @@
           "id": "buildingFloors",
           "property": "buildingFloors",
           "type": "Radio",
-          "heading": "Blir det en bygning med kjeller, loft eller takterrasse?",
+          "heading": "Skal bygningen ha kjeller, loft eller takterrasse?",
           "text":
-            "<p>Du har kun lov å bygge én etasje. Du må søke hvis du vil ha kjeller, loftsetasje eller takterrasse.</p><p>Du kan likevel ha et lite oppbevaringsareal eller kryploft uten at du trenger å søke.</p>",
+            "<p>Du har kun lov å bygge én etasje uten å søke. Du må søke hvis du vil ha kjeller, loft eller takterrasse. Du kan likevel ha et lite kryploft uten at du trenger å søke.</p><p>Bygningen kan ikke ligge under terreng.</p>",
           "image": {
             "url": "/images/12_garasje_600x275.png",
             "alt": "Kun en etasje"
@@ -1068,7 +1068,7 @@
                       "type": "Text",
                       "warning": true,
                       "text":
-                        "Du må bygge uten kjeller eller loftsetasje, eller sende byggesøknad til kommunen. Du kan ikke bygge før søknaden er godkjent."
+                        "Du må sende byggesøknad til kommunen om du vil ha kjeller, loft, takterrasse eller hvis bygningen skal ligge under terreng. Du kan ikke bygge før søknaden er godkjent."
                     }
                   ]
                 }
@@ -1143,7 +1143,7 @@
           "type": "Radio",
           "heading": "Skal det du bygger plasseres minst 1,0 meter fra nabogrensa?",
           "text":
-            "<p>Du må søke hvis det du bygger på noe som helst punkt er nærmere enn 1,0 meter fra nabogrensa. Pass på å regne med vegger og takutstikk.</p>",
+            "<p>Du må søke hvis det du bygger på noe som helst punkt er nærmere enn 1,0 meter fra nabogrensa.</p>",
           "image": {
             "url": "/images/08_garasje_600x275.png",
             "alt": "Illustrasjon av et hus"
@@ -2034,9 +2034,9 @@
           "id": "other",
           "property": "other",
           "type": "Radio",
-          "heading": "Er det andre forhold som hindrer deg i å bygge der du ønsker?",
+          "heading": "Begrenser kommunale planer eller andre forhold hva du kan bygge?",
           "text":
-            "<p>Det kan være andre forhold som hindrer deg i å bygge slik du ønsker. Dette vil du finne informasjon om i reguleringsplan, kommuneplanens arealdel, andre plandokumenter eller situasjonskart.</p><p>Eksempler på begrensninger du kan finne der er:</p><ul><li>strengere krav til hvor høy eller stor bygningen din kan være</li><li>strengere krav til hvor langt unna nabogrensa du kan bygge</li><li>krav til bygningens utseende, for eksempel fargevalg, takvinkel, plassering og materialvalg</li><li>verneverdige kulturminner som begrenser hvor eller hva du kan bygge</li><li>sjeldne dyre- eller plantearter som begrenser hvor eller hva du kan bygge</li><li>avstand til kraftlinjer</li></ul><p>Les derfor grundig gjennom reguleringsplan, kommuneplanens arealdel, situasjonskartet og andre dokumenter om eiendommen.</p>",
+            "<p>Kommunale planer og andre forhold kan begrense hva som er tillatt å gjøre på eiendommen din. Du må derfor sette deg godt inn i reguleringsplan, kommuneplanens arealdel, situasjonskartet og andre dokumenter om eiendommen.</p><p>Eksempler på begrensninger er:</p><ul><li>byggegrenser som bestemmer hvor på tomta du kan bygge</li><li>strengere krav til hvor høy eller stor bygningen din kan være</li><li>strengere krav til hvor langt unna nabogrensa du kan bygge</li><li>krav til bygningens utseende, for eksempel fargevalg, takvinkel, plassering og materialvalg</li><li>verneverdige kulturminner som begrenser hvor eller hva du kan bygge</li><li>sjeldne dyre- eller plantearter som begrenser hvor eller hva du kan bygge</li><li>avstand til kraftlinjer</li></ul><p>Kommunen kan hjelpe deg å finne frem til alle relevante dokumenter.</p>",
           "image": {
             "url": "/images/43_garasje_600x275.png",
             "alt": "Illustrasjon"
