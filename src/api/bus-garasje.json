@@ -21,7 +21,7 @@
               "heading": "Garasje eller carport",
               "value": "garasje",
               "image": {
-                "url": "/images/garasje.png",
+                "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-garasje/garasje.png",
                 "alt": "Garasje"
               }
             },
@@ -31,7 +31,7 @@
               "heading": "Hagestue, bod eller drivhus",
               "value": "bod",
               "image": {
-                "url": "/images/anneks_flerbruk.png",
+                "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-garasje/anneks_flerbruk.png",
                 "alt": "Bod"
               }
             },
@@ -41,17 +41,17 @@
               "heading": "Verksted, atelier eller kontor",
               "value": "hobby",
               "image": {
-                "url": "/images/anneks.png",
+                "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-garasje/anneks.png",
                 "alt": "Verksted, atelier eller kontor"
               }
             },
             {
               "id": "usesType.pergola",
               "type": "Answer",
-              "heading": "Pergola",
+              "heading": "Frittliggende pergola",
               "value": "pergola",
               "image": {
-                "url": "/images/lysthus.png",
+                "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-garasje/lysthus.png",
                 "alt": "Pergola "
              }
             },
@@ -61,7 +61,7 @@
               "heading": "Hytte, fritidsbolig eller anneks ",
               "value": "hytte",
               "image": {
-                "url": "/images/anneks.png",
+                "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-garasje/anneks.png",
                 "alt": "Hytte, fritidsbolig eller anneks "
              }
             }
