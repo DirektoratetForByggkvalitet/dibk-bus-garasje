@@ -120,7 +120,7 @@
           "text":
             "<p>Du må søke hvis du skal ha kjøkken, stue, bad, våtrom eller soverom i bygningen. Du kan ikke bo eller sove i bygningen.</p>",
           "image": {
-            "url": "/images/13A_garasje_600x275.png",
+            "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-garasje/13A_garasje_600x275.png",
             "alt": "Garasjebygning og boligbygning"
           },
           "options": [
@@ -792,7 +792,7 @@
           "text":
             "<p>For å slippe å søke må eiendommen din være bebygd. Eiendommen din er bebygd hvis det for eksempel er et bolighus eller hytte på eiendommen fra før.</p>",
           "image": {
-            "url": "/images/05_garasje_600x275.png",
+            "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-garasje/05_garasje_600x275.png",
             "alt": "Illustrasjon av et hus"
           },
           "options": [
@@ -894,7 +894,7 @@
           "text":
             "Det er begrensninger på hva du kan bygge i områder som er regulerte til landbruk, natur og friluftsformål samt reindrift. Dette kalles LNF-områder eller LNFR-områder. Du finner som regel informasjon om dette i kommuneplanens arealdel.</p>",
           "image": {
-            "url": "/images/17_garasje_600x275.png",
+            "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-garasje/17_garasje_600x275.png",
             "alt": "Fire sauer"
           },
           "options": [
@@ -920,7 +920,7 @@
           "text":
             "<p>I LNF-områder er det bare tillatt å sette opp bygninger som har direkte tilknytning til landbruk eller stedbunden næring (tradisjonell landbruksvirksomhet).</p>",
           "image": {
-            "url": "/images/18_garasje_600x275.png",
+            "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-garasje/18_garasje_600x275.png",
             "alt": "Garasje med traktor inni"
           },
           "summary": "Se eksempler",
@@ -1062,7 +1062,7 @@
           "text":
             "<p>Du har kun lov å bygge én etasje uten å søke. Du må søke hvis du vil ha kjeller, loft eller takterrasse. Du kan likevel ha et lite kryploft uten at du trenger å søke.</p><p>Bygningen kan ikke ligge under terreng.</p>",
           "image": {
-            "url": "/images/12_garasje_600x275.png",
+            "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-garasje/12_garasje_600x275.png",
             "alt": "Kun en etasje"
           },
           "options": [
@@ -1123,7 +1123,7 @@
           "text":
             "<p>Det du bygger må plasseres minst 1,0 meter fra andre bygninger på eiendommen din.</p>",
           "image": {
-            "url": "/images/07_garasje_600x275.png",
+            "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-garasje/07_garasje_600x275.png",
             "alt": "Illustrasjon av et hus"
           },
           "options": [
@@ -1176,7 +1176,7 @@
           "text":
             "<p>Du må søke hvis det du bygger på noe som helst punkt er nærmere enn 1,0 meter fra nabogrensa.</p>",
           "image": {
-            "url": "/images/08_garasje_600x275.png",
+            "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-garasje/08_garasje_600x275.png",
             "alt": "Illustrasjon av et hus"
           },
           "options": [
@@ -1229,7 +1229,7 @@
           "text":
             "<p>Du kan ikke plassere det du bygger over vann- og avløpsledninger. Kommunen må ha tilgang til disse ledningene for vedlikehold og reparasjon.</p>Du må derfor passe på: <ul><li>at du bruker et oppdatert kart hvor alle ledninger vises</li><li>å sjekke om det finnes lokale regler som fastsetter hvor langt unna ledninger det er lov å bygge</li></ul><p>Ta kontakt med kommunen om du er usikker på hvor ledningene er.</p>",
           "image": {
-            "url": "/images/16_garasje_600x275.png",
+            "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-garasje/16_garasje_600x275.png",
             "alt": "Illustrasjon"
           },
           "options": [
@@ -1294,7 +1294,7 @@
               "id": "roadDistanceImage",
               "type": "Image",
               "image": {
-                "url": "/images/40_garasje_600x275.png",
+                "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-garasje/40_garasje_600x275.png",
                 "alt": "Illustrasjon som viser avstand til veien"
               }
             },
@@ -1456,7 +1456,7 @@
           "text":
             "<p>Det kan være begresninger på hva du kan bygge i områder hvor det er fare forfor eksempel ras, flom, stormflo og skred. For eksempel kan et kvikkleireskred bli utløst av veldig små terrenginngrep. Usikker på om du bor i et slikt område? Sjekk reguleringsplan, kommuneplan og hør med kommunen.</p>",
           "image": {
-            "url": "/images/25_garasje_600x275.png",
+            "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-garasje/25_garasje_600x275.png",
             "alt": "Illustrasjon som viser avstand til veien"
           },
           "options": [
@@ -1562,7 +1562,7 @@
               "id": "seaDistanceImage",
               "type": "Image",
               "image": {
-                "url": "/images/19_garasje_600x275.png",
+                "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-garasje/19_garasje_600x275.png",
                 "alt": "Illustrasjon som viser avstand til sjøen"
               }
             },
@@ -1677,7 +1677,7 @@
               "text":
                 "<p>Det må være minst 30 meter til nærmeste jernbanespor. Dette gjelder både togspor, t-banespor og trikkespor. Avstanden måles fra nærmeste spors midtlinje.</p>",
               "image": {
-                "url": "/images/26_garasje_600x275.png",
+                "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-garasje/26_garasje_600x275.png",
                 "alt": "Illustrasjon"
               },
               "options": [
@@ -1703,7 +1703,7 @@
               "text":
                 "<p>For å bygge nærmere enn 30 meter fra nærmeste spors midtlinje, må du søke Bane NOR om tillatelse. Dette må du gjøre selv om det finnes en nærmere byggegrense mot jernbane i reguleringsplan.</p><p>Les mer om byggegrense mot jernbane hos <a href=\"http://www.banenor.no/Sikkerhet/Byggegrense/\">Bane NOR.</a></p></p>",
               "image": {
-                "url": "/images/27_garasje_600x275.png",
+                "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-garasje/27_garasje_600x275.png",
                 "alt": "Illustrasjon"
               },
               "options": [
@@ -1793,7 +1793,7 @@
           "text":
             "<p>Du kan ha behov for ny eller endret avkjørsel mot vei hvis bygningen vil føre til dårligere siktforhold eller gi økt trafikk til eiendommen. Bygger du i nærheten av fylkesvei eller en riksvei, kan du <a target='_blank' href=\"https://www.vegvesen.no/trafikkinformasjon/langs-veien/soknad-om-avkjorsel/send-inn-soknad-om-avkjorsel\">søke digitalt til Statens Vegvesen.</a> Gjelder det en kommunal vei, sender du inn søknad til kommunen din.</p>",
           "image": {
-            "url": "/images/41_garasje_600x275.png",
+            "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-garasje/41_garasje_600x275.png",
             "alt": "Illustrasjon"
           },
           "options": [
@@ -1881,7 +1881,7 @@
           "text":
             "<p>Du kan ha behov for avkjørsel mot vei hvis du har hobbyverksted, atelier eller kontor. Trenger du ny eller endret avkjørsel mot kommunal vei, kontakter du kommunen. Trenger du ny eller endret avkjørsel mot riks- eller fylkesvei kan du <a target='_blank' href=\"https://www.vegvesen.no/trafikkinformasjon/langs-veien/soknad-om-avkjorsel/send-inn-soknad-om-avkjorsel\">søke digitalt til Statens Vegvesen</a>.</p>",
           "image": {
-            "url": "/images/41_garasje_600x275.png",
+            "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-garasje/41_garasje_600x275.png",
             "alt": "Illustrasjon"
           },
           "options": [
@@ -1955,7 +1955,7 @@
           "text":
             "<p>Mønehøyde kan maksimalt være 4,0 meter og gesimshøyde maksimalt 3,0 meter. Høydene måles vanligvis i forhold til gjennomsnittsnivået av det ferdig planerte terrenget rundt bygningen.</p><b>Hva er gesimshøyde?</b><p>Gesimshøyde er høyde til skjæringspunktet mellom ytterklednings ytre flate og taktekkingens ytre flate, oppå taket. Gesimshøyde måles fra dette punktet og til terrengets utregnete gjennomsnittsnivå rundt bygget.</p><b>Hva er mønehøyde?</b> <p>Mønehøyde er vanligvis høyden mellom to skrå flater, som ofte vil være takets høyeste punkt. Mønehøyde måles fra dette punktet og til terrengets utregnete gjennomsnittsnivå rundt bygget.</p><b>Er du usikker på hvordan å måle høyden på bygningen?</b><p>Finn mer informasjon i kapittel 4 i <a  href=\"https://www.regjeringen.no/globalassets/upload/kmd/boby/grad_av_utnytting.pdf\">Grad av utnytting - beregnings- og måleregler (PDF)</a></p>",
           "image": {
-            "url": "/images/14A_garasje_600x275.png",
+            "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-garasje/14A_garasje_600x275.png",
             "alt": "Illustrasjon"
           },
           "options": [
@@ -2016,7 +2016,7 @@
           "text":
             "<p>Eiendommen din har en begrensning på hvor mye areal eller volum du kan ha bygninger på. Dette er som regel oppgitt i situasjonskart eller reguleringsplan som:</p> <ul><li>BYA: Bebygd areal. Se etter prosent BYA eller antall kvadratmeter BYA</li><li>BRA: Bruksareal. Se etter prosent BRA eller antall kvadratmeter BRA</li><li>TU: Tomteutnyttelse. Se etter prosent TU. Finnes kun på eldre planer</li></ul></p>For å finne ut hvor mye plass du har igjen å bygge på, må du regne ut hvor mye plass de eksisterende bygningene opptar.</p><p>Du kan ta vår veiviser <a href=\"http://hvorstortkandubygge.dibk.no/\">Hvor stort kan du bygge</a> for å få hjelp.",
           "image": {
-            "url": "/images/42_garasje_600x275.png",
+            "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-garasje/42_garasje_600x275.png",
             "alt": "Illustrasjon"
           },
           "options": [
@@ -2069,7 +2069,7 @@
           "text":
             "<p>Kommunale planer og andre forhold kan begrense hva som er tillatt å gjøre på eiendommen din. Du må derfor sette deg godt inn i reguleringsplan, kommuneplanens arealdel, situasjonskartet og andre dokumenter om eiendommen.</p><p>Eksempler på begrensninger er:</p><ul><li>byggegrenser som bestemmer hvor på tomta du kan bygge</li><li>strengere krav til hvor høy eller stor bygningen din kan være</li><li>strengere krav til hvor langt unna nabogrensa du kan bygge</li><li>krav til bygningens utseende, for eksempel fargevalg, takvinkel, plassering og materialvalg</li><li>verneverdige kulturminner som begrenser hvor eller hva du kan bygge</li><li>sjeldne dyre- eller plantearter som begrenser hvor eller hva du kan bygge</li><li>avstand til kraftlinjer</li></ul><p>Kommunen kan hjelpe deg å finne frem til alle relevante dokumenter.</p>",
           "image": {
-            "url": "/images/43_garasje_600x275.png",
+            "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-garasje/43_garasje_600x275.png",
             "alt": "Illustrasjon"
           },
           "options": [
