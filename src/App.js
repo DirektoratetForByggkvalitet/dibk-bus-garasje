@@ -20,7 +20,7 @@ export default class App extends Component {
   };
 
   static trackIntro() {
-    track(data.meta.name, 'intro', 'Bygg uten å søke!');
+    track(data.meta.name, 'intro', 'Bygg uten å søke - Garasje');
   }
 
   constructor(props) {
@@ -34,7 +34,7 @@ export default class App extends Component {
   closeIntro() {
     this.setState({ intro: false });
     window.scrollTo(0, 0);
-    trackEvent('close-intro');
+    trackEvent('Close intro');
   }
 
   showIntro() {
