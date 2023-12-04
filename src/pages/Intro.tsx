@@ -4,7 +4,16 @@ import { connect } from 'react-redux';
 import { Primitives } from 'losen';
 import { IntroMain } from '../primitives/IntroMain';
 
-function Intro({ close, data }) {
+interface IntroProps {
+  close: () => void;
+  data: object; // Replace 'object' with the actual type of 'data'
+}
+
+interface State {
+  '@WIZARD_STATE': any; // Replace 'any' with the actual type of '@WIZARD_STATE'
+}
+
+const Intro: React.FC<IntroProps> = ({ close, data }: IntroProps) => {
   const arrayWithData = Object.keys(data);
 
   // close / hide intro page if user has begun schema journey
@@ -12,7 +21,7 @@ function Intro({ close, data }) {
   // it's values is non-existent, in losen.
   if (
     arrayWithData.length !== 0 &&
-    !(arrayWithData.length === 1 && !arrayWithData[0] !== '$computed')
+    !(arrayWithData.length === 1 && arrayWithData[0] !== '$computed')
   ) {
     close();
   }
@@ -21,10 +30,15 @@ function Intro({ close, data }) {
     <Primitives.Wizard>
       <IntroMain>
         <Primitives.Heading.H1>Bygg uten å søke</Primitives.Heading.H1>
-        <Primitives.Paragraphs.Lead>Skal du bygge en garasje, bod eller annen bygning på eiendommen din? Finn ut om du må søke, eller om du kan tilpasse bygningen slik at du slipper å søke.</Primitives.Paragraphs.Lead>
+        <Primitives.Paragraphs.Lead>
+          Skal du bygge en garasje, bod eller annen bygning på eiendommen din?
+          Finn ut om du må søke, eller om du kan tilpasse bygningen slik at du
+          slipper å søke.
+        </Primitives.Paragraphs.Lead>
         <Primitives.Heading.H2>Før du begynner</Primitives.Heading.H2>
         <Primitives.Paragraphs.P>
-          Før du begynner er det lurt å finne fram til kommunale regler som gjelder for din eiendom. Dette er typisk:
+          Før du begynner er det lurt å finne fram til kommunale regler som
+          gjelder for din eiendom. Dette er typisk:
         </Primitives.Paragraphs.P>
         <ul>
           <li>Situasjonskart for din eiendom</li>
@@ -40,28 +54,39 @@ function Intro({ close, data }) {
           <li>hvor du har lov til å bygge på eiendommen din</li>
           <li>hvor mye du har lov til å bygge på eiendommen din</li>
         </ul>
-        <Primitives.Paragraphs.P>Dette kan hjelpe deg å svare riktig i veiviseren. </Primitives.Paragraphs.P>
-        <br />
-        <Primitives.Heading.H2>Start nå og fullfør senere</Primitives.Heading.H2>
         <Primitives.Paragraphs.P>
-          Det er du som er ansvarlig for at alle lover og regler blir fulgt når du bygger. Er det noen spørsmål du er usikker på underveis? Du kan ta en pause og fortsette senere. Nettleseren husker hvor du var.
+          Dette kan hjelpe deg å svare riktig i veiviseren.{' '}
         </Primitives.Paragraphs.P>
         <br />
-        <Primitives.Heading.H2>Har du funnet ut det du trenger?</Primitives.Heading.H2>
+        <Primitives.Heading.H2>
+          Start nå og fullfør senere
+        </Primitives.Heading.H2>
         <Primitives.Paragraphs.P>
-          Da er det bare å sette i gang med veiviseren! Du får hjelp til hvert spørsmål underveis.
+          Det er du som er ansvarlig for at alle lover og regler blir fulgt når
+          du bygger. Er det noen spørsmål du er usikker på underveis? Du kan ta
+          en pause og fortsette senere. Nettleseren husker hvor du var.
         </Primitives.Paragraphs.P>
-        <Primitives.Button.MainButton type="button" onClick={() => close()}>
+        <br />
+        <Primitives.Heading.H2>
+          Har du funnet ut det du trenger?
+        </Primitives.Heading.H2>
+        <Primitives.Paragraphs.P>
+          Da er det bare å sette i gang med veiviseren! Du får hjelp til hvert
+          spørsmål underveis.
+        </Primitives.Paragraphs.P>
+        <Primitives.Button.MainButton type='button' onClick={() => close()}>
           Start veiviseren
         </Primitives.Button.MainButton>
       </IntroMain>
     </Primitives.Wizard>
   );
-}
+};
 
 Intro.propTypes = {
   close: PropTypes.func.isRequired,
   data: PropTypes.object.isRequired,
 };
 
-export default connect(state => ({ data: state['@WIZARD_STATE'] }))(Intro);
+export default connect((state: State) => ({ data: state['@WIZARD_STATE'] }))(
+  Intro,
+);
