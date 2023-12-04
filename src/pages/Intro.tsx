@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Primitives } from 'losen';
@@ -16,15 +16,17 @@ interface State {
 const Intro: React.FC<IntroProps> = ({ close, data }: IntroProps) => {
   const arrayWithData = Object.keys(data);
 
-  // close / hide intro page if user has begun schema journey
-  // TODO: a better approach might be to exclude the $computed prop if
-  // it's values is non-existent, in losen.
-  if (
-    arrayWithData.length !== 0 &&
-    !(arrayWithData.length === 1 && arrayWithData[0] !== '$computed')
-  ) {
-    close();
-  }
+  useEffect(() => {
+    // close / hide intro page if user has begun schema journey
+    // TODO: a better approach might be to exclude the $computed prop if
+    // it's values is non-existent, in losen.
+    if (
+      arrayWithData.length !== 0 &&
+      !(arrayWithData.length === 1 && arrayWithData[0] !== '$computed')
+    ) {
+      close();
+    }
+  }, [arrayWithData, close]);
 
   return (
     <Primitives.Wizard>

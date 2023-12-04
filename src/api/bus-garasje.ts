@@ -71,6 +71,7 @@ const data: WizardDefinition = {
         },
         {
           type: 'Branch',
+          id: 'usesType.garasje',
           branches: [
             {
               test: {
@@ -82,17 +83,27 @@ const data: WizardDefinition = {
                 {
                   id: 'usesType.hytte.result',
                   type: 'Result',
-                  heading: 'Du må søke',
-                  lead: 'Hvis du skal bygge hytte, fritidsbolig eller et anneks som noen kan bo eller sove i, er du nødt til å søke. Det samme gjelder hvis du skal ha kjøkken, stue, bad, våtrom eller soverom i bygningen. Du kan få tips og råd om søknadsprosessen i vår veiledning <a target=\'_blank\' href="https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/">“Åtte steg fra idé til ferdig søknad“</a>.',
-                  errorheading: 'Du må søke',
-                  errorlead:
-                    'Hvis du skal bygge hytte, fritidsbolig eller et anneks som noen kan bo eller sove i, er du nødt til å søke. Det samme gjelder hvis du skal ha kjøkken, stue, bad, våtrom eller soverom i bygningen.Du kan få tips og råd om søknadsprosessen i vår veiledning <a target=\'_blank\' href="https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/">“Åtte steg fra idé til ferdig søknad“</a>.',
+                  heading: {
+                    complete: 'Du må søke',
+                    incomplete: 'Du må søke',
+                    completeWithError: '',
+                    incompleteWithError: '',
+                  },
+                  lead: {
+                    complete:
+                      'Hvis du skal bygge hytte, fritidsbolig eller et anneks som noen kan bo eller sove i, er du nødt til å søke. Det samme gjelder hvis du skal ha kjøkken, stue, bad, våtrom eller soverom i bygningen. Du kan få tips og råd om søknadsprosessen i vår veiledning <a target=\'_blank\' href="https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/">“Åtte steg fra idé til ferdig søknad“</a>.',
+                    incomplete:
+                      'Hvis du skal bygge hytte, fritidsbolig eller et anneks som noen kan bo eller sove i, er du nødt til å søke. Det samme gjelder hvis du skal ha kjøkken, stue, bad, våtrom eller soverom i bygningen.Du kan få tips og råd om søknadsprosessen i vår veiledning <a target=\'_blank\' href="https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/">“Åtte steg fra idé til ferdig søknad“</a>.',
+                    completeWithError: '',
+                    incompleteWithError: '',
+                  },
                 },
               ],
             },
           ],
         },
         {
+          id: 'usesType.garasje.result',
           type: 'Branch',
           branches: [
             {
@@ -126,12 +137,14 @@ const data: WizardDefinition = {
             {
               id: 'sleep.yes',
               type: 'Answer',
+              heading: 'Ja, noen skal bo eller sove der',
               text: 'Ja, noen skal bo eller sove der',
               value: 'yes',
             },
             {
               id: 'sleep.no',
               type: 'Answer',
+              heading: 'Nei, ingen skal bo eller sove der',
               text: 'Nei, ingen skal bo eller sove der',
               value: 'no',
             },
@@ -139,6 +152,7 @@ const data: WizardDefinition = {
         },
         {
           type: 'Branch',
+          id: 'sleep.no',
           branches: [
             {
               test: {
@@ -165,6 +179,7 @@ const data: WizardDefinition = {
         },
         {
           type: 'Branch',
+          id: 'usesType.hobby',
           branches: [
             {
               test: {
@@ -183,12 +198,14 @@ const data: WizardDefinition = {
                       id: 'garasjeMoreRoom.yes',
                       type: 'Answer',
                       text: 'Ja',
+                      heading: 'Ja',
                       value: 'yes',
                     },
                     {
                       id: 'garasjeMoreRoom.no',
                       type: 'Answer',
                       text: 'Nei',
+                      heading: 'Nei',
                       value: 'no',
                     },
                   ],
@@ -217,6 +234,7 @@ const data: WizardDefinition = {
                     {
                       id: 'extraRoomHobbyGarasje.yes',
                       type: 'Answer',
+                      heading: 'Ja',
                       text: 'Ja',
                       value: 'yes',
                     },
@@ -224,13 +242,13 @@ const data: WizardDefinition = {
                       id: 'extraRoomHobbyGarasje.no',
                       type: 'Answer',
                       text: 'Nei',
+                      heading: 'Nei',
                       value: 'no',
                     },
                   ],
                 },
                 {
                   id: 'opplysningSkillevegg',
-                  property: 'opplysningSkillevegg',
                   type: 'Group',
                   hidden: {
                     type: 'or',
@@ -279,9 +297,7 @@ const data: WizardDefinition = {
                   children: [
                     {
                       id: 'opplysningSkilleveggText',
-                      property: 'opplysningSkilleveggText',
                       type: 'Information',
-                      optional: 'true',
                       text: 'Opplysning: Du må lage en gasstett skillevegg mellom garasjen og dette rommet, for å beskytte de som skal bruke rommet mot gass og eksos',
                     },
                   ],
@@ -314,12 +330,16 @@ const data: WizardDefinition = {
                   },
                   options: [
                     {
+                      heading:
+                        'Ja, det er mindre enn 8,0 meter til bygning på naboeiendommen',
                       id: 'distanceNabo.yes',
                       type: 'Answer',
                       text: 'Ja, det er mindre enn 8,0 meter til bygning på naboeiendommen',
                       value: 'yes',
                     },
                     {
+                      heading:
+                        'Nei, det er minst 8,0 meter til bygning på naboeiendommen',
                       id: 'distanceNabo.no',
                       type: 'Answer',
                       text: 'Nei, det er minst 8,0 meter til bygning på naboeiendommen',
@@ -329,7 +349,6 @@ const data: WizardDefinition = {
                 },
                 {
                   id: 'distanceNaboNotice',
-                  property: 'distanceNaboNotice',
                   type: 'Group',
                   hidden: {
                     type: 'or',
@@ -398,9 +417,7 @@ const data: WizardDefinition = {
                   children: [
                     {
                       id: 'distanceNaboNoticeText',
-                      property: 'distanceNaboNoticeText',
                       type: 'Information',
-                      optional: 'true',
                       text: 'Det gjelder strengere brannkrav om det blir under 8,0 meter til for eksempel et bolighus eller et verksted på naboeiendom. I så fall må du brannsikre de delene av de du bygger som blir nærmere enn 8,0 meter fra naboen bygning. Brannmotstanden må være på minst El 30 (motstandsdyktig mot brann i 30 minutter).',
                     },
                   ],
@@ -411,6 +428,7 @@ const data: WizardDefinition = {
         },
         {
           type: 'Branch',
+          id: 'usesType.bod',
           branches: [
             {
               test: {
@@ -426,12 +444,14 @@ const data: WizardDefinition = {
                   heading: 'Skal bygningen ha flere rom?',
                   options: [
                     {
+                      heading: 'Ja',
                       id: 'garasjeMoreRoom.yes',
                       type: 'Answer',
                       text: 'Ja',
                       value: 'yes',
                     },
                     {
+                      heading: 'Nei',
                       id: 'garasjeMoreRoom.no',
                       type: 'Answer',
                       text: 'Nei',
@@ -461,12 +481,14 @@ const data: WizardDefinition = {
                   },
                   options: [
                     {
+                      heading: 'Ja',
                       id: 'extraRoomHobbyGarasje.yes',
                       type: 'Answer',
                       text: 'Ja',
                       value: 'yes',
                     },
                     {
+                      heading: 'Nei',
                       id: 'extraRoomHobbyGarasje.no',
                       type: 'Answer',
                       text: 'Nei',
@@ -502,12 +524,16 @@ const data: WizardDefinition = {
                   },
                   options: [
                     {
+                      heading:
+                        'Ja, det er mindre enn 8,0 meter til bygning på naboeiendommen',
                       id: 'distanceNabo.yes',
                       type: 'Answer',
                       text: 'Ja, det er mindre enn 8,0 meter til slike bygninger på naboeiendommen',
                       value: 'yes',
                     },
                     {
+                      heading:
+                        'Nei, det er minst 8,0 meter til bygning på naboeiendommen',
                       id: 'distanceNabo.no',
                       type: 'Answer',
                       text: 'Nei, det er minst 8,0 meter til slike bygninger på naboeiendommen',
@@ -517,7 +543,6 @@ const data: WizardDefinition = {
                 },
                 {
                   id: 'distanceNaboNotice',
-                  property: 'distanceNaboNotice',
                   type: 'Group',
                   hidden: {
                     type: 'or',
@@ -586,9 +611,7 @@ const data: WizardDefinition = {
                   children: [
                     {
                       id: 'distanceNaboNoticeText',
-                      property: 'distanceNaboNoticeText',
                       type: 'Information',
-                      optional: 'true',
                       text: 'Det kan gjelde strengere brannkrav for slike bygninger. Plasserer du bygningen din minst 8,0 meter fra bygning på naboeiendom er brannsikring ivaretatt. Plasseres den nærmere må du brannsikre de delene av bygningen som er nærmere naboen enn 8,0 meter. Brannmotstanden må være på minst El 30 (motstandsdyktig mot brann i 30 minutter)',
                     },
                   ],
@@ -634,12 +657,15 @@ const data: WizardDefinition = {
           },
           options: [
             {
+              heading:
+                'Ja, det er mindre enn 2,0 meter til bygning på naboeiendom',
               id: 'distanceNaboSmall.yes',
               type: 'Answer',
               text: 'Ja, det er mindre enn 2,0 meter til bygning på naboeiendom',
               value: 'yes',
             },
             {
+              heading: 'Nei, det er minst 2,0 meter til bygning på naboeiendom',
               id: 'distanceNaboSmall.no',
               type: 'Answer',
               text: 'Nei, det er minst 2,0 meter til bygning på naboeiendom',
@@ -649,7 +675,6 @@ const data: WizardDefinition = {
         },
         {
           id: 'distanceNaboSmallNotice',
-          property: 'distanceNaboSmallNotice',
           type: 'Group',
           hidden: {
             type: 'or',
@@ -688,9 +713,7 @@ const data: WizardDefinition = {
           children: [
             {
               id: 'distanceNaboSmallNoticeText',
-              property: 'distanceNaboSmallNoticeText',
               type: 'Information',
-              optional: 'true',
               text: 'Du må plassere bygningen minst 2,0 meter fra andre bygninger på naboeiendommen, eller brannsikre de delene av bygningen som er nærmere naboen enn 2,0 meter. Brannmotstanden må være minst EI 30 (motstandsdyktig mot brann i 30 minutter).',
             },
           ],
@@ -704,12 +727,15 @@ const data: WizardDefinition = {
           text: '<p>Da kan det være du må brannsikre de delene som er nærmere naboen enn 8,0 meter. Dette gjelder hvis f.eks. nabobygningen brukes som for eksempel hus, hytte, verksted, atelier eller kontor. Be om hjelp fra fagperson om du er usikker på om du trenger brannsikring.</p>',
           options: [
             {
+              heading:
+                'Ja, det er mindre enn 8,0 meter til bygning på naboeiendom',
               id: 'usesNabo.yes',
               type: 'Answer',
               text: 'Ja, det er mindre enn 8,0 meter til bygning på naboeiendom',
               value: 'yes',
             },
             {
+              heading: 'Nei, det er minst 8,0 meter til bygning på naboeiendom',
               id: 'usesNabo.no',
               type: 'Answer',
               text: 'Nei, det er minst 8,0 meter til bygning på naboeiendom',
@@ -733,6 +759,7 @@ const data: WizardDefinition = {
         },
         {
           type: 'Branch',
+          id: 'usesNabo.no',
           branches: [
             {
               test: {
@@ -757,9 +784,7 @@ const data: WizardDefinition = {
                   children: [
                     {
                       id: 'usesNabo.msg',
-                      property: 'usesNabo.msg',
                       type: 'Information',
-                      optional: 'true',
                       text: 'Det kan gjelde strengere brannkrav for slike bygninger. Plasserer du bygningen din minst 8,0 meter fra bygning på naboeiendom er brannsikring ivaretatt. Plasseres den nærmere må du brannsikre de delene av bygningen som er nærmere naboen enn 8,0 meter. Brannmotstanden må være på minst El 30 (motstandsdyktig mot brann i 30 minutter)',
                     },
                   ],
@@ -802,6 +827,7 @@ const data: WizardDefinition = {
         },
         {
           type: 'Branch',
+          id: 'bebygd.no',
           branches: [
             {
               test: {
@@ -849,6 +875,7 @@ const data: WizardDefinition = {
         },
         {
           type: 'Branch',
+          id: 'regplan.no',
           branches: [
             {
               test: {
@@ -928,12 +955,14 @@ const data: WizardDefinition = {
           },
           options: [
             {
+              heading: 'Ja, jeg skal sette opp landbruksbygning',
               id: 'lnfBuilding.yes',
               type: 'Answer',
               text: 'Ja, jeg skal sette opp landbruksbygning',
               value: 'yes',
             },
             {
+              heading: 'Nei, jeg skal ikke sette opp landbruksbygning',
               id: 'lnfBuilding.no',
               type: 'Answer',
               text: 'Nei, jeg skal ikke sette opp en landbruksbygning',
@@ -943,6 +972,7 @@ const data: WizardDefinition = {
         },
         {
           type: 'Branch',
+          id: 'lnfBuilding.no',
           branches: [
             {
               test: {
@@ -982,18 +1012,21 @@ const data: WizardDefinition = {
           text: 'Du må søke hvis det du bygger får et samlet bruksareal (BRA) eller bebygd areal (BYA) som er større enn 50 kvadratmeter.',
           options: [
             {
+              heading: 'Større enn 70 m<sup>2</sup>',
               id: 'buildingSize.yesand',
               type: 'Answer',
               text: 'Større enn 70 m<sup>2</sup>',
               value: 'yesand',
             },
             {
+              heading: 'Mellom 50-70 m<sup>2</sup>',
               id: 'buildingSize.yesbut',
               type: 'Answer',
               text: 'Mellom 50-70 m<sup>2</sup>',
               value: 'yesbut',
             },
             {
+              heading: 'Under 50 m<sup>2</sup>',
               id: 'buildingSize.no',
               type: 'Answer',
               text: 'Under 50 m<sup>2</sup>',
@@ -1003,6 +1036,7 @@ const data: WizardDefinition = {
         },
         {
           type: 'Branch',
+          id: 'buildingSize.no',
           branches: [
             {
               test: {
@@ -1063,6 +1097,7 @@ const data: WizardDefinition = {
         },
         {
           type: 'Branch',
+          id: 'buildingFloors.yes',
           branches: [
             {
               test: {
@@ -1123,6 +1158,7 @@ const data: WizardDefinition = {
         },
         {
           type: 'Branch',
+          id: 'buildingsDistance.no',
           branches: [
             {
               test: {
@@ -1177,6 +1213,7 @@ const data: WizardDefinition = {
         },
         {
           type: 'Branch',
+          id: 'neighborDistance.no',
           branches: [
             {
               test: {
@@ -1228,6 +1265,7 @@ const data: WizardDefinition = {
         },
         {
           type: 'Branch',
+          id: 'drainagePlacement.yes',
           branches: [
             {
               test: {
@@ -1243,7 +1281,6 @@ const data: WizardDefinition = {
                     {
                       id: 'drainagePlacement.msg',
                       type: 'Text',
-                      optional: true,
                       text: 'Du kan ikke bygge over vann- og avløpsledninger. Du må plassere det du bygger et annet sted eller kontakte kommunen for hjelp til å finne alternativ plassering.',
                     },
                   ],
@@ -1261,9 +1298,7 @@ const data: WizardDefinition = {
       children: [
         {
           id: 'road',
-          property: 'road',
           type: 'Group',
-          simple: true,
           heading: 'Nærhet til offentlig vei',
           text: '<p>Du bygger i nærheten av offentlig vei hvis det er mindre enn:<ul><li>15 meter til gang- og sykkelvei</li><li>15 meter til kommunal vei</li><li>50 meter til fylkesvei</li><li>100 meter til riksvei (50 meter hvis området er uregulert)</li></ul>Avstanden måles fra midtlinjen i kjørebanen.</p>',
           children: [
@@ -1282,12 +1317,14 @@ const data: WizardDefinition = {
               heading: 'Skal du bygge i nærheten av offentlig vei?',
               options: [
                 {
+                  heading: 'Ja',
                   id: 'roadDistance.yes',
                   type: 'Answer',
                   text: 'Ja',
                   value: 'yes',
                 },
                 {
+                  heading: 'Nei',
                   id: 'roadDistance.no',
                   type: 'Answer',
                   text: 'Nei',
@@ -1297,6 +1334,7 @@ const data: WizardDefinition = {
             },
             {
               type: 'Branch',
+              id: 'roadDistance.no',
               branches: [
                 {
                   test: {
@@ -1314,12 +1352,14 @@ const data: WizardDefinition = {
                       text: 'Se etter byggegrense mot vei i reguleringsplan eller i kommuneplanens arealdel. Hvis plasseringen til bygningen ikke er i strid med denne byggegrensa, kan du plassere bygningen der du ønsker.</p><p>Er det ikke oppgitt byggegrense mot vei i planene? Sjekk hvilket årstall reguleringsplanen din er vedtatt, og finn byggegrensen i tabellen under. Vil du bygge nærmere enn dette, må du søke om dispensasjon.</p><p>Du kan lese mer om byggegrense mot offentlig vei i <a href="https://lovdata.no/dokument/NL/lov/1963-06-21-23#KAPITTEL_5">kapittel 5 i veglova</a>.</p><table> <thead> <tr> <th>Tidsrom</th> <th>Avstand til kommunal vei</th> <th>Avstand til fylkesvei</th> <th>Avstand til riksvei</th> <th>Avstanden måles fra</th> </tr> </thead> <tbody> <tr> <td>1912 - 1931</td> <td>3,5 meter</td> <td>3,5 meter</td> <td>3,5 meter</td> <td>Veikant</td> </tr> <tr> <td>1931 - 1938</td> <td>5,0 meter</td> <td>5,0 meter</td> <td>5,0 meter</td> <td>Veikant</td> </tr> <tr> <td>1938 - 1964</td> <td>7,5 meter</td> <td>7,5 meter</td> <td>7,5 meter</td> <td>Veikant</td> </tr> <tr> <td>1964 - 31. juni 1996</td> <td>12,5 meter</td> <td>12,5 meter</td> <td>30,0 meter</td> <td>Veiens midtlinje</td> </tr> <tr> <td>1. juli 1996 - 31. desember 2009</td> <td>15,0 meter</td> <td>15,0 meter</td> <td>50,0 meter</td> <td>Veiens midtlinje</td> </tr> <tr> <td>1. januar 2010 - nå</td> <td>15,0 meter</td> <td>50,0 meter</td> <td>50,0 meter</td> <td>Veiens midtlinje</td> </tr> </tbody></table>',
                       options: [
                         {
+                          heading: 'Ja, jeg bygger langt nok unna vei',
                           id: 'roadDistanceWithRegplan.yes',
                           type: 'Answer',
                           text: 'Ja, jeg bygger langt nok unna vei',
                           value: 'yes',
                         },
                         {
+                          heading: 'Nei, jeg bygger ikke langt nok unna vei',
                           id: 'roadDistanceWithRegplan.no',
                           type: 'Answer',
                           text: 'Nei, jeg bygger ikke langt nok unna vei',
@@ -1347,6 +1387,7 @@ const data: WizardDefinition = {
             },
             {
               type: 'Branch',
+              id: 'roadDistanceWithRegplan.no',
               branches: [
                 {
                   test: {
@@ -1383,6 +1424,7 @@ const data: WizardDefinition = {
             },
             {
               type: 'Branch',
+              id: 'roadDistanceWithRegplan.yes',
               branches: [
                 {
                   test: {
@@ -1435,12 +1477,14 @@ const data: WizardDefinition = {
           },
           options: [
             {
+              heading: 'Ja',
               id: 'flood.yes',
               type: 'Answer',
               text: 'Ja',
               value: 'yes',
             },
             {
+              heading: 'Nei',
               id: 'flood.no',
               type: 'Answer',
               text: 'Nei',
@@ -1470,12 +1514,15 @@ const data: WizardDefinition = {
           },
           options: [
             {
+              heading:
+                'Ja, jeg har avklart med kommunen at jeg likevel kan bygge der jeg ønsker',
               id: 'floodarea.yes',
               type: 'Answer',
               text: 'Ja, jeg har avklart med kommunen at jeg likevel kan bygge der jeg ønsker',
               value: 'yes',
             },
             {
+              heading: 'Nei, det er fare for flom- eller skred i området',
               id: 'floodarea.no',
               type: 'Answer',
               text: 'Nei, det er fare for flom- eller skred i området',
@@ -1485,6 +1532,7 @@ const data: WizardDefinition = {
         },
         {
           type: 'Branch',
+          id: 'floodarea.no',
           branches: [
             {
               test: {
@@ -1505,12 +1553,10 @@ const data: WizardDefinition = {
               children: [
                 {
                   id: 'flood.group.error',
-                  property: 'flood.group.error',
                   type: 'Error',
                   children: [
                     {
                       id: 'flood.group.error.msg',
-                      property: 'flood.group.error.msg',
                       type: 'Text',
                       warning: true,
                       text: 'Det kan være begrensninger på hva du har lov til å bygge i et slikt område. Ta kontakt med kommunen for informasjon om hva du har lov å bygge på eiendommen.',
@@ -1523,9 +1569,7 @@ const data: WizardDefinition = {
         },
         {
           id: 'sea',
-          property: 'sea',
           type: 'Group',
-          simple: true,
           heading: 'Nærhet til sjøen',
           text: '<p>Det er i utgangspunktet forbudt å bygge nærmere enn 100 meter fra sjøen. Dette området kalles 100-metersbeltet. Avstanden måles fra alminnelig høyvannsstand.</p><p>Det kan også være begrensninger på hva du kan bygge nærmere enn 100 meter fra elver og innsjøer (vassdrag).</p><p>Svaret finner du i reguleringsplan eller i kommuneplanens arealdel.</p>',
           children: [
@@ -1544,12 +1588,14 @@ const data: WizardDefinition = {
               heading: 'Skal du bygge nærmere enn 100 meter fra sjøen?',
               options: [
                 {
+                  heading: 'Ja, jeg skal bygge nærmere sjøen',
                   id: 'seaDistance.yes',
                   type: 'Answer',
                   text: 'Ja, jeg skal bygge nærmere sjøen',
                   value: 'yes',
                 },
                 {
+                  heading: 'Nei, jeg skal bygge minst 100 meter fra sjøen',
                   id: 'seaDistance.no',
                   type: 'Answer',
                   text: 'Nei, jeg skal bygge minst 100 meter fra sjøen',
@@ -1565,12 +1611,16 @@ const data: WizardDefinition = {
               text: 'Kommunen kan ha fastsatt en annen byggegrense i 100-metersbeltet. Denne finner du i reguleringsplanen eller i kommuneplanens arealdel. Hvis plasseringen til bygningen ikke er i strid med denne byggegrensa, kan du bygge. Ta kontakt med kommunen om du er usikker på hva og hvor du kan bygge.',
               options: [
                 {
+                  heading:
+                    'Ja, det finnes en annen byggegrense for 100-metersbeltet som jeg holder meg innenfor',
                   id: 'seaDistanceOk.yes',
                   type: 'Answer',
                   text: 'Ja, det finnes en annen byggegrense for 100-metersbeltet som jeg holder meg innenfor',
                   value: 'yes',
                 },
                 {
+                  heading:
+                    'Nei, jeg kan ikke plassere bygningen der jeg ønsker',
                   id: 'seaDistanceOk.no',
                   type: 'Answer',
                   text: 'Nei, jeg kan ikke plassere bygningen der jeg ønsker',
@@ -1594,6 +1644,7 @@ const data: WizardDefinition = {
             },
             {
               type: 'Branch',
+              id: 'seaDistanceOk.no',
               branches: [
                 {
                   test: {
@@ -1632,10 +1683,8 @@ const data: WizardDefinition = {
         },
         {
           id: 'railroad',
-          property: 'railroad',
           type: 'Group',
           heading: 'Nærhet til jernbanespor',
-          simple: true,
           children: [
             {
               id: 'railroadDistance',
@@ -1650,12 +1699,16 @@ const data: WizardDefinition = {
               },
               options: [
                 {
+                  heading:
+                    'Ja, jeg skal bygge nærmere enn 30 meter til et jernbanespor',
                   id: 'railroadDistance.no',
                   type: 'Answer',
                   text: 'Ja, jeg skal bygge nærmere enn 30 meter til et jernbanespor',
                   value: 'no',
                 },
                 {
+                  heading:
+                    'Nei, jeg skal ikke bygge nærmere enn 30 meter til et jernbanespor',
                   id: 'railroadDistance.yes',
                   type: 'Answer',
                   text: 'Nei, jeg skal ikke bygge nærmere enn 30 meter til et jernbanespor',
@@ -1676,12 +1729,15 @@ const data: WizardDefinition = {
               },
               options: [
                 {
+                  heading:
+                    'Ja, jeg har fått tillatelse til å bygge nærmere enn 30 meter',
                   id: 'railroadDistanceOk.yes',
                   type: 'Answer',
                   text: 'Ja, jeg har fått tillatelse til å bygge nærmere enn 30 meter',
                   value: 'yes',
                 },
                 {
+                  heading: 'Nei, jeg må søke om tillatelse for å bygge nærmere',
                   id: 'railroadDistanceOk.no',
                   type: 'Answer',
                   text: 'Nei, jeg må søke om tillatelse for å bygge nærmere',
@@ -1705,7 +1761,6 @@ const data: WizardDefinition = {
             },
             {
               id: 'railroadDistanceOk.error',
-              property: 'railroadDistanceOk.error',
               type: 'Group',
               hidden: {
                 type: 'or',
@@ -1728,10 +1783,9 @@ const data: WizardDefinition = {
               },
               children: [
                 {
+                  heading: 'Du må søke om tillatelse for å bygge nærmere',
                   id: 'railroadDistanceOk.msg',
-                  property: 'railroadDistanceOk.msg',
                   type: 'Information',
-                  optional: 'true',
                   text: 'Du må kontakte <a href="http://www.banenor.no/Om-oss/Kontakt-oss/">Bane NOR</a> og søke om tillatelse til å bygge nærmere enn 30 meter fra nærmeste spors midtlinje.',
                 },
               ],
@@ -1764,12 +1818,15 @@ const data: WizardDefinition = {
           },
           options: [
             {
+              heading: 'Ja, jeg trenger ny eller endret avkjørsel mot vei',
               id: 'exitRoad.yes',
               type: 'Answer',
               text: 'Ja, jeg trenger ny eller endret avkjørsel mot vei',
               value: 'yes',
             },
             {
+              heading:
+                'Nei, jeg trenger ikke ny eller endret avkjørsel mot vei',
               id: 'exitRoad.no',
               type: 'Answer',
               text: 'Nei, jeg trenger ikke ny eller endret avkjørsel mot vei',
@@ -1779,6 +1836,7 @@ const data: WizardDefinition = {
         },
         {
           type: 'Branch',
+          id: 'exitRoad.yes',
           branches: [
             {
               test: {
@@ -1849,12 +1907,15 @@ const data: WizardDefinition = {
           },
           options: [
             {
+              heading: 'Ja, jeg trenger ny eller endret avkjørsel mot vei',
               id: 'exitRoad.yes',
               type: 'Answer',
               text: 'Ja, jeg trenger ny eller endret avkjørsel mot vei',
               value: 'yes',
             },
             {
+              heading:
+                'Nei, jeg trenger ikke ny eller endret avkjørsel mot vei',
               id: 'exitRoad.no',
               type: 'Answer',
               text: 'Nei, jeg trenger ikke ny eller endret avkjørsel mot vei',
@@ -1864,6 +1925,7 @@ const data: WizardDefinition = {
         },
         {
           type: 'Branch',
+          id: 'exitRoad.yes',
           branches: [
             {
               test: {
@@ -1921,12 +1983,15 @@ const data: WizardDefinition = {
           },
           options: [
             {
+              heading:
+                'Ja, mønehøyden er maksimalt 4,0 meter og gesimshøyden er maksimalt 3,0 meter',
               id: 'heights.yes',
               type: 'Answer',
               text: 'Ja, mønehøyden er maksimalt 4,0 meter og gesimshøyden er maksimalt 3,0 meter',
               value: 'yes',
             },
             {
+              heading: 'Nei, bygningen blir høyere enn dette',
               id: 'heights.no',
               type: 'Answer',
               text: 'Nei, bygningen blir høyere enn dette',
@@ -1936,6 +2001,7 @@ const data: WizardDefinition = {
         },
         {
           type: 'Branch',
+          id: 'heights.no',
           branches: [
             {
               test: {
@@ -1980,12 +2046,16 @@ const data: WizardDefinition = {
           },
           options: [
             {
+              heading:
+                'Ja, eiendommen min har stort nok areal til å bygge det jeg ønsker',
               id: 'areaAvailable.yes',
               type: 'Answer',
               text: 'Ja, eiendommen min har stort nok areal til å bygge det jeg ønsker',
               value: 'yes',
             },
             {
+              heading:
+                'Nei, eiendommen min har ikke stort nok areal til å bygge det jeg ønsker',
               id: 'areaAvailable.no',
               type: 'Answer',
               text: 'Nei, eiendommen min har ikke stort nok areal til å bygge det jeg ønsker',
@@ -1995,6 +2065,7 @@ const data: WizardDefinition = {
         },
         {
           type: 'Branch',
+          id: 'areaAvailable.no',
           branches: [
             {
               test: {
@@ -2033,12 +2104,14 @@ const data: WizardDefinition = {
           },
           options: [
             {
+              heading: 'Ja, det finnes andre begrensninger',
               id: 'other.yes',
               type: 'Answer',
               text: 'Ja, det finnes andre begrensninger',
               value: 'yes',
             },
             {
+              heading: 'Nei, det finnes ikke andre begrensninger',
               id: 'other.no',
               type: 'Answer',
               text: 'Nei, det finnes ikke andre begrensninger',
@@ -2048,6 +2121,7 @@ const data: WizardDefinition = {
         },
         {
           type: 'Branch',
+          id: 'other.yes',
           branches: [
             {
               test: {
@@ -2077,6 +2151,7 @@ const data: WizardDefinition = {
     },
     {
       type: 'Branch',
+      id: 'page6',
       branches: [
         {
           test: {
@@ -2128,11 +2203,22 @@ const data: WizardDefinition = {
             {
               id: 'applicationResult',
               type: 'Result',
-              heading: 'Du må søke',
-              errorheading: 'Du har ikke svart på alle spørsmålene',
-              lead: '<p>Svarene dine viser at du må søke. Sjekk oppsummeringen under for å finne ut om du trenger å sende inn byggesøknad, dispensasjon eller om du trenger andre tillatelser.</p><p>Er du i tvil om du har svart riktig? Ta en utskrift av svarene dine og kontakt kommunen. De kan også fortelle deg mer om søknadsprosessen.</p><p>Husk at det er ditt ansvar at du bygger lovlig. Dersom bygningen er ulovlig kan den i verste fall rives.</p>',
-              errorlead:
-                '<p>Vi kan derfor ikke fortelle deg hva du trenger av søknader og dispensasjoner. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p><p>Du kan få tips og råd om søknadsprosessen i <a target=‘blank’ href="https://www.youtube.com/watch?v=s6oTf12Q-rY&feature=youtu.be">denne kortfilmen</a> og i vår veiledning <a target=‘blank’ href="https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/">“Åtte steg fra idé til ferdig søknad“</a>.</p>',
+              heading: {
+                complete: 'Du må søke',
+                incomplete: 'Du har ikke svart på alle spørsmålene',
+                incompleteWithError: 'Du har ikke svart på alle spørsmålene',
+                completeWithError: 'Du har ikke svart på alle spørsmålene',
+              },
+              lead: {
+                complete:
+                  '<p>Svarene dine viser at du må søke. Sjekk oppsummeringen under for å finne ut om du trenger å sende inn byggesøknad, dispensasjon eller om du trenger andre tillatelser.</p><p>Er du i tvil om du har svart riktig? Ta en utskrift av svarene dine og kontakt kommunen. De kan også fortelle deg mer om søknadsprosessen.</p><p>Husk at det er ditt ansvar at du bygger lovlig. Dersom bygningen er ulovlig kan den i verste fall rives.</p>',
+                incomplete:
+                  '<p>Vi kan derfor ikke fortelle deg hva du trenger av søknader og dispensasjoner. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p><p>Du kan få tips og råd om søknadsprosessen i <a target=‘blank’ href="https://www.youtube.com/watch?v=s6oTf12Q-rY&feature=youtu.be">denne kortfilmen</a> og i vår veiledning <a target=‘blank’ href="https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/">“Åtte steg fra idé til ferdig søknad“</a>.</p>',
+                incompleteWithError:
+                  '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p><p>Du kan få tips og råd om søknadsprosessen i <a target=‘blank’ href="https://www.youtube.com/watch?v=s6oTf12Q-rY&feature=youtu.be">denne kortfilmen</a> og i vår veiledning <a target=‘blank’ href="https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/">“Åtte steg fra idé til ferdig søknad“</a>.</p>',
+                completeWithError:
+                  '<p>Svarene dine viser at du må søke. Sjekk oppsummeringen under for å finne ut om du trenger å sende inn byggesøknad, dispensasjon eller om du trenger andre tillatelser.</p><p>Er du i tvil om du har svart riktig? Ta en utskrift av svarene dine og kontakt kommunen. De kan også fortelle deg mer om søknadsprosessen.</p><p>Husk at det er ditt ansvar at du bygger lovlig. Dersom bygningen er ulovlig kan den i verste fall rives.</p>',
+              },
             },
           ],
         },
@@ -2140,6 +2226,7 @@ const data: WizardDefinition = {
     },
     {
       type: 'Branch',
+      id: 'page6',
       branches: [
         {
           test: {
@@ -2211,11 +2298,22 @@ const data: WizardDefinition = {
             {
               id: 'dispResult',
               type: 'Result',
-              heading: 'Du må søke',
-              errorheading: 'Du har ikke svart på alle spørsmålene',
-              lead: '<p>Svarene dine viser at du må søke. Sjekk oppsummeringen under for å finne ut om du trenger å sende inn byggesøknad, dispensasjon eller om du trenger andre tillatelser. Er du i tvil om du har svart riktig? Ta en utskrift av svarene dine og kontakt kommunen. De kan også fortelle deg mer om søknadsprosessen.</p><p>Du kan få tips og råd til søknadsprosessen i kortfilmen <a target=‘blank’ href="https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/">“Hva må til for å sende inn byggesøknad?“</a> og i vår veiledning <a target=‘blank’ href="https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/">“Åtte steg fra idé til ferdig søknad“</a>. Skjema for nabovarsling og byggesøknad finner du på siden <a target=‘blank’ href="https://dibk.no/bygge-selv/soknadsskjema-for-mindre-byggeprosjekter-pa-boligeiendom/">“Søknadsskjemaer for mindre byggeprosjekter på boligeiendom“</a>.<p>Husk at det er ditt ansvar at du bygger lovlig. Dersom bygningen er ulovlig kan den i verste fall rives.</p>',
-              errorlead:
-                '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+              heading: {
+                complete: 'Du må søke',
+                incomplete: 'Du har ikke svart på alle spørsmålene',
+                incompleteWithError: 'Du har ikke svart på alle spørsmålene',
+                completeWithError: 'Du har ikke svart på alle spørsmålene',
+              },
+              lead: {
+                complete:
+                  '<p>Svarene dine viser at du må søke. Sjekk oppsummeringen under for å finne ut om du trenger å sende inn byggesøknad, dispensasjon eller om du trenger andre tillatelser. Er du i tvil om du har svart riktig? Ta en utskrift av svarene dine og kontakt kommunen. De kan også fortelle deg mer om søknadsprosessen.</p><p>Du kan få tips og råd til søknadsprosessen i kortfilmen <a target=‘blank’ href="https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/">“Hva må til for å sende inn byggesøknad?“</a> og i vår veiledning <a target=‘blank’ href="https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/">“Åtte steg fra idé til ferdig søknad“</a>. Skjema for nabovarsling og byggesøknad finner du på siden <a target=‘blank’ href="https://dibk.no/bygge-selv/soknadsskjema-for-mindre-byggeprosjekter-pa-boligeiendom/">“Søknadsskjemaer for mindre byggeprosjekter på boligeiendom“</a>.<p>Husk at det er ditt ansvar at du bygger lovlig. Dersom bygningen er ulovlig kan den i verste fall rives.</p>',
+                incomplete:
+                  '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+                incompleteWithError:
+                  '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+                completeWithError:
+                  '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+              },
             },
           ],
         },
@@ -2224,11 +2322,22 @@ const data: WizardDefinition = {
     {
       id: 'hooray',
       type: 'Result',
-      heading: 'Du kan bygge uten å søke!',
-      errorheading: 'Du har ikke svart på alle spørsmålene',
-      lead: '<p>Svarene dine viser at du kan bygge uten å søke. Sjekk oppsummeringen under for å finne ut om du har svart riktig. Dette gjelder særlig  spørsmålene om kommunale planer. Disse kan begrense hva du kan gjøre på eiendommen din uten å søke. </p><p>Er du i tvil om du har svart riktig? Ta en utskrift av svarene dine og kontakt kommunen.</p><p>Du trenger ikke varsle naboene om byggingen skriftlig, men vi anbefaler likevel å snakke med dem om byggeplanene dine i forkant.</p><p>Selv om du slipper å søke, er du nødt til å informere kommunen etter at bygget er ferdig. Bruk skjemaet <a href="https://dibk.no/globalassets/blanketter_utfyllbare/alle-blanketter/5188-melding-om-bygning-eller-tilbygg-som-er-unntatt-soknadsplikt.pdf">”Melding om bygning eller tilbygg som er unntatt søknadsplikt”</a>.</p><p>Husk at det er ditt ansvar at du bygger lovlig. Dersom bygningen er ulovlig kan den i verste fall rives.</p>',
-      errorlead:
-        '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+      heading: {
+        complete: 'Du kan bygge uten å søke!',
+        completeWithError: 'Du har ikke svart på alle spørsmålene',
+        incompleteWithError: 'Du har ikke svart på alle spørsmålene',
+        incomplete: 'Du har ikke svart på alle spørsmålene',
+      },
+      lead: {
+        complete:
+          '<p>Svarene dine viser at du kan bygge uten å søke. Sjekk oppsummeringen under for å finne ut om du har svart riktig. Dette gjelder særlig  spørsmålene om kommunale planer. Disse kan begrense hva du kan gjøre på eiendommen din uten å søke. </p><p>Er du i tvil om du har svart riktig? Ta en utskrift av svarene dine og kontakt kommunen.</p><p>Du trenger ikke varsle naboene om byggingen skriftlig, men vi anbefaler likevel å snakke med dem om byggeplanene dine i forkant.</p><p>Selv om du slipper å søke, er du nødt til å informere kommunen etter at bygget er ferdig. Bruk skjemaet <a href="https://dibk.no/globalassets/blanketter_utfyllbare/alle-blanketter/5188-melding-om-bygning-eller-tilbygg-som-er-unntatt-soknadsplikt.pdf">”Melding om bygning eller tilbygg som er unntatt søknadsplikt”</a>.</p><p>Husk at det er ditt ansvar at du bygger lovlig. Dersom bygningen er ulovlig kan den i verste fall rives.</p>',
+        completeWithError:
+          '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+        incompleteWithError:
+          '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+        incomplete:
+          '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+      },
     },
   ],
 };

@@ -1,19 +1,30 @@
-/* globals window */
-
 import { createStore, combineReducers, compose } from 'redux';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
 import { state } from 'losen';
-import { persistStore, autoRehydrate } from 'redux-persist';
-import schema from './api/bus-garasje'
+import schema from './api/bus-garasje';
 
-/**
- * Create the store with middleware
- */
+declare global {
+  interface Window {
+    __REDUX_DEVTOOLS_EXTENSION__?: typeof compose;
+  }
+}
+
+const persistConfig = {
+  key: 'root',
+  storage,
+};
+
+const rootReducer = combineReducers({ [state.NAME]: state.reducer(schema) });
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
 const store = createStore(
-  combineReducers({ [state.NAME]: state.reducer(schema) }),
+  persistedReducer,
   undefined,
-  compose(autoRehydrate(), window.devToolsExtension ? window.devToolsExtension() : f => f),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 );
 
-persistStore(store);
+let persistor = persistStore(store);
 
-export default store;
+export { store, persistor };

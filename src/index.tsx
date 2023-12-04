@@ -1,10 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-const root = document.querySelector('div[data-bind], #root');
-let translations = JSON.parse(root.getAttribute('data-bind') || '{}');
+const container = document.querySelector('div[data-bind], #root');
+if (!container) {
+  throw new Error('Container element not found');
+}
+
+let translations = JSON.parse(container.getAttribute('data-bind') || '{}');
 
 translations = Object.keys(translations).reduce((res, id) => {
   const { title: heading, ...rest } = translations[id];
@@ -18,7 +22,9 @@ translations = Object.keys(translations).reduce((res, id) => {
   };
 }, {});
 
-ReactDOM.render(<App translations={translations} />, root); /* eslint no-undef: 0 */
+const root = createRoot(container);
+
+root.render(<App translations={translations} />);
 if (window.location.hostname === 'localhost') {
   registerServiceWorker();
 }
