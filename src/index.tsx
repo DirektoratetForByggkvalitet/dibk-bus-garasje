@@ -2,6 +2,8 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import { Provider } from 'react-redux';
+import store from './store';
 
 const container = document.querySelector('div[data-bind], #root');
 if (!container) {
@@ -24,7 +26,11 @@ translations = Object.keys(translations).reduce((res, id) => {
 
 const root = createRoot(container);
 
-root.render(<App translations={translations} />);
+root.render(
+  <Provider store={store}>
+    <App translations={translations} />
+  </Provider>,
+);
 if (window.location.hostname === 'localhost') {
   registerServiceWorker();
 }

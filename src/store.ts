@@ -25,6 +25,6 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 );
 
-let persistor = persistStore(store);
+export const persistor = persistStore(store);
 
-export { store, persistor };
+export default store;

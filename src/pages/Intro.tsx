@@ -6,28 +6,13 @@ import { IntroMain } from '../primitives/IntroMain';
 
 interface IntroProps {
   close: () => void;
-  data: object; // Replace 'object' with the actual type of 'data'
 }
 
 interface State {
-  '@WIZARD_STATE': any; // Replace 'any' with the actual type of '@WIZARD_STATE'
+  '@WIZARD_STATE': any;
 }
 
-const Intro: React.FC<IntroProps> = ({ close, data }: IntroProps) => {
-  const arrayWithData = Object.keys(data);
-
-  useEffect(() => {
-    // close / hide intro page if user has begun schema journey
-    // TODO: a better approach might be to exclude the $computed prop if
-    // it's values is non-existent, in losen.
-    if (
-      arrayWithData.length !== 0 &&
-      !(arrayWithData.length === 1 && arrayWithData[0] !== '$computed')
-    ) {
-      close();
-    }
-  }, [arrayWithData, close]);
-
+const Intro: React.FC<IntroProps> = ({ close }: IntroProps) => {
   return (
     <Primitives.Wizard>
       <IntroMain>
@@ -84,11 +69,4 @@ const Intro: React.FC<IntroProps> = ({ close, data }: IntroProps) => {
   );
 };
 
-Intro.propTypes = {
-  close: PropTypes.func.isRequired,
-  data: PropTypes.object.isRequired,
-};
-
-export default connect((state: State) => ({ data: state['@WIZARD_STATE'] }))(
-  Intro,
-);
+export default Intro;
