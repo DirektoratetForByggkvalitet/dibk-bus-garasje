@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "lodash.get": "^4.4.2",
-    "losen": "^8.0.0",
+    "losen": "^9.0.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-autobind": "^1.0.6",
@@ -23,7 +23,7 @@
     "redux": "^4.2.1",
     "redux-persist": "^6.0.0",
     "styled-components": "^6.1.1",
-    "vite-tsconfig-paths": "^4.2.1"
+    "vite-tsconfig-paths": "^4.2.2"
   },
   "devDependencies": {
     "@types/lodash.get": "^4.4.9",
