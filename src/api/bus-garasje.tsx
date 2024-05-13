@@ -85,19 +85,20 @@ const data: WizardDefinition = {
                   type: 'Result',
                   heading: {
                     complete: 'Du må søke',
-                    incomplete: 'Du må søke',
-                    incompleteWithError: 'Du må søke',
-                    completeWithError: 'Du må søke',
+                    incomplete: 'Du har ikke svart på alle spørsmålene',
+                    incompleteWithError:
+                      'Du har ikke svart på alle spørsmålene og har feil i svarene dine',
+                    completeWithError: 'Du har feil i svarene dine',
                   },
                   lead: {
                     complete:
                       'Hvis du skal bygge hytte, fritidsbolig eller et anneks som noen kan bo eller sove i, er du nødt til å søke. Det samme gjelder hvis du skal ha kjøkken, stue, bad, våtrom eller soverom i bygningen. Du kan få tips og råd om søknadsprosessen i vår veiledning <a target=\'_blank\' href="https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/">“Åtte steg fra idé til ferdig søknad“</a>.',
                     completeWithError:
-                      'Hvis du skal bygge hytte, fritidsbolig eller et anneks som noen kan bo eller sove i, er du nødt til å søke. Det samme gjelder hvis du skal ha kjøkken, stue, bad, våtrom eller soverom i bygningen. Du kan få tips og råd om søknadsprosessen i vår veiledning <a target=\'_blank\' href="https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/">“Åtte steg fra idé til ferdig søknad“</a>.',
+                      '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>.',
                     incomplete:
-                      'Hvis du skal bygge hytte, fritidsbolig eller et anneks som noen kan bo eller sove i, er du nødt til å søke. Det samme gjelder hvis du skal ha kjøkken, stue, bad, våtrom eller soverom i bygningen. Du kan få tips og råd om søknadsprosessen i vår veiledning <a target=\'_blank\' href="https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/">“Åtte steg fra idé til ferdig søknad“</a>.',
+                      '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>.',
                     incompleteWithError:
-                      'Hvis du skal bygge hytte, fritidsbolig eller et anneks som noen kan bo eller sove i, er du nødt til å søke. Det samme gjelder hvis du skal ha kjøkken, stue, bad, våtrom eller soverom i bygningen. Du kan få tips og råd om søknadsprosessen i vår veiledning <a target=\'_blank\' href="https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/">“Åtte steg fra idé til ferdig søknad“</a>.',
+                      'Du har svart feil på noen spørsmål. Du kan se hvilke spørsmål du har svart feil på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.',
                   },
                 },
               ],
@@ -200,14 +201,12 @@ const data: WizardDefinition = {
                       heading: 'Ja',
                       id: 'garasjeMoreRoom.yes',
                       type: 'Answer',
-                      text: 'Ja',
                       value: 'yes',
                     },
                     {
                       heading: 'Nei',
                       id: 'garasjeMoreRoom.no',
                       type: 'Answer',
-                      text: 'Nei',
                       value: 'no',
                     },
                   ],
@@ -237,14 +236,12 @@ const data: WizardDefinition = {
                       heading: 'Ja',
                       id: 'extraRoomHobbyGarasje.yes',
                       type: 'Answer',
-                      text: 'Ja',
                       value: 'yes',
                     },
                     {
                       heading: 'Nei',
                       id: 'extraRoomHobbyGarasje.no',
                       type: 'Answer',
-                      text: 'Nei',
                       value: 'no',
                     },
                   ],
@@ -2211,18 +2208,19 @@ const data: WizardDefinition = {
               heading: {
                 complete: 'Du må søke',
                 incomplete: 'Du har ikke svart på alle spørsmålene',
-                incompleteWithError: 'Du har ikke svart på alle spørsmålene',
-                completeWithError: 'Du har ikke svart på alle spørsmålene',
+                incompleteWithError:
+                  'Du har ikke svart på alle spørsmålene og har feil i svarene',
+                completeWithError: 'Du har feil i svarene',
               },
               lead: {
                 complete:
                   '<p>Svarene dine viser at du må søke. Sjekk oppsummeringen under for å finne ut om du trenger å sende inn byggesøknad, dispensasjon eller om du trenger andre tillatelser.</p><p>Er du i tvil om du har svart riktig? Ta en utskrift av svarene dine og kontakt kommunen. De kan også fortelle deg mer om søknadsprosessen.</p><p>Husk at det er ditt ansvar at du bygger lovlig. Dersom bygningen er ulovlig kan den i verste fall rives.</p>',
                 incomplete:
-                  '<p>Vi kan derfor ikke fortelle deg hva du trenger av søknader og dispensasjoner. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p><p>Du kan få tips og råd om søknadsprosessen i <a target=‘blank’ href="https://www.youtube.com/watch?v=s6oTf12Q-rY&feature=youtu.be">denne kortfilmen</a> og i vår veiledning <a target=‘blank’ href="https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/">“Åtte steg fra idé til ferdig søknad“</a>.</p>',
+                  '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>.',
                 incompleteWithError:
-                  '<p>Vi kan derfor ikke fortelle deg hva du trenger av søknader og dispensasjoner. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p><p>Du kan få tips og råd om søknadsprosessen i <a target=‘blank’ href="https://www.youtube.com/watch?v=s6oTf12Q-rY&feature=youtu.be">denne kortfilmen</a> og i vår veiledning <a target=‘blank’ href="https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/">“Åtte steg fra idé til ferdig søknad“</a>.</p>',
+                  '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>.',
                 completeWithError:
-                  '<p>Vi kan derfor ikke fortelle deg hva du trenger av søknader og dispensasjoner. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p><p>Du kan få tips og råd om søknadsprosessen i <a target=‘blank’ href="https://www.youtube.com/watch?v=s6oTf12Q-rY&feature=youtu.be">denne kortfilmen</a> og i vår veiledning <a target=‘blank’ href="https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/">“Åtte steg fra idé til ferdig søknad“</a>.</p>',
+                  'Du har svart feil på noen spørsmål. Du kan se hvilke spørsmål du har svart feil på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.',
               },
             },
           ],
@@ -2306,8 +2304,9 @@ const data: WizardDefinition = {
               heading: {
                 complete: 'Du må søke',
                 incomplete: 'Du har ikke svart på alle spørsmålene',
-                incompleteWithError: 'Du har ikke svart på alle spørsmålene',
-                completeWithError: 'Du har ikke svart på alle spørsmålene',
+                incompleteWithError:
+                  'Du har ikke svart på alle spørsmålene og har feil i svarene',
+                completeWithError: 'Du har feil i svarene',
               },
               lead: {
                 complete:
@@ -2317,7 +2316,7 @@ const data: WizardDefinition = {
                 incompleteWithError:
                   '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
                 completeWithError:
-                  '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+                  'Du har svart feil på noen spørsmål. Du kan se hvilke spørsmål du har svart feil på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.',
               },
             },
           ],
@@ -2330,8 +2329,9 @@ const data: WizardDefinition = {
       heading: {
         complete: 'Du kan bygge uten å søke!',
         incomplete: 'Du har ikke svart på alle spørsmålene',
-        incompleteWithError: 'Du har ikke svart på alle spørsmålene',
-        completeWithError: 'Du har ikke svart på alle spørsmålene',
+        incompleteWithError:
+          'Du har ikke svart på alle spørsmålene og har feil i svarene',
+        completeWithError: 'Du har feil i svarene',
       },
       lead: {
         complete:
@@ -2341,7 +2341,7 @@ const data: WizardDefinition = {
         incompleteWithError:
           '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
         completeWithError:
-          '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+          'Du har svart feil på noen spørsmål. Du kan se hvilke spørsmål du har svart feil på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.',
       },
     },
   ],
